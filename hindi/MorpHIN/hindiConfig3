@@ -1,0 +1,50 @@
+[Lexicon]
+lexName = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Lexicon/newer_LEXICON
+auxVerbFilename = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/VERB_AUXILIARY_LIST
+spellingVariationRuleFilename = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/Spell_variations_Rules
+
+[Stemmer]
+suffixReplacementRuleFilename = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/newFormatSuffixReplacementRules
+specialCharactersRuleFilename = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/Regex_cat_map
+irregularVerbFilename = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/IRREGULAR_VERB_MAPPING
+uniqueSuffixReplacementRuleFilename = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/newFormatUniqueSuffixReplacementRules
+derivationalMorphologyRuleFilename = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/DERIVATIONAL_MORPHOLOGY_RULES
+stemDictionary = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/stemDictionary.serialized
+
+[MA]
+stemAnalysisFile = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/STEM_ANALYSIS
+suffixAnalysisFile = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/SUFFIX_ANALYSIS
+stemFlagFile =/mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/VERB_STEM_FLAG_MAP
+suffixFlagFile =/mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/VERB_SUFFIX_FLAG_MAP
+
+[Tagset]
+tagMappingFilename = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/Tagmapping
+
+[Disambiguator]
+ordering = ORDERED
+orderedRulesFile = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Rules/Set3/rules.ord
+unorderedRulesFile = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Rules/rules.unord
+seqFH = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/sequence_of_tags_in_training_instances
+
+[AS]
+wordAndASID = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/wordAndASID.serialized
+ASID-ASName-Mapping = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/ASID-ASName-Mapping.txt
+word-ASID-ASName-Mapping = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/word-ASID-ASName-Mapping.txt
+ASID-ASName-Words = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/ASID-ASName-Words.txt
+ASID-ASName-NumOfWords = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/ASID-ASName-NumOfWords.txt
+wordAndAS = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/wordAndAS.serialized
+ASAndWord = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/ASAndWord.serialized
+ASAndWordGR1 = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/ASAndWordGR1.serialized
+ASAndNumOfTimes = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/ASAndNumOfTimes.serialized
+ASGR1AndNumOfTimes = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/ASGR1AndNumOfTimes.serialized
+asToAsid = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/Set3/asToAsid.serialized
+
+[Trainer]
+trainingInstancesDir = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/Set3/TrainingInstances
+sequenceOfTagsFilename = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/sequence_of_tags_in_training_instances
+learnedRulesDir = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Rules/Set3
+trainingDataDir = /mnt/dgf1/home/dineshg/workspace/HindiCorpus/FullCorpus/NewSets/TrainSet3
+cn2executable = /mnt/dgf1/home/dineshg/HindiOldSystem/cn2/cn
+
+[NGI]
+RuleFile = /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Rules/ngiRuleFile

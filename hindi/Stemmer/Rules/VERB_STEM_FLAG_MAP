@@ -1,0 +1,29 @@
+//  VERB STEM FLAG MAP
+// IF THE SPECIFIED MORPHEME IS PRESENT IN STEM
+// THEN  THE CORRESPONDING FLAG IS RETURNED
+// FORMAT:
+// # category
+// morpheme flag
+#verb
+रह	r
+कर	k
+जा 	j
+आ	a
+चल	c
+चुक	co
+रख	co
+डाल	co
+बैठ	co
+लग	l
+वाल	v
+को	ko
+चाह	ch
+सक	s
+पा	p
+बन	bn
+पड़	md
+दे	mp
+#verb_cop
+ह	h
+#case
+.	cm

@@ -1,0 +1,20 @@
+// THESE ARE RIGHT TO LEFT PROCESSING RULES
+
+//contains all the possible sequences which includes a case marker or a PP.
+// format is ----->
+// [category:case + category:case + ... category:case] ... [category:case + category:case + ... category:case][cm or pp]
+// + in the square bracket denotes any of the category is possible
+// case can be d (direct), o (oblique). or x (dont care)
+// * in the square bracket means that any number of any tag can appear between the adjoining tags.
+
+//[noun:o + pn:o + pnoun:x + number:x + pp:x + grnd:x] [cm:x]
+//[noun:o + pn:o + pnoun:x + number:x + png:x + grnd:x] [pp:x]
+
+[demonstrative:o + png:x] [*:x] [unknown:x + noun:o + pn:o + pnoun:x + number:x + grnd:x + P_wh:x + pn_ref:x + pn_rec:x] [cm:x + pp:x]
+[pn:d + png:x] [*:x] [unknown:x + noun:o + pn:o + pnoun:x + number:x + grnd:x + P_wh:x + pn_ref:x + pn_rec:x] [cm:x + pp:x]
+
+[demonstrative:d + png:x] [*:x] [unknown:x + noun:d + pn:d + pnoun:x + number:x + grnd:x + P_wh:x + pn_ref:x + pn_rec:x]
+[pn:o + png:x] [*:x] [unknown:x + noun:d + pn:d + pnoun:x + number:x + grnd:x + P_wh:x + pn_ref:x + pn_rec:x]
+
+
+

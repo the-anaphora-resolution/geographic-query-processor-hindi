@@ -1,0 +1,7 @@
+**ATTRIBUTE FILE**
+
+word_minus_2: noun pnoun verb_aux demonstrative png verb_cop grnd adjective adverb cm ordinal cardinal pp P_wh pn_rec pn_ref conj particle inj foreign neg wh pn intensifier quantifier verb number nst SYM NA redup ut ;
+word_minus_1: noun pnoun verb_aux demonstrative png verb_cop grnd adjective adverb cm ordinal cardinal pp P_wh pn_rec pn_ref conj particle inj foreign neg wh pn intensifier quantifier verb number nst SYM NA redup ut ;
+word_plus_1: noun pnoun verb_aux demonstrative png verb_cop grnd adjective adverb cm ordinal cardinal pp P_wh pn_rec pn_ref conj particle inj foreign neg wh pn intensifier quantifier verb number nst SYM NA redup ut ;
+word_plus_2: noun pnoun verb_aux demonstrative png verb_cop grnd adjective adverb cm ordinal cardinal pp P_wh pn_rec pn_ref conj particle inj foreign neg wh pn intensifier quantifier verb number nst SYM NA redup ut ;
+curr_word_tag: noun pnoun verb_aux demonstrative png verb_cop grnd adjective adverb cm ordinal cardinal pp P_wh pn_rec pn_ref conj particle inj foreign neg wh pn intensifier quantifier verb number nst SYM NA redup ut ;

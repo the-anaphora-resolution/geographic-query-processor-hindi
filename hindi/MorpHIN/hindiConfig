@@ -1,0 +1,74 @@
+[Lexicon]
+lexName = /mnt/dgf1/home/sachinp/latest-lexicon
+auxVerbFilename = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/VERB_AUXILIARY_LIST
+spellingVariationRuleFilename = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/Spell_variations_Rules
+
+[Stemmer]
+suffixReplacementRuleFilename = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/newFormatSuffixReplacementRules
+specialCharactersRuleFilename = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/Regex_cat_map
+irregularVerbFilename = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/IRREGULAR_VERB_MAPPING
+uniqueSuffixReplacementRuleFilename = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/newFormatUniqueSuffixReplacementRules
+derivationalMorphologyRuleFilename = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/DERIVATIONAL_MORPHOLOGY_RULES
+stemDictionary = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/stemDictionary.serialized
+charametarSuff = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/Suff2
+allSuff = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/Suff1
+NounSuff = /mnt/dgf1/home/sachinp/abc1
+
+[Tagset]
+tagMappingFilename = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/Tagmapping
+
+[MA]
+stemAnalysisFile = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/STEM_ANALYSIS
+suffixAnalysisFile = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/SUFFIX_ANALYSIS
+stemFlagFile =/mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/VERB_STEM_FLAG_MAP
+suffixFlagFile =/mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/VERB_SUFFIX_FLAG_MAP
+MAOutput = /mnt/dgf1/home/sachinp/temp1
+
+
+[Disambiguator]
+ordering = ORDERED
+orderedRulesFile = /mnt/dgf1/home/sachinp/Learned/Rules/rules.ord
+unorderedRulesFile = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Rules/rules.unord
+seqFH = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/sequence_of_tags_in_training_instances
+
+[AS]
+wordAndASID = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/wordAndASID.serialized
+ASID-ASName-Mapping = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/ASID-ASName-Mapping.txt
+word-ASID-ASName-Mapping = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/word-ASID-ASName-Mapping.txt
+ASID-ASName-Words = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/ASID-ASName-Words.txt
+ASID-ASName-NumOfWords = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/ASID-ASName-NumOfWords.txt
+wordAndAS = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/wordAndAS.serialized
+ASAndWord = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/ASAndWord.serialized
+ASAndWordGR1 = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/ASAndWordGR1.serialized
+ASAndNumOfTimes = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/ASAndNumOfTimes.serialized
+ASGR1AndNumOfTimes = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/ASGR1AndNumOfTimes.serialized
+asToAsid = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Learned/Resources/asToAsid.serialized
+
+[Trainer]
+trainingInstancesDir = /mnt/dgf1/home/sachinp/CN2
+sequenceOfTagsFilename = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/sequence_of_tags_in_training_instances
+suffixesFilename = /mnt/dgf1/home/sachinp/suffixes2
+learnedRulesDir = /mnt/dgf1/home/sachinp/Learned/Rules
+trainingDataDir = /mnt/dgf1/home/sachinp/TrainingData/newTrainH1
+cn2executable = /mnt/dgf1/home/sachinp/workspace/CN2/cn
+
+[NGI]
+RuleFile = /mnt/dgf1/home/sachinp/workspace/HindiLinguisticResources/Rules/ngiRuleFile
+
+[HMM]
+tagfile = /mnt/dgf1/home/sachinp/tagfile
+tagCat = /mnt/dgf1/home/sachinp/workspace/MarathiLinguisticResources/Rules/Tagmapping
+trainingData = /mnt/dgf1/home/sachinp/TrainingData/newTrainH1
+countFile = /mnt/dgf1/home/sachinp/lexCounts
+lexCountsObject = /mnt/dgf1/home/sachinp/lexCountsObject
+suffTagsObject = /mnt/dgf1/home/sachinp/suffTagsObject
+selfSuffObject = /mnt/dgf1/home/sachinp/selfSuffObject
+qObject = /mnt/dgf1/home/sachinp/qObject
+qN_1Object = /mnt/dgf1/home/sachinp/qN_1Object
+tagCounts = /mnt/dgf1/home/sachinp/tagCounts
+testfile = /mnt/dgf1/home/sachinp/temptrain
+distinctTags = /mnt/dgf1/home/sachinp/distinctTags
+tagcats = /mnt/dgf1/home/sachinp/tagcats
+categories = /mnt/dgf1/home/sachinp/categories
+suffixesObject = /mnt/dgf1/home/sachinp/suffObject
+suffixes = /mnt/dgf1/home/sachinp/suffListUniq

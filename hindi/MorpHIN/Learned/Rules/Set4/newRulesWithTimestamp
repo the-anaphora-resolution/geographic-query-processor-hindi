@@ -1,0 +1,7 @@
+#!/bin/sh
+rm *.o
+/mnt/dgf1/home/dineshg/HindiOldSystem/cn2/cn < /mnt/dgf1/home/dineshg/workspace/HindiLinguisticResources/Learned/Resources/Set4/TrainingInstances/c
+RULEFILENAME="rules.ord.$1"
+./formatRules.DINESH.pl o ./ > $RULEFILENAME
+rm -f rules.ord
+ln -s $RULEFILENAME rules.ord

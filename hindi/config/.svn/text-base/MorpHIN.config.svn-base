@@ -1,0 +1,44 @@
+[Lexicon]
+lexName = ./MorpHIN/Lexicon.txt
+auxVerbFilename = ./MorpHIN/VERB_AUXILIARY_LIST
+spellingVariationRuleFilename = ./MorpHIN/Spell_variations_Rules
+
+[Stemmer]
+suffixReplacementRuleFilename = ./MorpHIN/newFormatSuffixReplacementRules
+specialCharactersRuleFilename = ./MorpHIN/Regex_cat_map
+irregularVerbFilename = ./MorpHIN/IRREGULAR_VERB_MAPPING
+uniqueSuffixReplacementRuleFilename = ./MorpHIN/newFormatUniqueSuffixReplacementRules
+derivationalMorphologyRuleFilename = ./MorpHIN/DERIVATIONAL_MORPHOLOGY_RULES
+stemDictionary = ./stemDictionary.serialized
+
+[Tagset]
+tagMappingFilename = ./MorpHIN/Tagmapping
+
+[MA]
+stemAnalysisFile = ./MorpHIN/STEM_ANALYSIS
+suffixAnalysisFile = ./MorpHIN/SUFFIX_ANALYSIS
+stemFlagFile =./MorpHIN/VERB_STEM_FLAG_MAP
+suffixFlagFile =./MorpHIN/VERB_SUFFIX_FLAG_MAP
+
+
+[Disambiguator]
+ordering = ORDERED
+orderedRulesFile = ./Learned/Rules/rules.ord
+unorderedRulesFile = ./Learned/Rules/rules.unord
+seqFH = ./MorpHIN/sequence_of_tags_in_training_instances
+
+[AS]
+wordAndASID = ./Learned/Resources/wordAndASID.serialized
+ASID-ASName-Mapping = ./Learned/Resources/ASID-ASName-Mapping.txt
+word-ASID-ASName-Mapping = ./Learned/Resources/word-ASID-ASName-Mapping.txt
+ASID-ASName-Words = ./Learned/Resources/ASID-ASName-Words.txt
+ASID-ASName-NumOfWords = ./Learned/Resources/ASID-ASName-NumOfWords.txt
+wordAndAS = ./Learned/Resources/wordAndAS.serialized
+ASAndWord = ./Learned/Resources/ASAndWord.serialized
+ASAndWordGR1 = ./Learned/Resources/ASAndWordGR1.serialized
+ASAndNumOfTimes = ./Learned/Resources/ASAndNumOfTimes.serialized
+ASGR1AndNumOfTimes = ./Learned/Resources/ASGR1AndNumOfTimes.serialized
+asToAsid = ./Learned/Resources/asToAsid.serialized
+
+[NGI]
+RuleFile = ./MorpHIN/ngiRuleFile

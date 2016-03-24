@@ -1,0 +1,52 @@
+8
+
+dir
+104
+http://10.129.32.10/svn_nlp/trunk/JHWNL/config
+http://10.129.32.10/svn_nlp
+
+
+
+2007-08-30T06:59:53.084802Z
+23
+aditya
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+15407e28-7fbc-4c41-9bb1-6a4bfe49a589
+
+HindiWN.properties
+file
+
+
+
+
+2007-08-30T07:00:18.000000Z
+441434952586cfbb3d09d2bd47f576ef
+2007-08-30T06:59:53.084802Z
+23
+aditya
+
+MorpHIN.config
+file
+
+
+
+
+2007-08-29T09:18:22.000000Z
+66d4447642921bec1fa16b5c9cae17b1
+2007-08-29T09:18:54.188439Z
+8
+aditya
+
