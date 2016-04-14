@@ -4,7 +4,7 @@ __author__ = "Chinmaya Gautam"
 __copyright__ = "Copyright 2016, The Anaphora Resolution"
 __credits__ = ["Chinamya Gautam", "Harsh Fatehpuria", "Rahul Agrawal", "Simrat Singh Chabbra"]
 __license__ = "GPL"
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __maintainer__ = "Chinmaya Gautam"
 __email__ = "chinmaya.gautam@usc.edu"
 __status__ = "Developement"
@@ -56,7 +56,7 @@ res = list()
 for entry in res_table.find_all('td'):
      res.append(entry.get_text().encode('utf-8'))
 
-outfile = open('output.txt', 'w')
+outfile = open('parsed_data.txt', 'w')
 
 #all done! write the parsed data!
 for r in res:
