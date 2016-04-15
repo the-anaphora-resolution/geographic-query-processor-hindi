@@ -21,21 +21,22 @@ output_file_handler= open("nlpOutput.txt","w")
 
 #query=input_file_handler.readline().strip().split()
 query=input_file_handler.readline().strip().split()
-print query
+#print query
 input_file_handler.close()
 
 for i in query:
-	output_file_handler.write(i)
+	output_file_handler.write(i+" ")
 
 #Finding Synonyms
 input_file_handler= open("../synonyms/distance.txt","r")
 distance_synonyms=eval(input_file_handler.readline())
-print distance_synonyms
+#print distance_synonyms
 input_file_handler.close()
 
-for i in distance_synonyms:
-	output_file_handler.write(i+"\n")
-
-
+flag=0
+for i in set(query).intersection(distance_synonyms):
+	flag=1
+	output_file_handler.write("\n"+i)
+if flag==1: print "TRUE"
 input_file_handler.close()
 output_file_handler.close()
