@@ -1,0 +1,11 @@
+# Properties file for Hindi WordNet Java HindiWN Library(JHWNL) 
+HindiWNVersion = 1.1
+
+dictionary.type = FileDictionary
+# Directory where HindiWN Text database is placed
+filedata.path = ./database
+
+#Morphological Processor Configuration
+use.morph = true
+morph.processor = StemItMorphologicalProcessor
+morph.config.file = ./config/MorpHIN.config

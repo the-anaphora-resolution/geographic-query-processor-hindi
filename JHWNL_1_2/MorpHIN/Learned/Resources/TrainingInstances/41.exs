@@ -1,0 +1,37 @@
+**EXAMPLE FILE**
+
+	cm	*	adjective	noun	*	noun	*	cm;
+	cm	*	noun	noun	a84	verb	*	cm;
+	cm	*	noun	noun	*	verb	*	cm;
+	cm	*	cardinal	noun	*	noun	*	cm;
+	cm	*	noun	noun	*	verb	*	cm;
+	cm	*	noun	noun	*	verb	*	cm;
+	cm	*	adjective	noun	a56	noun	*	cm;
+	pn	*	verb	pn	*	conj	*	cm;
+	cm	*	adjective	pnoun	*	noun	*	cm;
+	cm	*	verb	pnoun	*	cm	*	cm;
+	cm	*	adjective	noun	*	noun	*	cm;
+	cm	*	verb	pnoun	*	noun	*	cm;
+	cm	*	cardinal	pnoun	*	SYM	*	cm;
+	cm	*	pn	pnoun	*	noun	*	cm;
+	cm	*	noun	pnoun	*	adjective	*	cm;
+	cm	*	noun	pnoun	*	verb	*	cm;
+	pn	*	noun	SYM	*	noun	*	cm;
+	cm	*	verb	noun	a84	verb_aux	*	adjective;
+	cm	*	verb	pnoun	*	cm	*	adjective;
+	cm	*	adjective	pnoun	*	noun	*	cm;
+	cm	*	noun	pnoun	*	cm	*	cm;
+	pn	*	quantifier	cm	*	adjective	*	cm;
+	pn	*	quantifier	SYM	*	particle	*	cm;
+	cm	*	noun	noun	*	verb	*	cm;
+	cm	*	noun	pnoun	*	adjective	*	cm;
+	cm	*	adjective	pnoun	*	cardinal	*	cm;
+	pn	*	noun	conj	*	verb	*	cm;
+	pn	*	noun	conj	*	verb	*	cm;
+	cm	*	adjective	pnoun	*	noun	*	cm;
+	pn	*	noun	SYM	*	noun	*	cm;
+	cm	*	demonstrative	pnoun	a51	noun	*	cm;
+	cm	*	ordinal	pnoun	*	adjective	*	cm;
+	pn	*	demonstrative	SYM	*	noun	*	cm;
+	cm	*	noun	noun	*	noun	*	cm;
+	cm	*	noun	noun	a84	adjective	*	cm;

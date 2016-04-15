@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/iitb/cfilt/cpost/stemmer
+END
+package-tree.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/iitb/cfilt/cpost/stemmer/package-tree.html
+END
+package-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/iitb/cfilt/cpost/stemmer/package-frame.html
+END
+StemmerRule.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/iitb/cfilt/cpost/stemmer/StemmerRule.html
+END
+Stemmer.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/iitb/cfilt/cpost/stemmer/Stemmer.html
+END
+StemmedToken.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/iitb/cfilt/cpost/stemmer/StemmedToken.html
+END
+package-use.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/iitb/cfilt/cpost/stemmer/package-use.html
+END
+StemmerRuleResult.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/iitb/cfilt/cpost/stemmer/StemmerRuleResult.html
+END
+StemmerRuleReader.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/iitb/cfilt/cpost/stemmer/StemmerRuleReader.html
+END
+package-summary.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/iitb/cfilt/cpost/stemmer/package-summary.html
+END

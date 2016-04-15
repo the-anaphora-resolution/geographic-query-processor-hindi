@@ -1,0 +1,31 @@
+**EXAMPLE FILE**
+
+	verb_aux	*	adjective	verb	*	noun	*	adverb;
+	verb_aux	*	demonstrative	verb	a57	noun	*	adverb;
+	cm	*	noun	pnoun	*	cm	*	adverb;
+	verb_aux	*	pn	verb	*	quantifier	*	adverb;
+	cm	*	cm	pnoun	*	adjective	*	adverb;
+	verb	*	pnoun	noun	*	pnoun	*	adverb;
+	nst	*	verb	cm	*	particle	*	adverb;
+	verb_aux	*	pn	verb_aux	a57	pnoun	*	adverb;
+	verb	a78	quantifier	adverb	*	noun	*	adverb;
+	verb_aux	*	pnoun	verb	a57	pnoun	*	adverb;
+	SYM	*	cm	*	*	adjective	*	adverb;
+	verb_aux	*	quantifier	verb_aux	a28	adjective	*	adverb;
+	noun	*	pnoun	adjective	a75	cm	*	adverb;
+	verb_aux	*	noun	verb_aux	a28	pn	*	adverb;
+	verb	*	pnoun	noun	*	conj	*	adverb;
+	noun	*	pnoun	SYM	*	pnoun	*	adverb;
+	conj	*	pnoun	SYM	*	noun	*	adverb;
+	conj	*	pn	verb	*	cm	*	adverb;
+	noun	*	noun	pn	*	cm	*	adverb;
+	conj	*	pn	particle	*	demonstrative	*	adverb;
+	conj	*	cm	verb	a51	demonstrative	*	adverb;
+	pn	*	noun	SYM	*	cm	*	adverb;
+	adjective	*	pnoun	SYM	*	verb	*	adverb;
+	verb	*	cardinal	particle	*	noun	*	adverb;
+	conj	*	pnoun	verb_aux	*	noun	*	adverb;
+	conj	*	pn	verb	*	noun	*	adverb;
+	verb	*	pn	noun	*	noun	*	adverb;
+	verb_aux	*	pnoun	verb_aux	a83	cm	*	adverb;
+	SYM	*	noun	SYM	*	cm	*	adverb;

@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules
+END
+sequence_of_tags_in_training_instances
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/sequence_of_tags_in_training_instances
+END
+Tagmapping
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/Tagmapping
+END
+NOUN_GROUP_POSSIBLE_COMBINATIONS
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/NOUN_GROUP_POSSIBLE_COMBINATIONS
+END
+VERB_AUXILIARY_LIST
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/VERB_AUXILIARY_LIST
+END
+ngiRuleFile
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/ngiRuleFile
+END
+newFormatSuffixReplacementRules
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/newFormatSuffixReplacementRules
+END
+DERIVATIONAL_MORPHOLOGY_RULES
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/DERIVATIONAL_MORPHOLOGY_RULES
+END
+Regex_cat_map
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/Regex_cat_map
+END
+VERB_SUFFIX_FLAG_MAP
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/VERB_SUFFIX_FLAG_MAP
+END
+IRREGULAR_VERB_MAPPING
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/IRREGULAR_VERB_MAPPING
+END
+Spell_variations_Rules
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/Spell_variations_Rules
+END
+Lexicon.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/Lexicon.txt
+END
+sequence_of_tags_in_training_instances_TAGS.unique
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/sequence_of_tags_in_training_instances_TAGS.unique
+END
+PHRASE_LEVEL_ANALYSIS_RULES
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/PHRASE_LEVEL_ANALYSIS_RULES
+END
+Tagmapping_new
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/Tagmapping_new
+END
+VERB_STEM_FLAG_MAP
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/VERB_STEM_FLAG_MAP
+END
+STEM_ANALYSIS
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/STEM_ANALYSIS
+END
+SUFFIX_ANALYSIS
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/SUFFIX_ANALYSIS
+END
+newFormatUniqueSuffixReplacementRules
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn_nlp/!svn/ver/6/trunk/StemIt/Rules/newFormatUniqueSuffixReplacementRules
+END

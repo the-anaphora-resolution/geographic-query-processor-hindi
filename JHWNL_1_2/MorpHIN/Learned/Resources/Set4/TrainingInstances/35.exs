@@ -1,0 +1,33 @@
+**EXAMPLE FILE**
+
+	cm	cm	noun	cm	adjective;
+	conj	noun	SYM	noun	adjective;
+	pn	cm	pnoun	cm	adjective;
+	pnoun	conj	noun	adjective	adjective;
+	SYM	adjective	noun	cm	adjective;
+	verb	conj	adverb	particle	adjective;
+	cm	adjective	noun	cm	adjective;
+	cardinal	adjective	noun	cm	adjective;
+	cm	adjective	noun	cm	adjective;
+	verb_aux	SYM	noun	cm	adjective;
+	demonstrative	cardinal	adjective	noun	adjective;
+	pnoun	cm	noun	cm	adjective;
+	verb_aux	conj	pnoun	pnoun	adjective;
+	conj	pn	noun	cm	adjective;
+	pnoun	cm	noun	cm	adjective;
+	pnoun	cm	noun	cm	adjective;
+	pnoun	cm	adjective	noun	adjective;
+	verb_aux	SYM	noun	pnoun	adjective;
+	pnoun	SYM	noun	pnoun	adjective;
+	conj	SYM	noun	cm	adjective;
+	verb_aux	SYM	noun	noun	adjective;
+	verb	pn	noun	cm	adjective;
+	SYM	adjective	noun	cm	adjective;
+	pnoun	cm	noun	cm	adjective;
+	SYM	SYM	adjective	noun	adjective;
+	verb_aux	conj	noun	cm	adjective;
+	verb_aux	conj	noun	cm	adjective;
+	cardinal	adjective	noun	cm	adjective;
+	cm	verb	noun	cm	adjective;
+	noun	conj	noun	cm	adjective;
+	pn	adjective	noun	cm	adjective;

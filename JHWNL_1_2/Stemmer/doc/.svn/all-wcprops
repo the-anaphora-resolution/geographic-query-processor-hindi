@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc
+END
+help-doc.html
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/help-doc.html
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/index.html
+END
+overview-tree.html
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/overview-tree.html
+END
+stylesheet.css
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/stylesheet.css
+END
+constant-values.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/constant-values.html
+END
+package-list
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/package-list
+END
+allclasses-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/allclasses-frame.html
+END
+allclasses-noframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/allclasses-noframe.html
+END
+overview-summary.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/overview-summary.html
+END
+overview-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/overview-frame.html
+END
+deprecated-list.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn_nlp/!svn/ver/6/trunk/StemIt/doc/deprecated-list.html
+END

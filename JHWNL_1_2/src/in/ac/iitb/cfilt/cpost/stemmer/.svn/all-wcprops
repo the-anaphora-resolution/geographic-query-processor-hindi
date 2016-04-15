@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn_nlp/!svn/ver/664/trunk/StemIt/src/in/ac/iitb/cfilt/cpost/stemmer
+END
+StemmerRule.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn_nlp/!svn/ver/664/trunk/StemIt/src/in/ac/iitb/cfilt/cpost/stemmer/StemmerRule.java
+END
+Stemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn_nlp/!svn/ver/664/trunk/StemIt/src/in/ac/iitb/cfilt/cpost/stemmer/Stemmer.java
+END
+StemmerRuleResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn_nlp/!svn/ver/6/trunk/StemIt/src/in/ac/iitb/cfilt/cpost/stemmer/StemmerRuleResult.java
+END
+StemmedToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn_nlp/!svn/ver/6/trunk/StemIt/src/in/ac/iitb/cfilt/cpost/stemmer/StemmedToken.java
+END
+StemmerRuleReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn_nlp/!svn/ver/1182/trunk/StemIt/src/in/ac/iitb/cfilt/cpost/stemmer/StemmerRuleReader.java
+END

@@ -1,0 +1,36 @@
+**EXAMPLE FILE**
+
+	cm	*	cm	noun	*	ordinal	a75	noun;
+	cm	*	cm	noun	a75	adjective	a75	noun;
+	cm	*	cm	noun	*	noun	*	nst;
+	cm	*	cm	noun	*	quantifier	a75	noun;
+	cm	*	cm	pnoun	*	demonstrative	a75	noun;
+	cm	*	cm	noun	*	adjective	a75	noun;
+	demonstrative	*	cm	cm	*	adjective	a75	noun;
+	cm	*	cm	noun	*	pnoun	a75	noun;
+	cardinal	*	cm	SYM	*	pnoun	*	noun;
+	cm	*	cm	noun	*	adjective	a75	noun;
+	cm	*	cm	noun	*	adjective	a75	noun;
+	demonstrative	*	cm	conj	*	quantifier	a75	noun;
+	cm	*	cm	noun	*	pnoun	a75	noun;
+	cm	*	cardinal	noun	*	noun	a75	noun;
+	pn	*	cm	cm	*	quantifier	*	noun;
+	cm	*	cm	noun	a84	particle	a75	noun;
+	cm	*	cm	noun	a75	pnoun	a75	noun;
+	adjective	*	cm	pnoun	*	pnoun	*	noun;
+	adjective	*	cm	conj	*	pnoun	*	noun;
+	adjective	*	cm	pnoun	*	pnoun	*	noun;
+	cm	*	cm	noun	a84	verb	*	cm;
+	noun	*	verb	cardinal	*	verb_aux	*	noun;
+	noun	*	neg	conj	*	verb	*	verb;
+	cm	*	cm	pnoun	*	pnoun	a75	noun;
+	cm	*	cm	noun	a84	cardinal	a75	noun;
+	cm	*	cm	noun	*	noun	a75	noun;
+	ordinal	a57	pnoun	conj	*	cm	*	noun;
+	cm	*	cm	noun	*	verb	a75	noun;
+	pn	*	cm	SYM	*	pnoun	a75	noun;
+	pn	*	cm	verb	*	pn	a75	noun;
+	cm	*	cm	noun	*	verb	a75	noun;
+	cm	*	cm	noun	*	verb	a75	noun;
+	cm	*	cm	noun	*	SYM	a75	noun;
+	cm	*	cm	noun	a84	demonstrative	*	cm;

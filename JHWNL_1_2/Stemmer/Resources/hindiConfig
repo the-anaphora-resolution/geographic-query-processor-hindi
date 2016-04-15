@@ -1,0 +1,11 @@
+[Lexicon]
+lexName = /mnt/dgf1/home/manshri/workspace/StemIt/Resources/newer_LEXICON
+auxVerbFilename = /mnt/dgf1/home/manshri/workspace/StemIt/Resources/VERB_AUXILIARY_LIST
+spellingVariationRuleFilename = /mnt/dgf1/home/manshri/workspace/StemIt/Resources/Spell_variations_Rules
+
+[Stemmer]
+suffixReplacementRuleFilename = /mnt/dgf1/home/manshri/workspace/StemIt/Resources/newFormatSuffixReplacementRules
+specialCharactersRuleFilename = /mnt/dgf1/home/manshri/workspace/StemIt/Resources/Regex_cat_map
+irregularVerbFilename = /mnt/dgf1/home/manshri/workspace/StemIt/Resources/IRREGULAR_VERB_MAPPING
+uniqueSuffixReplacementRuleFilename = /mnt/dgf1/home/manshri/workspace/StemIt/Resources/newFormatUniqueSuffixReplacementRules
+derivationalMorphologyRuleFilename = /mnt/dgf1/home/manshri/workspace/StemIt/Resources/DERIVATIONAL_MORPHOLOGY_RULES

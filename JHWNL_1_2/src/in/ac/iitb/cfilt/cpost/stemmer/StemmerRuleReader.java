@@ -1,0 +1,550 @@
+package in.ac.iitb.cfilt.cpost.stemmer;
+
+import in.ac.iitb.cfilt.cpost.ConfigReader;
+import in.ac.iitb.cfilt.cpost.lexicon.Wordlist;
+import in.ac.iitb.cfilt.prop.AppProperties;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+//import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Set;
+import java.util.Vector;
+
+/**
+ * @author Dinesh Gadge
+ *
+ */
+public class StemmerRuleReader {
+
+	private String suffixReplacementRuleFilename = "";
+	private String specialCharactersRuleFilename = "";
+	private String irregularVerbFilename = "";
+	private String uniqueSuffixReplacementRuleFilename = "";
+	private String auxiliaryVerbFilename = "";
+	private String derivationalMorphologyRuleFilename = "";
+	private String spellingVariationRuleFilename = "";
+	private HashMap<String, HashMap<String, Vector<StemmerRule>>> suffixReplacementRuleHash = new HashMap<String, HashMap<String, Vector<StemmerRule>>>();
+	private HashMap<String, String> specialCharactersRuleHash = new HashMap<String, String>();
+	private HashMap<String, String> irregularVerbHash = new HashMap<String, String>();
+	private HashMap<String, String> uniqueSuffixReplacementRuleHash = new HashMap<String, String>();
+	private HashMap<String, String> auxiliaryVerbHash = new HashMap<String, String>();
+	private HashMap<String, HashMap<String, Vector<String>>> derivationalMorphologyRuleHash = new HashMap<String, HashMap<String, Vector<String>>>(); 
+	private HashMap<String, String> spellingVariationRuleHash = new HashMap<String, String>();
+	private boolean populated = false;
+	private Wordlist wordList = null;
+	
+	public StemmerRuleReader(Wordlist wordList) {
+		this();
+		this.wordList = wordList;
+	}
+	/**
+	 * Default Constructor
+	 */
+	private StemmerRuleReader(){
+		if(!suffixReplacementRuleFilename.equals(ConfigReader.get("Stemmer.suffixReplacementRuleFilename")) ||
+				!specialCharactersRuleFilename.equals(ConfigReader.get("Stemmer.specialCharactersRuleFilename")) ||
+				!irregularVerbFilename.equals(ConfigReader.get("Stemmer.irregularVerbFilename")) ||
+				!uniqueSuffixReplacementRuleFilename.equals(ConfigReader.get("Stemmer.uniqueSuffixReplacementRuleFilename")) ||
+				!auxiliaryVerbFilename.equals(ConfigReader.get("Lexicon.auxVerbFilename")) ||
+				!derivationalMorphologyRuleFilename.equals(ConfigReader.get("Stemmer.derivationalMorphologyRuleFilename")) ||
+				!spellingVariationRuleFilename.equals(ConfigReader.get("Lexicon.spellingVariationRuleFilename"))){
+			populated = false;
+		}
+		if(!populated){
+			suffixReplacementRuleFilename = ConfigReader.get("Stemmer.suffixReplacementRuleFilename");
+			specialCharactersRuleFilename = ConfigReader.get("Stemmer.specialCharactersRuleFilename");
+			irregularVerbFilename = ConfigReader.get("Stemmer.irregularVerbFilename");
+			uniqueSuffixReplacementRuleFilename = ConfigReader.get("Stemmer.uniqueSuffixReplacementRuleFilename");
+			auxiliaryVerbFilename = ConfigReader.get("Lexicon.auxVerbFilename");
+			derivationalMorphologyRuleFilename = ConfigReader.get("Stemmer.derivationalMorphologyRuleFilename");
+			spellingVariationRuleFilename = ConfigReader.get("Lexicon.spellingVariationRuleFilename");
+			createAllRules();
+			populated = true;
+		}
+	}
+
+	public void populate(){
+		suffixReplacementRuleFilename = ConfigReader.get("Stemmer.suffixReplacementRuleFilename");
+		specialCharactersRuleFilename = ConfigReader.get("Stemmer.specialCharactersRuleFilename");
+		irregularVerbFilename = ConfigReader.get("Stemmer.irregularVerbFilename");
+		uniqueSuffixReplacementRuleFilename = ConfigReader.get("Stemmer.uniqueSuffixReplacementRuleFilename");
+		auxiliaryVerbFilename = ConfigReader.get("Lexicon.auxVerbFilename");
+		derivationalMorphologyRuleFilename = ConfigReader.get("Stemmer.derivationalMorphologyRuleFilename");
+		spellingVariationRuleFilename = ConfigReader.get("Lexicon.spellingVariationRuleFilename");
+		createAllRules();
+	}
+
+	/**
+	 * This functions calls corresponding functions to read from different rule files  
+	 */
+	private void createAllRules(){
+		System.out.println("SRR reading begins : " + new Timestamp(System.currentTimeMillis()));
+		createRules(suffixReplacementRuleFilename);
+		System.out.println("SRR reading ends : " + new Timestamp(System.currentTimeMillis()));
+		createRules(specialCharactersRuleFilename);
+		createRules(irregularVerbFilename);
+		createRules(uniqueSuffixReplacementRuleFilename);
+		createRules(auxiliaryVerbFilename);
+		createRules(derivationalMorphologyRuleFilename);
+		createRules(spellingVariationRuleFilename);
+	}
+
+	/**
+	 * This is a 'reader' function which reads opens the given file for reading and calls the 
+	 * <code>hashIt(String line, String filename)</code> function to hash the lines which are 
+	 * not 'comment-lines' and which are not 'empty-lines.'  
+	 * @param filename Name of the rule file
+	 */
+	private void createRules(String filename){
+		try {
+			if(filename.startsWith("$setu")){
+				String path=AppProperties.getProperty("setu");
+				if((path.substring(path.length()-1)).equals("/")){
+					path=path.substring(0,path.length()-1);
+				}
+				filename=path.concat(filename.substring(5));
+			}
+
+			BufferedReader bsrr = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF8"));
+			String line = " ";
+
+			while (line != null){
+				line = bsrr.readLine();
+				if(line != null){
+					line = line.trim();
+					if(line.length()!=0 && !line.startsWith("//")) // To ensure that line is not empty and line is not to be ignored.
+						hashIt(line, filename);
+				}
+			}
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * This function calls the corresponding hashing function for different filenames. 
+	 * @param line The line to be hashed
+	 * @param filename The name of the file from which <code>line</code> has been taken
+	 */
+	private void hashIt(String line, String filename){
+		if(filename.equals(suffixReplacementRuleFilename)){
+			hashSuffixReplacementRule(line);
+		}
+		if(filename.equals(specialCharactersRuleFilename)){
+			hashSpecialCharactersRule(line);
+		}
+		if(filename.equals(irregularVerbFilename)){
+			hashIrregularVerb(line);
+		}
+		if(filename.equals(uniqueSuffixReplacementRuleFilename)){
+			hashUniqueSuffixReplacementRule(line);
+		}
+		if(filename.equals(auxiliaryVerbFilename)){
+			hashAuxiliaryVerb(line);
+		}
+		if(filename.equals(derivationalMorphologyRuleFilename)){
+			hashDerivationalMorphologyRule(line);
+		}
+		if(filename.equals(spellingVariationRuleFilename)){
+			hashSpellingVariationRule(line);
+		}
+	}
+
+	private void hashSpellingVariationRule(String line) {
+		String[] lineComponents = line.split(",");
+		if(lineComponents.length == 2){
+			spellingVariationRuleHash.put(lineComponents[0].trim(), lineComponents[1].trim());
+		}
+		else{
+			spellingVariationRuleHash.put(lineComponents[0].trim(), "");
+		}
+	}
+
+	private void hashDerivationalMorphologyRule(String line) {
+		String[] lineComponents = line.trim().split(" ");
+		String suffix = lineComponents[1].trim();
+		String rootCat = lineComponents[3].trim();
+		String newCat = lineComponents[5].trim();
+
+		if(derivationalMorphologyRuleHash.containsKey(suffix)){
+			HashMap<String, Vector<String>> rootCategoryToNewCatogoriesHash = derivationalMorphologyRuleHash.get(suffix);
+			if(rootCategoryToNewCatogoriesHash.containsKey(rootCat)){
+				Vector<String> newCategoriesVector = rootCategoryToNewCatogoriesHash.get(rootCat);
+				String[] newCategories = newCat.split("\\,");
+				for(int i = 0; i < newCategories.length; i++){
+					if(!newCategoriesVector.contains(newCategories[i]))
+						newCategoriesVector.add(newCategories[i]);
+				}
+			}
+			else{
+				String[] newCategories = newCat.split("\\,");
+				Vector<String> newCategoriesVector = new Vector<String>();
+				for(int i = 0; i < newCategories.length; i++){
+					if(!newCategoriesVector.contains(newCategories[i]))
+						newCategoriesVector.add(newCategories[i]);
+				}
+				rootCategoryToNewCatogoriesHash.put(rootCat, newCategoriesVector);
+			}
+		}
+		else{
+			HashMap<String, Vector<String>> rootCategoryToNewCatogoriesHash = new HashMap<String, Vector<String>>();
+			String[] newCategories = newCat.split("\\,");
+			Vector<String> newCategoriesVector = new Vector<String>();
+			for(int i = 0; i < newCategories.length; i++){
+				if(!newCategoriesVector.contains(newCategories[i]))
+					newCategoriesVector.add(newCategories[i]);
+			}
+			rootCategoryToNewCatogoriesHash.put(rootCat, newCategoriesVector);
+			derivationalMorphologyRuleHash.put(suffix, rootCategoryToNewCatogoriesHash);
+		}
+
+	}
+
+	private void hashAuxiliaryVerb(String line) {
+		String[] lineComponents = line.split(StemmerRule.DELIMITER);
+		auxiliaryVerbHash.put(lineComponents[0].trim(), "");
+	}
+
+	private void hashUniqueSuffixReplacementRule(String line) {
+		String[] lineComponents = line.split(StemmerRule.DELIMITER);
+		uniqueSuffixReplacementRuleHash.put(lineComponents[1].trim(), "");
+	}
+
+	private void hashIrregularVerb(String line) {
+		String[] lineComponents = line.split(StemmerRule.DELIMITER);
+		if(lineComponents.length == 2){
+			String irregularForm = lineComponents[0].trim();
+			String regularForm = lineComponents[1].trim();
+			irregularVerbHash.put(irregularForm, regularForm);
+//			System.out.println(irregularForm+" "+regularForm);
+		}
+	}
+
+	private void hashSpecialCharactersRule(String line) {
+		line = line.replaceFirst(",", "-split-");
+		String[] lineComponents = line.split("-split-");
+		String paradigm;
+		String regex;
+		if(lineComponents.length == 2){
+			paradigm = lineComponents[0].trim();
+			regex = lineComponents[1].trim();
+		}
+		else{
+			paradigm = "";
+			regex = lineComponents[0].trim();
+		}
+		specialCharactersRuleHash.put(regex, paradigm);
+	}
+
+	/**
+	 * This function creates a 2 level hash. 
+	 * First level hash is a map from last character of the suffix to another hash.
+	 * This second level hash is a map from the actual suffix to a <code>Vector</code> of <code>StemmerRule</code>s
+	 * @param line The line to be hashed
+	 */
+	private void hashSuffixReplacementRule(String line){
+
+		String[] lineComponents = line.split(StemmerRule.DELIMITER);
+		String paradigm = lineComponents[0].trim();
+		String suffix = lineComponents[1].trim();
+		String ultimateInsertion = lineComponents[2].trim();
+		String ultimateDeletion = lineComponents[3].trim();
+		String penultimateInsertion = lineComponents[4].trim();
+		String penultimateDeletion = lineComponents[5].trim();
+		int priority = Integer.parseInt(lineComponents[6].trim());
+
+		String lastChar = suffix.substring(suffix.length()-1);
+		StemmerRule sr = new StemmerRule(paradigm, suffix, ultimateInsertion, ultimateDeletion, penultimateInsertion, penultimateDeletion, priority);
+
+		if(suffixReplacementRuleHash.containsKey(lastChar)){
+			HashMap<String, Vector<StemmerRule>> suffixStemmerRuleHash = suffixReplacementRuleHash.get(lastChar);
+			if(suffixStemmerRuleHash.containsKey(suffix)){
+				Vector<StemmerRule> srv = suffixStemmerRuleHash.get(suffix);
+				if(!srv.contains(sr))
+					srv.add(sr);
+			}
+			else{
+				Vector<StemmerRule> srv = new Vector<StemmerRule>(); 
+				srv.add(sr);
+				suffixStemmerRuleHash.put(suffix, srv);
+			}
+		}
+		else{
+			Vector<StemmerRule> srv = new Vector<StemmerRule>(); 
+			srv.add(sr);
+			HashMap<String, Vector<StemmerRule>> suffixStemmerRuleHash = new HashMap<String, Vector<StemmerRule>>();
+			suffixStemmerRuleHash.put(suffix, srv);
+			suffixReplacementRuleHash.put(lastChar, suffixStemmerRuleHash);
+		}
+	}
+
+//	public static Vector<StemmerRuleResult> applySuffixReplacementRulesOnHelper(String token){
+//	System.out.println("Token : " + token);
+//	Vector<StemmerRuleResult> retVal = applySuffixReplacementRulesOn(token);
+//	if(retVal == null){
+//	StemmerRuleResult tempResult = new StemmerRuleResult(token, "rootword", "", "");
+//	retVal = new Vector<StemmerRuleResult>();
+//	retVal.add(tempResult);
+//	}
+//	return retVal;
+//	}
+
+	/**
+	 * This function applies all possible suffix replacement rules on the given token.
+	 * 
+	 * @param token The token on which rules are to be applied
+	 * @return A <code>Vector</code> of results obtained on application of all possible rules.
+	 */
+	public Vector<StemmerRuleResult> applySuffixReplacementRulesOn(String token){
+		if(token.equals("")){
+			return null;
+		}
+//		UTFConsole.out.println("applySuffixReplacementRules called with token : '" + token +"'");
+		Vector<StemmerRuleResult> retVal = new Vector<StemmerRuleResult>();
+//		UTFConsole.out.println("applying specialCharacterRules");
+
+		/*Random Hack*/
+		StemmerRuleResult specialCharacterResult = this.applySpecialCharacterRulesOn(token);
+		if(specialCharacterResult != null){
+//			UTFConsole.out.println("specialCharacterResult != null");
+			retVal.add(specialCharacterResult);
+		}
+		else{
+//			UTFConsole.out.println("specialCharacterResult == null");
+		}
+		/*Random Hack*/
+
+		String lastChar = token.substring(token.length()-1);
+
+		if(suffixReplacementRuleHash.containsKey(lastChar)){
+			HashMap<String, Vector<StemmerRule>> suffixStemmerRuleHash = suffixReplacementRuleHash.get(lastChar);
+			Set suffixes = suffixStemmerRuleHash.keySet();
+			Iterator suffixIter = suffixes.iterator();
+			retVal = new Vector<StemmerRuleResult>();
+			while(suffixIter.hasNext()){
+				String suffix = (String) suffixIter.next();
+//				UTFConsole.out.println("Checking if " + token + " endsWith " + suffix);
+				if(token.endsWith(suffix)){ 
+//					System.out.println("Yes");
+					boolean tokenIsSuffix = token.equals(suffix);
+
+					Vector<StemmerRuleResult> tempRetVal = null;
+					if(!tokenIsSuffix){
+//						UTFConsole.out.println("Token is not suffix");
+						tempRetVal = applySuffixReplacementRulesOn(token.replaceAll(suffix+"$", ""));
+
+						StemmerRuleResult currentResult;
+						if(tempRetVal != null){
+							Iterator<StemmerRuleResult> tempRetValIter = tempRetVal.iterator();
+							while(tempRetValIter.hasNext()){
+								StemmerRuleResult temp = (StemmerRuleResult)tempRetValIter.next();
+								temp.addSuffix(suffix);
+//								System.out.println("Temp : " + temp.toString());
+							}
+							retVal.addAll(tempRetVal);
+						}
+//						else{
+//						System.out.println("Got null, So applying all possible StemmerRules");
+						Vector<StemmerRule> stemmerRules = suffixStemmerRuleHash.get(suffix);
+						Iterator<StemmerRule> stemmerRulesIter = stemmerRules.iterator();
+						StemmerRule currentRule = null;
+						while(stemmerRulesIter.hasNext()){
+							currentRule = stemmerRulesIter.next();
+//							UTFConsole.out.println("Rule :: Paradigm : " + currentRule.getParadigm() +" Suffix : " + currentRule.suffix + " replacement : " + currentRule.ultimateInsertion);
+							//New Code Begins
+							String newToken = token.replaceAll(suffix+"$", "");
+							boolean goFurther = false;
+							currentResult = null;
+							if(!currentRule.getUltimateDeletion().equals("")){
+								if(newToken.endsWith(currentRule.getUltimateDeletion())){
+									currentResult = currentRule.applyOn(newToken, wordList);
+									goFurther = true;
+								}
+							}
+							else{
+								currentResult = currentRule.applyOn(newToken, wordList);
+								goFurther = true;
+							}
+							//New Code Ends
+							if(goFurther && auxiliaryVerbHash.containsKey(currentResult.getRoot())){
+								StemmerRuleResult newResult = new StemmerRuleResult(currentResult.getRoot(), "vaux", "verb_aux", "", currentRule.suffix);
+								if(!retVal.contains(newResult)){
+									retVal.add(newResult);
+//									System.out.println("Added :: " + newResult.toString());
+//									System.out.println("Rule :: Paradigm : " + currentRule.getParadigm() +" Suffix : " + currentRule.suffix + " replacement : " + currentRule.ultimateInsertion);
+								}
+							}
+//							PrintStream out = null;
+//							try {
+//							out = new PrintStream(System.out, true, "UTF8");
+//							} catch (UnsupportedEncodingException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//							}
+//							out.println(currentResult);
+
+							if(goFurther && !retVal.contains(currentResult)){
+								retVal.add(currentResult);
+//								System.out.println("Added :: " + currentResult.toString());
+//								System.out.println("Rule :: Paradigm : " + currentRule.getParadigm() +" Suffix : " + currentRule.suffix + " replacement : " + currentRule.ultimateInsertion);
+							}
+						}
+					}
+				}
+				else{
+					// TODO Code needs to be added after testing if necessary
+//					System.out.println("No");
+				}
+			}
+			if(retVal.isEmpty()){
+//				System.out.println("Returning null");
+				retVal = null;
+			}
+		}
+		return retVal;
+	}
+
+	public StemmerRuleResult applySpecialCharacterRulesOn(String token) {
+		StemmerRuleResult retVal = null;
+		Set<String> regexes = specialCharactersRuleHash.keySet();
+		Iterator regexesIter = regexes.iterator();
+		while(regexesIter.hasNext()){
+			String regex = (String) regexesIter.next();
+			if(token.matches(regex)){
+				String paradigm = specialCharactersRuleHash.get(regex);
+				retVal = new StemmerRuleResult(token, paradigm, paradigm, "", "");
+			}
+		}
+		return retVal;
+	}
+
+	public boolean hasRegularRootForm(String token) {
+		return irregularVerbHash.containsKey(token);
+	}
+
+	public String getRegularRootForm(String irregularForm) {
+		return irregularVerbHash.get(irregularForm);
+	}
+
+	public boolean hasUniqueSuffix(LinkedList<String> suffixes) {
+		boolean retVal = false;
+		Iterator suffixesIter = suffixes.iterator();
+		while(suffixesIter.hasNext()){
+			String currentSuffix = (String)suffixesIter.next();
+			if(uniqueSuffixReplacementRuleHash.containsKey(currentSuffix)){
+				retVal = true;
+				break;
+			}
+		}
+		return retVal;
+	}
+
+	public String getUniqueSuffix(LinkedList<String> suffixes) {
+		String retVal = "";
+		Iterator suffixesIter = suffixes.iterator();
+		while(suffixesIter.hasNext()){
+			String currentSuffix = (String)suffixesIter.next();
+			if(currentSuffix.length() > retVal.length() && uniqueSuffixReplacementRuleHash.containsKey(currentSuffix)){
+				retVal = currentSuffix;
+			}
+		}
+		return retVal;
+	}
+
+	public boolean isAuxiliary(String token) {
+		return auxiliaryVerbHash.containsKey(token);
+	}
+
+	public Vector<String[]> checkDerivationalMorphology(String token) {
+		Vector<String[]> retVal = new Vector<String[]>();
+		Set suffixes = derivationalMorphologyRuleHash.keySet();
+
+		String currentSuffix;
+		Iterator suffixesIter = suffixes.iterator();
+
+		while(suffixesIter.hasNext()){
+			currentSuffix = (String)suffixesIter.next();
+			if(token.endsWith(currentSuffix)){
+				String root = token.replaceAll(currentSuffix + "$", "");
+				HashMap<String, Vector<String>> rootCatToNewCatsHash = derivationalMorphologyRuleHash.get(currentSuffix);
+
+				Set rootCategories = rootCatToNewCatsHash.keySet();
+				String currentRootCategory;
+				Vector<String> newCategoriesVector;
+				Iterator rootCategoriesIter = rootCategories.iterator();
+
+				String[] properties = new String[3];
+
+				while(rootCategoriesIter.hasNext()){
+					currentRootCategory = (String)rootCategoriesIter.next();
+					newCategoriesVector = rootCatToNewCatsHash.get(currentRootCategory);
+					for(int i = 0; i < newCategoriesVector.size(); i++){
+						properties[0] = root;
+						properties[1] = currentRootCategory;
+						properties[2] = newCategoriesVector.get(i);
+						retVal.add(properties);
+					}
+				}
+			}
+		}
+		if(retVal.size() == 0){
+			retVal = null;
+		}
+		return retVal;
+	}
+
+	public Vector<String> getSpellingVariations(String token) {
+		Vector<String> retVal = new Vector<String>();
+
+		Set chars = spellingVariationRuleHash.keySet();
+		Iterator charsIter = chars.iterator();
+
+		while(charsIter.hasNext()){
+			String currentChar = (String) charsIter.next();
+			if(token.contains(currentChar)){
+				// TODO Refine this.
+				retVal.add(token.replaceAll(currentChar, spellingVariationRuleHash.get(currentChar)));
+			}
+		}
+
+		if(retVal.size() == 0){
+			retVal = null;
+		}
+		return retVal;
+	}
+
+	public void main(String args[]){
+		ConfigReader.read("Resources/hindiConfig");
+		//StemmerRuleReader srreader = new StemmerRuleReader();
+		//StemmerRuleReader.createAllRules();
+
+//		try {
+//		BufferedReader bfr = new BufferedReader(new InputStreamReader(new FileInputStream("Resources/hindiTokens"), "UTF8"));
+//		String token = null;
+//		token = bfr.readLine();
+//		while(token != null){
+//		Vector<StemmerRuleResult> srresult = StemmerRuleReader.applySuffixReplacementRulesOnHelper(token);
+//		for(int i=0; i < srresult.size(); i++){
+//		System.out.println(srresult.elementAt(i).toString());
+//		}
+//		token = bfr.readLine();
+//		}
+//		} catch (FileNotFoundException e) {
+//		e.printStackTrace();
+//		} catch (IOException e) {
+//		e.printStackTrace();
+//		}
+	}	
+}

@@ -1,0 +1,78 @@
+8
+
+dir
+1054
+http://10.144.150.121/svn_nlp/trunk/StemIt/src/in/ac/iitb/cfilt/cpost
+http://10.144.150.121/svn_nlp
+
+
+
+2008-02-29T11:49:51.849906Z
+664
+mitesh
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+15407e28-7fbc-4c41-9bb1-6a4bfe49a589
+
+ConfigReader.java
+file
+1180
+
+
+
+2009-02-16T16:54:33.000000Z
+1708b443ee446134a5ca8440d615d254
+2009-02-16T19:28:34.704496Z
+1180
+sapan
+has-props
+
+ConsoleStemmer.java
+file
+
+
+
+
+2008-11-07T17:51:51.000000Z
+5b264e8645da7d2f3baf42eae132abc8
+2008-02-29T11:49:51.849906Z
+664
+mitesh
+
+StemIt.java
+file
+
+
+
+
+2008-11-07T17:51:51.000000Z
+08e02e23050f1f824ba65077e9f7c095
+2008-02-29T11:49:51.849906Z
+664
+mitesh
+has-props
+
+lexicon
+dir
+
+logger
+dir
+
+stemmer
+dir
+
+utils
+dir
+

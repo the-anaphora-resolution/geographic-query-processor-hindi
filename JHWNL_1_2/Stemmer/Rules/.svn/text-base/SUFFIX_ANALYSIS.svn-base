@@ -1,0 +1,124 @@
+// This file stores the analysis of morpheme
+// in suffix
+// The format for storing analysis is 
+// paradigm,morpheme(with position information),anlysis
+// if the morpheme occurs at the end of suffix it is indicated
+// by '$' sign
+verb, ूँ$, P:1 
+verb, ऊँ$, P:1 
+verb, ो$, P:2, M:I 
+verb, िए$, P:2, M:I 
+verb, िये$, P:2, M:I 
+verb, ओ$, P:2, M:I 
+verb, इए$, P:2, M:I 
+verb, इये$, P:2, M:I 
+verb, जिये$, P:2, M:I 
+verb, जिए$, P:2, M:I 
+verb, ूँ, P:1, N:S 
+verb, ूं, P:1, N:S 
+verb, ऊं, P:1, N:S 
+verb, ऊँ, P:1, N:S 
+verb, ें, N:S 
+verb, ें, N:P 
+verb, े, N:S, P:2 
+verb, े, N:P, P:2 
+verb, ए, P:2, N:S 
+verb, ए, P:3, N:S 
+verb, एं, P:1, N:P 
+verb, एं, P:2, N:S 
+verb, एं, P:2, N:P 
+verb, एं, P:3, N:P 
+verb, ये, P:2, N:S 
+verb, ये, P:3, N:S 
+verb, ये$, P:2, N:S 
+verb, ये$, P:2, N:P 
+verb, ये$, P:3, N:P 
+verb, यें, P:2, N:S 
+verb, यें, P:2, N:P 
+verb, यें, P:3, N:P 
+verb, ो, P:2 
+verb, ओ, P:2 
+verb, ों, P:2, N:P 
+verb, ों, P:3, N:P 
+verb, या$, G:M, N:S 
+verb, ये$, G:M, N:P 
+verb, ये$, G:N, N:P 
+verb, यी$, G:F, N:S 
+verb, यीं$, G:F, N:P 
+verb, ई$, G:F, N:S 
+verb, ईं$, G:F, N:P 
+verb, ी$, G:F, N:S 
+verb, ीं$, G:F, N:P 
+verb, ा$, G:M, N:S 
+verb, े$, G:M, N:P
+verb, ग, T:Fu 
+copula, ै$, P:2, N:S 
+copula, ै$, P:3, N:S 
+copula, ैं$, P:1, N:P 
+copula, ैं$, P:2, N:P 
+copula, ैं$, P:3, N:P 
+copula, ूं$, P:1, N:S 
+copula, ूँ$, P:1, N:S 
+copula, ुआ$, G:M, N:S 
+copula, ुए$, G:M, N:P 
+copula, ुई$, G:F, N:S 
+copula, ुईं$, G:F, N:P 
+copula, ो, M:S 
+copula, ों, M:S 
+copula, थ, T:Pa 
+copula, ी$, G:F, N:S 
+copula, ीं$, G:F, N:P 
+copula, ा$, G:M, N:S 
+copula, े$, G:M, N:P 
+copula, ऊं, P:1, N:S 
+copula, ऊँ, P:1, N:S 
+घर, ों$, N:P, C:O 
+खर्च, े$, N:S, C:O 
+खर्च, े$, N:P, C:X 
+खर्च, ों$, N:P, C:O 
+रात, ें$, N:P, C:D 
+रात, ों$, N:P, C: O 
+लड़का, े$, N:S, C:O 
+लड़का, े$, N:P, C:X 
+लड़का, ों$, N:P, C:O 
+राजा, ओं$, N:P, C:O 
+लोहा, े$, N:X, C:O 
+लोहा, े$, N:P,C:O 
+आशा, एँ$, N:P, C:D 
+आशा, ओं$, N:P, C:O 
+गुड़िया, याँ$, N:P, C:D 
+गुड़िया, यों$, N:P, C:O 
+कवि, यों$, N:P,C:O 
+आपत्ति, याँ$, N:P, C:D 
+आपत्ति, यों$, N:P, C:O 
+आदमी, ियों$, N:P, C:O 
+लड़की, ियाँ$, N:P, C:D 
+लड़की, ियों$, N:P, C:O 
+ऋतु, एँ$, N:P,C:D 
+ऋतु, ओं$, N:P,C:O 
+शत्रु, ओं$, N:P, C:O 
+आलू, ुओं$, N:P, C: O 
+बहु, ुएँ$, N:P, C:D 
+बहु, ुओं$, N:P, C: O 
+माँ, एँ$, N:P, C: D 
+माँ, ओं$, N:P, C:O 
+कुआँ, एँ$, N:P, C: D 
+कुआँ, ओं$, N:P, C:O 
+गेहूँ, ूँ$, N:P, C:O 
+लौ, एँ$, N:P, C:D 
+लौ, वों$, N:P, C:O 
+अपनापन, ेपन$, N:S, C:O 
+adjective, ी$, G:F,N:S
+adjective, े$, G:M,N:S,C:O
+adjective, े$, G:M,N:P,C:D
+adjective, े$, G:M,N:P,C:O 
+adjective, ई$, G:F
+ordinal, ी$, G:F,N:S 
+ordinal, े$, G:M,N:S,C:O
+ordinal, े$, G:M,N:P,C:D
+ordinal, े$, G:M,N:P,C:O
+ordinal. वाँ$, G:M,N:S,C:D 
+ordinal. वें$, G:M,N:S,C:O
+ordinal. वें$, G:M,N:P,C:O
+ordinal. वीं$, G:F
+

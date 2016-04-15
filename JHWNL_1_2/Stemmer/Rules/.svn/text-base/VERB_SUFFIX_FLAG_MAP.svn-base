@@ -1,0 +1,18 @@
+// VERB SUFFIX FLAG MAP
+// RETURNDS THE FLAG IF THE MORPHEME IS PRESENT IN SUFFIX
+// FLAGS ARE USED FOR VERB-GROUP ANALYSIS
+// FORMAT:
+// morpheme flag
+#verb
+त	t
+य	y
+ना	na
+ने	ne
+नी	ni
+ग	g
+ए	y
+ई	y
+#verb_cop
+ो	o
+#लड़का
+े	e
