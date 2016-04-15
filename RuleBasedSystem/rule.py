@@ -27,16 +27,19 @@ input_file_handler.close()
 for i in query:
 	output_file_handler.write(i+" ")
 
-#Finding Synonyms
-input_file_handler= open("../synonyms/distance.txt","r")
-distance_synonyms=eval(input_file_handler.readline())
-#print distance_synonyms
-input_file_handler.close()
+#Function to check if query is a distance query
+def isPropertyDistance(query):
+	input_file_handler= open("../synonyms/distance.txt","r")
+	distance_synonyms=eval(input_file_handler.readline())
+	#print distance_synonyms
+	input_file_handler.close()
 
-flag=0
-for i in set(query).intersection(distance_synonyms):
-	flag=1
-	output_file_handler.write("\n"+i)
-if flag==1: print "TRUE"
-input_file_handler.close()
+	flag=0
+	for i in set(query).intersection(distance_synonyms):
+		flag=1
+		#output_file_handler.write("\n"+i)
+	if flag==1: return True
+
+print isPropertyDistance(query)
+
 output_file_handler.close()
