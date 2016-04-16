@@ -1,14 +1,14 @@
- country_name 
---------------
+ administrative 
+----------------
  India
 (1 row)
 
- country_local_name 
---------------------
+ administrative 
+----------------
  Bharat
 (1 row)
 
-         states         
+    administrative3     
 ------------------------
  Chhattisgarh
  Uttaranchal
@@ -47,7 +47,7 @@
  Delhi
 (35 rows)
 
-          cities          
+     administrative3      
 --------------------------
  Rae Bareli
  Belgaum
@@ -640,7 +640,7 @@
  Etawah
 (589 rows)
 
-        cities        
+   administrative3    
 ----------------------
  Belgaum
  n.a. ( 1198)
@@ -2871,7 +2871,7 @@
  n.a. ( 617)
 (2227 rows)
 
-          rivers           
+        water_lines        
 ---------------------------
  ZASKAR
  AGRA CANAL
@@ -3233,7 +3233,7 @@
  KUNWARI
 (358 rows)
 
-            lakes             
+         water_areas          
 ------------------------------
  NAGIN LAKE
  
