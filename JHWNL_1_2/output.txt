@@ -1,0 +1,14 @@
+
+INPUT: नगर
+
+
+WORD: नगर
+Stemmer.mmAtStemmer : true
+Stemmer.useStemDictionary: false
+Wordlist reading begins : 2016-04-15 17:43:02.794
+Wordlist reading ends : 2016-04-15 17:43:03.408
+SRR reading begins : 2016-04-15 17:43:03.41
+SRR reading ends : 2016-04-15 17:43:03.413
+SRR reading begins : 2016-04-15 17:43:03.415
+SRR reading ends : 2016-04-15 17:43:03.418
+["शहर" , "नगर" , "नगरी" , "सिटी" , "पुर" , "स्थानक"]
