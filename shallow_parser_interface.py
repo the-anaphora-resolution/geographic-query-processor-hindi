@@ -12,7 +12,7 @@ __status__ = "Developement"
 import mechanize
 import cookielib
 from bs4 import BeautifulSoup, Tag
-
+import sys
 #Browser
 br = mechanize.Browser()
 
@@ -40,7 +40,7 @@ html = r.read()
 #Select the first (index zero form)
 br. select_form(nr=0)
 
-infile = open("infile.txt")
+infile = open(sys.argv[1])
 data = infile.read()
 infile.close()
 
