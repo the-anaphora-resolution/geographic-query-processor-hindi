@@ -113,19 +113,20 @@ def getNamedEntities(query):
 
 	fileR="../synonyms/ner/NNP/"
 	for filepath in iglob(os.path.join(fileR, '*.json')): 
-		print filepath
+		#print filepath
 		with open(filepath) as f:
-			print f
+			#print f
 			synonym_dict= eval(f.readline())
 			for key, value in synonym_dict.items():
 				#print key
 				#output_file_handler.write(set(query))
 				if len(set(query).intersection(value)) >0:
-					ner["NNP"].append(key)
+					if key not in ner["NNP"]:
+						ner["NNP"].append(key)
 					#print key, value
 
 			#print synonym_dict
-	print ner
+	return ner
 
 
 
@@ -135,7 +136,7 @@ def getNamedEntities(query):
 print "GEOGRAPHIC QUESTION ANSWERING SYSTEM"
 print "------------------------------------\n"
 print "Loading Query from file... "
-time.sleep(2)
+#time.sleep(2)
 #filePath=sys.argv[1]
 filePath="hindiQuery.txt"
 
