@@ -5,6 +5,10 @@ to be filled in the Postgre SQL Query
 
 import sys
 import time
+from glob import iglob
+import json
+import os
+
 
 
 def isPropertyDistance(query):
@@ -13,7 +17,7 @@ def isPropertyDistance(query):
 	@param: query in list format, stripped and split
 	@return: True if a distance query, False otherwise
 	'''
-	input_file_handler= open("../synonyms/distance.txt","r")
+	input_file_handler= open("../synonyms/property/distance.txt","r")
 	distance_synonyms=eval(input_file_handler.readline())
 	#print distance_synonyms
 	input_file_handler.close()
@@ -32,7 +36,7 @@ def isPropertyLength(query):
 	@param: query in list format, stripped and split
 	@return: True if a length query, False otherwise
 	''
-	input_file_handler= open("../synonyms/length.txt","r")
+	input_file_handler= open("../synonyms/property/length.txt","r")
 	length_synonyms=eval(input_file_handler.readline())
 	#print length_synonyms
 	input_file_handler.close()
@@ -50,7 +54,7 @@ def isPropertyArea(query):
 	@param: query in list format, stripped and split
 	@return: True if a area query, False otherwise
 	''
-	input_file_handler= open("../synonyms/area.txt","r")
+	input_file_handler= open("../synonyms/property/area.txt","r")
 	area_synonyms=eval(input_file_handler.readline())
 	#print area_synonyms
 	input_file_handler.close()
@@ -68,7 +72,7 @@ def isPropertyCount(query):
 	@param: query in list format, stripped and split
 	@return: True if a count query, False otherwise
 	''
-	input_file_handler= open("../synonyms/count.txt","r")
+	input_file_handler= open("../synonyms/property/count.txt","r")
 	inside_synonyms=eval(input_file_handler.readline())
 	#print inside_synonyms
 	input_file_handler.close()
@@ -98,6 +102,33 @@ def checkQueryProperty(query):
 	#	return 3
 
 
+def getNamedEntities(query):
+	'''
+	Funtion to find a list of named entities in the query in tagged form
+	@param: query in list format, stripped and split
+	@return: a JSON object of tags and a list of named entities
+	'''
+	ner={}
+	ner["NNP"]=[]
+
+	fileR="../synonyms/ner/NNP/"
+	for filepath in iglob(os.path.join(fileR, '*.json')): 
+		print filepath
+		with open(filepath) as f:
+			print f
+			synonym_dict= eval(f.readline())
+			for key, value in synonym_dict.items():
+				#print key
+				#output_file_handler.write(set(query))
+				if len(set(query).intersection(value)) >0:
+					ner["NNP"].append(key)
+					#print key, value
+
+			#print synonym_dict
+	print ner
+
+
+
 
 
 
@@ -117,9 +148,18 @@ input_file_handler.close()
 
 for i in query:
 	output_file_handler.write(i+" ")
- 
+
+
+#Get type of query 
 queryProperty = checkQueryProperty(query)
 print queryProperty
+
+#Get Query Named Entities
+queryNamedEntities= getNamedEntities(query)
+print queryNamedEntities
+
+#Define the Query based on the above parameters
+
 
 output_file_handler.close()
 
