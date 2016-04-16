@@ -132,36 +132,33 @@ def getNamedEntities(query):
 
 
 
+if __name__ == "__main__":
+	print "GEOGRAPHIC QUESTION ANSWERING SYSTEM"
+	print "------------------------------------\n"
+	print "Loading Query from file... "
+	time.sleep(2)
+	#filePath=sys.argv[1]
+	filePath="hindiQuery.txt"
 
-print "GEOGRAPHIC QUESTION ANSWERING SYSTEM"
-print "------------------------------------\n"
-print "Loading Query from file... "
-#time.sleep(2)
-#filePath=sys.argv[1]
-filePath="hindiQuery.txt"
+	input_file_handler= open(filePath,"r")
+	output_file_handler= open("nlpOutput.txt","w")
 
-input_file_handler= open(filePath,"r")
-output_file_handler= open("nlpOutput.txt","w")
-
-query=input_file_handler.readline().strip().split()
-#print query
-input_file_handler.close()
-
-for i in query:
-	output_file_handler.write(i+" ")
+	query=input_file_handler.readline().strip().split()
+	#print query
+	input_file_handler.close()
 
 
-#Get type of query 
-queryProperty = checkQueryProperty(query)
-print queryProperty
+	#Get type of query 
+	queryProperty = checkQueryProperty(query)
+	print queryProperty
 
-#Get Query Named Entities
-queryNamedEntities= getNamedEntities(query)
-print queryNamedEntities
+	#Get Query Named Entities
+	queryNamedEntities= getNamedEntities(query)
+	print queryNamedEntities
 
-#Define the Query based on the above parameters
+	#Define the Query based on the above parameters
 
 
-output_file_handler.close()
+	output_file_handler.close()
 
 
