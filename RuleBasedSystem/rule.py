@@ -25,6 +25,62 @@ def isPropertyDistance(query):
 	if flag==1: return True
 
 
+'''
+def isPropertyLength(query):
+	''
+	Function to check if the query is a Length query or not
+	@param: query in list format, stripped and split
+	@return: True if a length query, False otherwise
+	''
+	input_file_handler= open("../synonyms/length.txt","r")
+	length_synonyms=eval(input_file_handler.readline())
+	#print length_synonyms
+	input_file_handler.close()
+
+	flag=0
+	for i in set(query).intersection(length_synonyms):
+		flag=1
+		#output_file_handler.write("\n"+i)
+	if flag==1: return True
+
+
+def isPropertyArea(query):
+	''
+	Function to check if the query is a Area query or not
+	@param: query in list format, stripped and split
+	@return: True if a area query, False otherwise
+	''
+	input_file_handler= open("../synonyms/area.txt","r")
+	area_synonyms=eval(input_file_handler.readline())
+	#print area_synonyms
+	input_file_handler.close()
+
+	flag=0
+	for i in set(query).intersection(area_synonyms):
+		flag=1
+		#output_file_handler.write("\n"+i)
+	if flag==1: return True
+
+
+def isPropertyCount(query):
+	''
+	Function to check if the query is a Count query or not
+	@param: query in list format, stripped and split
+	@return: True if a count query, False otherwise
+	''
+	input_file_handler= open("../synonyms/count.txt","r")
+	inside_synonyms=eval(input_file_handler.readline())
+	#print inside_synonyms
+	input_file_handler.close()
+
+	flag=0
+	for i in set(query).intersection(count_synonyms):
+		flag=1
+		#output_file_handler.write("\n"+i)
+	if flag==1: return True
+
+'''
+
 
 def checkQueryProperty(query):
 	'''
@@ -38,8 +94,9 @@ def checkQueryProperty(query):
 	#	return 1
 	#if(isPropertyArea(query)):
 	#	return 2
-	#if(isPropertyInside(query)):	
+	#if(isPropertyCount(query)):	
 	#	return 3
+
 
 
 
@@ -65,3 +122,5 @@ queryProperty = checkQueryProperty(query)
 print queryProperty
 
 output_file_handler.close()
+
+
