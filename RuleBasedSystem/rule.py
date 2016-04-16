@@ -109,8 +109,9 @@ def getNamedEntities(query):
 	@return: a JSON object of tags and a list of named entities
 	'''
 	ner={}
-	ner["NNP"]=[]
 
+	#Finding NNP ners
+	ner["NNP"]=[]
 	fileR="../synonyms/ner/NNP/"
 	for filepath in iglob(os.path.join(fileR, '*.json')): 
 		#print filepath
@@ -124,11 +125,26 @@ def getNamedEntities(query):
 					if key not in ner["NNP"]:
 						ner["NNP"].append(key)
 					#print key, value
-
 			#print synonym_dict
+
+	#Finding NN ners	
+	ner["NN"]=[]
+	fileR="../synonyms/ner/NN/"
+	for filepath in iglob(os.path.join(fileR, '*.json')): 
+		#print filepath
+		with open(filepath) as f:
+			#print f
+			synonym_dict= eval(f.readline())
+			for key, value in synonym_dict.items():
+				#print key
+				#output_file_handler.write(set(query))
+				if len(set(query).intersection(value)) >0:
+					if key not in ner["NN"]:
+						ner["NN"].append(key)
+					#print key, value
+			#print synonym_dict
+	
 	return ner
-
-
 
 
 
@@ -136,7 +152,7 @@ if __name__ == "__main__":
 	print "GEOGRAPHIC QUESTION ANSWERING SYSTEM"
 	print "------------------------------------\n"
 	print "Loading Query from file... "
-	time.sleep(2)
+	#time.sleep(2)
 	#filePath=sys.argv[1]
 	filePath="hindiQuery.txt"
 
@@ -147,7 +163,6 @@ if __name__ == "__main__":
 	#print query
 	input_file_handler.close()
 
-
 	#Get type of query 
 	queryProperty = checkQueryProperty(query)
 	print queryProperty
@@ -157,7 +172,6 @@ if __name__ == "__main__":
 	print queryNamedEntities
 
 	#Define the Query based on the above parameters
-
 
 	output_file_handler.close()
 
