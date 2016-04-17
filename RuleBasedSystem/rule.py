@@ -26,10 +26,11 @@ def checkQueryProperty(query):
 		return query_types[8]
 	if isPropertySizeVal(query):
 		return query_types[9]
-	if(isPropertyCount(query)):	
-		return query_types[7]
 	if(isPropertyNeighbors(query)):	
 		return query_types[2]
+	if(isPropertyCount(query)):	
+		return query_types[7]
+	
 	#if(isPropertyLength(query)):
 	#	return query_types[5]
 	#if(isPropertyArea(query)):
@@ -87,18 +88,17 @@ def isPropertyCount(query):
 	@param: query in list format, stripped and split
 	@return: True if a count query, False otherwise
 	'''
-	input_file_handler= open("../synonyms/property/count.txt","r")
-	count_synonyms=eval(input_file_handler.readline())
-	#print inside_synonyms
-	input_file_handler.close()
+	# input_file_handler= open("../synonyms/property/count.txt","r")
+	# count_synonyms=eval(input_file_handler.readline())
+	# #print inside_synonyms
+	# input_file_handler.close()
 
 	#Get Query Named Entities
 	queryNamedEntities= getNamedEntities(query)
 
 	flag=0
-	for i in set(query).intersection(count_synonyms):
-		if len(queryNamedEntities["NN"])==1 and len(queryNamedEntities["NNP"])==1:
-			flag=1
+	if len(queryNamedEntities["NN"])==1 and len(queryNamedEntities["NNP"])==1:
+		flag=1
 		#output_file_handler.write("\n"+i)
 	if flag==1: return True
 
@@ -226,9 +226,17 @@ def getSizeListParameters(query):
 	return paradic
 
 
-def getNeighborsParameters(queryNamedEntities):
+def getNeighborsParameters(query, queryNamedEntities):
 	paradic = dict()
 	paradic['L1'] = queryNamedEntities["NNP"][0]
+	input_file_handler= open("../synonyms/property/count.txt","r")
+	count_synonyms=eval(input_file_handler.readline())
+	#print inside_synonyms
+	input_file_handler.close()
+	if len(set(query).intersection(count_synonyms)) > 0:
+		paradic['result'] = "count"
+	else:
+		paradic['result'] = "list"
 	return paradic
 
 
@@ -295,7 +303,16 @@ def getCountParameters(queryNamedEntities):
 	result={}
 	result["L1"]=queryNamedEntities["NNP"][0]
 	result["L2"]=queryNamedEntities["NN"][0]
+	input_file_handler= open("../synonyms/property/count.txt","r")
+	count_synonyms=eval(input_file_handler.readline())
+	#print inside_synonyms
+	input_file_handler.close()
+	if len(set(query).intersection(count_synonyms)) > 0:
+		result['result'] = "count"
+	else:
+		result['result'] = "list"
 	return result
+
 
 
 print "GEOGRAPHIC QUESTION ANSWERING SYSTEM"
@@ -342,7 +359,7 @@ elif queryProperty == "count":
 	print queryNamedEntities
 elif queryProperty == "neighbors":
 	queryNamedEntities= getNamedEntities(query)
-	queryNamedEntities=getNeighborsParameters(queryNamedEntities)
+	queryNamedEntities=getNeighborsParameters(query,queryNamedEntities)
 	output_file_handler.write(str(queryNamedEntities))
 	print queryNamedEntities
 
