@@ -28,6 +28,8 @@ def checkQueryProperty(query):
 		return query_types[9]
 	if(isPropertyCount(query)):	
 		return query_types[7]
+	if(isPropertyNeighbors(query)):	
+		return query_types[2]
 	#if(isPropertyLength(query)):
 	#	return query_types[5]
 	#if(isPropertyArea(query)):
@@ -54,6 +56,29 @@ def isPropertyDistance(query):
 		flag=1
 		#output_file_handler.write("\n"+i)
 	if flag==1: return True
+
+
+def isPropertyNeighbors(query):
+	'''
+	Function to check if the query is a Neighbors query or not
+	@param: query in list format, stripped and split
+	@return: True if a neighbors query, False otherwise
+	'''
+	input_file_handler= open("../synonyms/property/neighbors.txt","r")
+	neighbors_synonyms=eval(input_file_handler.readline())
+	#print inside_synonyms
+	input_file_handler.close()
+
+	#Get Query Named Entities
+	queryNamedEntities= getNamedEntities(query)
+
+	flag=0
+	for i in set(query).intersection(neighbors_synonyms):
+		if len(queryNamedEntities["NNP"])==1:
+			flag=1
+		#output_file_handler.write("\n"+i)
+	if flag==1: return True
+
 
 
 def isPropertyCount(query):
@@ -160,11 +185,9 @@ def getCountNeeded(query):
 def getSizeValParameters(query):
 	queryNamedEntities= getNamedEntities(query)
 	paradic = dict()
-	paradic["location"] = queryNamedEntities["NNP"][0]
+	paradic["L1"] = queryNamedEntities["NNP"][0]
 	
-	
-	print paradic
-
+	return paradic
 
 def getSizeListParameters(query):
 
@@ -203,19 +226,19 @@ def getSizeListParameters(query):
 	return paradic
 
 
-
+def getNeighborsParameters(queryNamedEntities):
+	paradic = dict()
+	paradic['L1'] = queryNamedEntities["NNP"][0]
+	return paradic
 
 
 
 	
 def getLocationParameters(query):
-	
 	queryNamedEntities= getNamedEntities(query)
-
 	paradic = dict()
-	paradic['l0'] = queryNamedEntities["NNP"][0]
-	paradic['l1'] = queryNamedEntities["NNP"][1]
-
+	paradic['L1'] = queryNamedEntities["NNP"][0]
+	paradic['L2'] = queryNamedEntities["NNP"][1]
 	return paradic
 
 def getNamedEntities(query):
@@ -268,7 +291,11 @@ def getNamedEntities(query):
 	
 	return ner
 
-
+def getCountParameters(queryNamedEntities):
+	result={}
+	result["L1"]=queryNamedEntities["NNP"][0]
+	result["L2"]=queryNamedEntities["NN"][0]
+	return result
 
 
 print "GEOGRAPHIC QUESTION ANSWERING SYSTEM"
@@ -305,11 +332,17 @@ elif queryProperty == "size_list":
 	output_file_handler.write(str(sizeParameters))
 	print sizeParameters
 elif queryProperty == "size_val":
-	sizeParameters = getSizeValParameters(query)
+	size_valParameters = getSizeValParameters(query)
 	output_file_handler.write(str(size_valParameters))
-	print sizeParameters	
+	print size_valParameters	
 elif queryProperty == "count":
 	queryNamedEntities= getNamedEntities(query)
+	queryNamedEntities=getCountParameters(queryNamedEntities)
+	output_file_handler.write(str(queryNamedEntities))
+	print queryNamedEntities
+elif queryProperty == "neighbors":
+	queryNamedEntities= getNamedEntities(query)
+	queryNamedEntities=getNeighborsParameters(queryNamedEntities)
 	output_file_handler.write(str(queryNamedEntities))
 	print queryNamedEntities
 
