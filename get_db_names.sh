@@ -11,12 +11,10 @@
 
 #to turn off tuple headers: \pset tuples_only
 /Library/PostgreSQL/9.5/bin/psql -d postgres -U postgres -p 5432 <<EOF
-SELECT name_engli AS country_name FROM administrative;
-SELECT name_local AS country_local_name FROM administrative;
-SELECT DISTINCT name_1 AS states FROM administrative3;
-SELECT DISTINCT name_2 AS cities FROM administrative3;
-SELECT DISTINCT name_3 AS cities FROM administrative3;
-SELECT DISTINCT nam AS rivers FROM water_lines;
-SELECT DISTINCT name AS lakes FROM water_areas;
+SELECT name_engli AS administrative FROM administrative;
+SELECT DISTINCT name_1 AS administrative1 FROM administrative1;
+SELECT DISTINCT name_3 AS administrative3 FROM administrative3;
+SELECT DISTINCT nam AS water_lines FROM water_lines;
+SELECT DISTINCT name AS water_areas FROM water_areas;
 EOF
 
