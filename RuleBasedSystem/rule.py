@@ -10,7 +10,6 @@ import time
 from glob import iglob
 import json
 import os
-import hexdump
 
 outfile_path = "query_info.txt"
 query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count', 'size']
@@ -33,28 +32,26 @@ def isPropertyDistance(query):
 	if flag==1: return True
 
 
-'''
-
-
-
 def isPropertyCount(query):
-	''
+	'''
 	Function to check if the query is a Count query or not
 	@param: query in list format, stripped and split
 	@return: True if a count query, False otherwise
-	''
+	'''
 	input_file_handler= open("../synonyms/property/count.txt","r")
-	inside_synonyms=eval(input_file_handler.readline())
+	count_synonyms=eval(input_file_handler.readline())
 	#print inside_synonyms
 	input_file_handler.close()
 
+	#Get Query Named Entities
+	queryNamedEntities= getNamedEntities(query)
+
 	flag=0
 	for i in set(query).intersection(count_synonyms):
-		flag=1
+		if len(queryNamedEntities["NN"])==1 and len(queryNamedEntities["NNP"])==1:
+			flag=1
 		#output_file_handler.write("\n"+i)
 	if flag==1: return True
-
-'''
 
 # -*- coding: utf-8 -*-
 def isPropertySize(query):
@@ -150,12 +147,13 @@ def checkQueryProperty(query):
 		return query_types[0]
 	if isPropertySize(query):
 		return query_types[8]
+	if(isPropertyCount(query)):	
+		return query_types[7]
 	#if(isPropertyLength(query)):
 	#	return query_types[5]
 	#if(isPropertyArea(query)):
 	#	return query_types[6]
-	#if(isPropertyCount(query)):	
-	#	return query_types[7]
+	
 
 
 def getNamedEntities(query):
@@ -215,7 +213,12 @@ filePath="hindiQuery.txt"
 input_file_handler= open(filePath,"r")
 output_file_handler= open(outfile_path,"w")
 
-query=input_file_handler.readline().strip().split()
+#removing ? mark from the end of the input query
+queryString=input_file_handler.readline().strip()
+if queryString[-1:]=="?":
+	queryString=queryString[:-1]
+
+query=queryString.split()
 #print query
 input_file_handler.close()
 
@@ -233,7 +236,10 @@ elif queryProperty == "size":
 	sizeParameters = getSizeParameters(query)
 	output_file_handler.write(str(sizeParameters))
 	print sizeParameters
-
+elif queryProperty == "count":
+	queryNamedEntities= getNamedEntities(query)
+	output_file_handler.write(str(queryNamedEntities))
+	print queryNamedEntities
 
 #Define the Query based on the above parameters
 
