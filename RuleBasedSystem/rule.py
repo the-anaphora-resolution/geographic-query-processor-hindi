@@ -330,7 +330,8 @@ queryString=input_file_handler.readline().strip()
 if queryString[-1:]=="?":
 	queryString=queryString[:-1]
 
-query=queryString.split()
+query = queryString.replace("-", "_")
+query=query.rstrip('\n').split()
 #print query
 input_file_handler.close()
 
