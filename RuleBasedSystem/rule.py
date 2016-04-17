@@ -165,7 +165,7 @@ def getNamedEntities(query):
 	ner={}
 
 	#Finding NNP ners
-	ner["NNP"]=[]
+	flag=0
 	fileR="../synonyms/ner/NNP/"
 	for filepath in iglob(os.path.join(fileR, '*.json')): 
 		#print filepath
@@ -176,13 +176,16 @@ def getNamedEntities(query):
 				#print key
 				#output_file_handler.write(set(query))
 				if len(set(query).intersection(value)) >0:
+					if flag==0:
+						flag=1
+						ner["NNP"]=[]
 					if key not in ner["NNP"]:
 						ner["NNP"].append(key)
 					#print key, value
 			#print synonym_dict
 
-	#Finding NN ners	
-	ner["NN"]=[]
+	#Finding NN ners
+	flag=0	
 	fileR="../synonyms/ner/NN/"
 	for filepath in iglob(os.path.join(fileR, '*.json')): 
 		#print filepath
@@ -193,6 +196,9 @@ def getNamedEntities(query):
 				#print key
 				#output_file_handler.write(set(query))
 				if len(set(query).intersection(value)) >0:
+					if flag==0:
+						flag=1
+						ner["NN"]=[]
 					if key not in ner["NN"]:
 						ner["NN"].append(key)
 					#print key, value
