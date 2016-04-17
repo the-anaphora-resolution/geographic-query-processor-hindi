@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 '''
 Program to process the query through a set of rules and  determine the slots
 to be filled in the Postgre SQL Query
@@ -8,9 +10,10 @@ import time
 from glob import iglob
 import json
 import os
+import hexdump
 
 outfile_path = "query_info.txt"
-query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count']
+query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count', 'size']
 
 def isPropertyDistance(query):
 	'''
@@ -31,40 +34,7 @@ def isPropertyDistance(query):
 
 
 '''
-def isPropertyLength(query):
-	''
-	Function to check if the query is a Length query or not
-	@param: query in list format, stripped and split
-	@return: True if a length query, False otherwise
-	''
-	input_file_handler= open("../synonyms/property/length.txt","r")
-	length_synonyms=eval(input_file_handler.readline())
-	#print length_synonyms
-	input_file_handler.close()
 
-	flag=0
-	for i in set(query).intersection(length_synonyms):
-		flag=1
-		#output_file_handler.write("\n"+i)
-	if flag==1: return True
-
-
-def isPropertyArea(query):
-	''
-	Function to check if the query is a Area query or not
-	@param: query in list format, stripped and split
-	@return: True if a area query, False otherwise
-	''
-	input_file_handler= open("../synonyms/property/area.txt","r")
-	area_synonyms=eval(input_file_handler.readline())
-	#print area_synonyms
-	input_file_handler.close()
-
-	flag=0
-	for i in set(query).intersection(area_synonyms):
-		flag=1
-		#output_file_handler.write("\n"+i)
-	if flag==1: return True
 
 
 def isPropertyCount(query):
@@ -86,6 +56,89 @@ def isPropertyCount(query):
 
 '''
 
+# -*- coding: utf-8 -*-
+def isPropertySize(query):
+	'''
+	Function to check if the query is a Size query or not
+	@param: query in list format, stripped and split
+	@return: True if a area query, False otherwise
+	'''
+	input_file_handler= open("../synonyms/property/area.txt","r")
+	area_synonyms=eval(input_file_handler.readline())
+	#print area_synonyms
+	input_file_handler.close()
+	input_file_handler= open("../synonyms/property/length.txt","r")
+	length_synonyms=eval(input_file_handler.readline())
+	
+	input_file_handler.close()
+	#print printObject(area_synonyms)
+	print query[3]
+
+	#hexdump.dump(query[3].decode("utf-8"))
+	#hexdump.dump(area_synonyms[1])
+	print area_synonyms[1]
+
+
+	#for x in area_synonyms:
+		#print x == query[3]
+	print printObject(set(query).intersection(area_synonyms))
+	if len(set(query).intersection(area_synonyms)) > 0:
+		return True
+
+	if len(set(query).intersection(length_synonyms)) > 0:
+		return True
+
+		#output_file_handler.write("\n"+i)
+	return False
+
+def printObject(obj):
+	for a in obj:
+		print a.decode("utf-8")
+
+def getSizeParameters(query):
+
+	queryNamedEntities= getNamedEntities(query)
+	
+	with open("../synonyms/property/number.json") as f1:
+		numdic = eval(f1.readline())
+		
+
+	cnt = -1
+	for num in numdic:
+		if len(set(query).intersection(numdic[num])) > 0:
+			cnt = num
+	if cnt == -1:
+		if "सबसे" in query:
+			cnt = 1
+	if cnt == -1:
+		paradic = dict()
+		paradic["NNP"] = queryNamedEntities["NNP"]
+		paradic["GET"] = "size"
+		
+		return paradic
+
+	else:
+		with open("../synonyms/property/big.txt") as f1:
+			big_synonyms = eval(f1.readline())
+		with open("../synonyms/property/small.txt") as f1:
+			small_synonyms = eval(f1.readline())
+		big = True
+		if len(set(query).intersection(small_synonyms)) > 0:
+			big = False
+		paradic = dict()
+		paradic["count"] = cnt
+		if big:
+			paradic["sort"] = "high"
+		else:
+			paradic["sort"] = "low"
+		if len(queryNamedEntities["NNP"]) > 0:
+			paradic["in"] = queryNamedEntities["NNP"][0]
+		paradic["GET"] = "names"
+		return paradic
+
+
+
+
 
 def checkQueryProperty(query):
 	'''
@@ -95,6 +148,8 @@ def checkQueryProperty(query):
 	'''
 	if(isPropertyDistance(query)):
 		return query_types[0]
+	if isPropertySize(query):
+		return query_types[8]
 	#if(isPropertyLength(query)):
 	#	return query_types[5]
 	#if(isPropertyArea(query)):
@@ -170,9 +225,15 @@ output_file_handler.write(str(queryProperty) + "\n")
 print queryProperty
 
 #Get Query Named Entities
-queryNamedEntities= getNamedEntities(query)
-output_file_handler.write(str(queryNamedEntities))
-print queryNamedEntities
+if queryProperty == "distance":
+	queryNamedEntities= getNamedEntities(query)
+	output_file_handler.write(str(queryNamedEntities))
+	print queryNamedEntities
+elif queryProperty == "size":
+	sizeParameters = getSizeParameters(query)
+	output_file_handler.write(str(sizeParameters))
+	print sizeParameters
+
 
 #Define the Query based on the above parameters
 
