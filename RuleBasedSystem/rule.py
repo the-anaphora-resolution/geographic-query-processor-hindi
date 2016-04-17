@@ -9,7 +9,8 @@ from glob import iglob
 import json
 import os
 
-
+outfile_path = "query_info.txt"
+query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count']
 
 def isPropertyDistance(query):
 	'''
@@ -93,13 +94,13 @@ def checkQueryProperty(query):
 	@return: Type of query 
 	'''
 	if(isPropertyDistance(query)):
-		return 0
+		return query_types[0]
 	#if(isPropertyLength(query)):
-	#	return 1
+	#	return query_types[5]
 	#if(isPropertyArea(query)):
-	#	return 2
+	#	return query_types[6]
 	#if(isPropertyCount(query)):	
-	#	return 3
+	#	return query_types[7]
 
 
 def getNamedEntities(query):
@@ -148,31 +149,33 @@ def getNamedEntities(query):
 
 
 
-if __name__ == "__main__":
-	print "GEOGRAPHIC QUESTION ANSWERING SYSTEM"
-	print "------------------------------------\n"
-	print "Loading Query from file... "
-	#time.sleep(2)
-	#filePath=sys.argv[1]
-	filePath="hindiQuery.txt"
 
-	input_file_handler= open(filePath,"r")
-	output_file_handler= open("nlpOutput.txt","w")
+print "GEOGRAPHIC QUESTION ANSWERING SYSTEM"
+print "------------------------------------\n"
+print "Loading Query from file... "
+#time.sleep(2)
+#filePath=sys.argv[1]
+filePath="hindiQuery.txt"
 
-	query=input_file_handler.readline().strip().split()
-	#print query
-	input_file_handler.close()
+input_file_handler= open(filePath,"r")
+output_file_handler= open(outfile_path,"w")
 
-	#Get type of query 
-	queryProperty = checkQueryProperty(query)
-	print queryProperty
+query=input_file_handler.readline().strip().split()
+#print query
+input_file_handler.close()
 
-	#Get Query Named Entities
-	queryNamedEntities= getNamedEntities(query)
-	print queryNamedEntities
+#Get type of query 
+queryProperty = checkQueryProperty(query)
+output_file_handler.write(str(queryProperty) + "\n")
+print queryProperty
 
-	#Define the Query based on the above parameters
+#Get Query Named Entities
+queryNamedEntities= getNamedEntities(query)
+output_file_handler.write(str(queryNamedEntities))
+print queryNamedEntities
 
-	output_file_handler.close()
+#Define the Query based on the above parameters
+
+output_file_handler.close()
 
 
