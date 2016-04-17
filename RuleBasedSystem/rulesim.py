@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def isPropertySize(query):
 	'''
 	Function to check if the query is a Size query or not
@@ -26,9 +27,28 @@ def isPropertySize(query):
 
 def getSizeParameters(query):
 	queryNamedEntities= getNamedEntities(query)
-	with open("big.txt") as f1:
-		big_synonyms = eval(f1.readline())
-	with open("small.txt") as f1:
-		small_synonyms = eval(f1.readline())
-	for i 
 	
+	with open("../synonyms/property/number.json") as f1:
+		numdic = eval(f1.readline())
+		
+
+	cnt = -1
+	for num in numdic:
+		if len(set(query).intersection(numdic[num])) > 0:
+			cnt = num
+	if cnt == -1:
+		if "सबसे" in query:
+			cnt = 1
+	if cnt == -1:
+		
+
+
+	else:
+		with open("../synonyms/property/big.txt") as f1:
+			big_synonyms = eval(f1.readline())
+		with open("../synonyms/property/small.txt") as f1:
+			small_synonyms = eval(f1.readline())
+		big = True
+		if len(set(query).intersection(small_synonyms)) > 0:
+			big = False
+
