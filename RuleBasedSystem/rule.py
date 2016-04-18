@@ -119,16 +119,16 @@ def isPropertySize(query):
 	
 	input_file_handler.close()
 	#print printObject(area_synonyms)
-	print query[3]
+	#print query[3]
 
 	#hexdump.dump(query[3].decode("utf-8"))
 	#hexdump.dump(area_synonyms[1])
-	print area_synonyms[1]
+	#print area_synonyms[1]
 
 
 	#for x in area_synonyms:
 		#print x == query[3]
-	print printObject(set(query).intersection(area_synonyms))
+	#print printObject(set(query).intersection(area_synonyms))
 	if len(set(query).intersection(area_synonyms)) > 0:
 		return True
 
@@ -258,6 +258,7 @@ def getNamedEntities(query):
 	ner={}
 
 	#Finding NNP ners
+	#print printObject(nounset)
 	flag=0
 	fileR="../synonyms/ner/NNP/"
 	for filepath in iglob(os.path.join(fileR, '*.json')): 
@@ -268,7 +269,7 @@ def getNamedEntities(query):
 			for key, value in synonym_dict.items():
 				#print key
 				#output_file_handler.write(set(query))
-				if len(set(query).intersection(value)) >0:
+				if len(set(nounset).intersection(value)) >0:
 					if flag==0:
 						flag=1
 						ner["NNP"]=[]
@@ -325,6 +326,25 @@ filePath="hindiQuery.txt"
 input_file_handler= open(filePath,"r")
 output_file_handler= open(outfile_path,"w")
 
+nounset = set()
+	
+useShallowParser = True
+if (useShallowParser):
+	os.system("python ../shallow_parser_interface.py " + filePath)
+	with open("parsed_data.txt", "r") as f1:
+		posmap = dict()
+		for line in f1:
+			ind = line.find("af")
+			if ind!=-1:
+				posmap[line[ind+4:(line.find(","))]] = line.split(",")[1]
+		for ent in posmap:
+			if posmap[ent] == 'n':
+				nounset.add(ent)
+
+
+#print len(nounset)
+#print printObject(nounset)
+##a = raw_input() 
 #removing ? mark from the end of the input query
 queryString=input_file_handler.readline().strip()
 if queryString[-1:]=="?":
@@ -332,6 +352,8 @@ if queryString[-1:]=="?":
 
 query = queryString.replace("-", "_")
 query=query.rstrip('\n').split()
+if not useShallowParser:
+	nounset = set(query)
 #print query
 input_file_handler.close()
 
