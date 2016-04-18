@@ -14,6 +14,7 @@ import os
 outfile_path = "query_info.txt"
 query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count', 'size_list', 'size_val']
 
+
 def checkQueryProperty(query):
 	'''
 	Function to find the property of a query
@@ -38,8 +39,14 @@ def checkQueryProperty(query):
 
 
 def printObject(obj):
+	'''
+	Function to print object in decoded form
+	@param: object to print
+	@return: null
+	'''
 	for a in obj:
 		print a.decode("utf-8")
+
 
 def isPropertyDistance(query):
 	'''
@@ -102,8 +109,9 @@ def isPropertyCount(query):
 		#output_file_handler.write("\n"+i)
 	if flag==1: return True
 
-# -*- coding: utf-8 -*-
 
+
+# -*- coding: utf-8 -*-
 def isPropertySize(query):
 	'''
 	Function to check if the query is a Size query or not
@@ -125,7 +133,6 @@ def isPropertySize(query):
 	#hexdump.dump(area_synonyms[1])
 	#print area_synonyms[1]
 
-
 	#for x in area_synonyms:
 		#print x == query[3]
 	#print printObject(set(query).intersection(area_synonyms))
@@ -141,6 +148,11 @@ def isPropertySize(query):
 
 
 def isPropertySizeList(query):
+	'''
+	Function to find the property of a query
+	@param: query in list format, stripped and split
+	@return: True if query is a SizeList query, False otherwise
+	'''
 	if  not isPropertySize(query):
 		return False
 	cnt = getCountNeeded(query)
@@ -151,9 +163,12 @@ def isPropertySizeList(query):
 
 	
 
-	
-
 def isPropertySizeVal(query):
+	'''
+	Function to check if the query is a SizeVal query or not
+	@param: query in list format, stripped and split
+	@return: True if a SizeVal query, False otherwise
+	'''
 	if  not isPropertySize(query):
 		return False
 	cnt = getCountNeeded(query)
@@ -164,6 +179,11 @@ def isPropertySizeVal(query):
 	
 
 def getCountNeeded(query):
+	'''
+	Function to find the Count property of a query
+	@param: query in list format, stripped and split
+	@return: Count in query 
+	'''
 	
 	with open("../synonyms/property/number.json") as f1:
 		numdic = eval(f1.readline())
@@ -189,15 +209,14 @@ def getSizeValParameters(query):
 	
 	return paradic
 
-def getSizeListParameters(query):
 
+def getSizeListParameters(query):
 	queryNamedEntities= getNamedEntities(query)
-	
 	with open("../synonyms/property/number.json") as f1:
 		numdic = eval(f1.readline())
-		
 
 	cnt = -1
+
 	for num in numdic:
 		if len(set(query).intersection(numdic[num])) > 0:
 			cnt = num
@@ -249,6 +268,8 @@ def getLocationParameters(query):
 	paradic['L2'] = queryNamedEntities["NNP"][1]
 	return paradic
 
+
+
 def getNamedEntities(query):
 	'''
 	Funtion to find a list of named entities in the query in tagged form
@@ -299,6 +320,8 @@ def getNamedEntities(query):
 			#print synonym_dict
 	
 	return ner
+
+
 
 def getCountParameters(queryNamedEntities):
 	result={}
