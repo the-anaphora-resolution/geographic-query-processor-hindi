@@ -203,6 +203,12 @@ def getCountNeeded(query):
 
 
 def getSizeValParameters(query):
+	'''
+	Function to find the Size Val property of a query
+	@param: query in list format, stripped and split
+	@return: Size property in query 
+	'''
+
 	queryNamedEntities= getNamedEntities(query)
 	paradic = dict()
 	paradic["L1"] = queryNamedEntities["NNP"][0]
@@ -211,6 +217,12 @@ def getSizeValParameters(query):
 
 
 def getSizeListParameters(query):
+	'''
+	Function to find the Size List property of a query
+	@param: query in list format, stripped and split
+	@return: Size List property in query 
+	'''
+
 	queryNamedEntities= getNamedEntities(query)
 	with open("../synonyms/property/number.json") as f1:
 		numdic = eval(f1.readline())
@@ -246,6 +258,12 @@ def getSizeListParameters(query):
 
 
 def getNeighborsParameters(query, queryNamedEntities):
+	'''
+	Function to find the property of neighbors of a query
+	@param: query in list format, stripped and split
+	@return: List of neighbours 
+	'''
+
 	paradic = dict()
 	paradic['L1'] = queryNamedEntities["NNP"][0]
 	input_file_handler= open("../synonyms/property/count.txt","r")
@@ -324,6 +342,11 @@ def getNamedEntities(query):
 
 
 def getCountParameters(queryNamedEntities):
+	'''
+	Function to find the Count parameters of a query
+	@param: query in list format, stripped and split
+	@return: Is query a list query or a count query
+	'''
 	result={}
 	result["L1"]=queryNamedEntities["NNP"][0]
 	result["L2"]=queryNamedEntities["NN"][0]
@@ -339,6 +362,9 @@ def getCountParameters(queryNamedEntities):
 
 
 
+'''
+Main Execution point of the program begins here-->
+'''
 print "GEOGRAPHIC QUESTION ANSWERING SYSTEM"
 print "------------------------------------\n"
 print "Loading Query from file... "
@@ -349,8 +375,12 @@ filePath="hindiQuery.txt"
 input_file_handler= open(filePath,"r")
 output_file_handler= open(outfile_path,"w")
 
+
+'''
+Integrating Shallow Parser here -->
+Finds Nouns in a string, which we use to find NERs (Named Entities) in query
+'''
 nounset = set()
-	
 useShallowParser = True
 if (useShallowParser):
 	os.system("python ../shallow_parser_interface.py " + filePath)
