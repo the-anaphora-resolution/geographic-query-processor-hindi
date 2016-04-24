@@ -556,6 +556,8 @@ def getWithinParameters(queryNamedEntities):
 	result={}
 	result["L1"]=queryNamedEntities["NNP"][0]
 	result["L2"]=queryNamedEntities["NN"][0]
+	if queryNamedEntities["NN"][0]=='state':
+		result["L2"]=queryNamedEntities["NN"][1]
 	input_file_handler= open("../synonyms/property/count.txt","r")
 	count_synonyms=eval(input_file_handler.readline())
 	#print inside_synonyms
