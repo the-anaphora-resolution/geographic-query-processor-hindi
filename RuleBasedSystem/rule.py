@@ -12,7 +12,7 @@ import json
 import os
 
 outfile_path = "query_info.txt"
-query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count', 'size_list', 'size_val', 'capital']
+query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count', 'size_list', 'size_val', 'capital','city_in']
 
 
 def checkQueryProperty(query):
@@ -34,8 +34,9 @@ def checkQueryProperty(query):
 	if(isPropertyCount(query)):	
 		return query_types[7]
 	
-	#if(isPropertyLength(query)):
-	#	return query_types[5]
+	if(isPropertyCityIn(query)):
+		return query_types[11]
+
 	#if(isPropertyArea(query)):
 	#	return query_types[6]
 
@@ -206,6 +207,28 @@ def isPropertySizeVal(query):
 	
 	return True
 	
+
+
+
+def isPropertyCityIn(query):
+	'''
+	Function to find the city_in property of a query
+	@param: query in list format, stripped and split
+	@return: True if query is a city_in query, False otherwise
+	'''
+	
+	if "कहाँ" in query:
+		return True
+	elif "किस" in query:
+		return True
+	elif "कौन से" in query:
+		return True
+	elif "कौनसे" in query:
+		return True
+	else:
+		return False
+	
+
 
 def getCountNeeded(query):
 	'''
@@ -484,6 +507,14 @@ elif queryProperty == "neighbors":
 	queryNamedEntities=getNeighborsParameters(query,queryNamedEntities)
 	output_file_handler.write(str(queryNamedEntities))
 	print queryNamedEntities
+
+#Last Rule- city_in query
+elif queryProperty == "city_in":
+	queryNamedEntities= getNamedEntities(query)
+	output_file_handler.write(str(queryNamedEntities))
+	print queryNamedEntities
+
+
 
 #Define the Query based on the above parameters
 
