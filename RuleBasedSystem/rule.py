@@ -29,6 +29,8 @@ def checkQueryProperty(query):
 		return query_types[5]
 	if isPropertySizeVal(query):
 		return query_types[9]
+	if(isPropertyDirection(query)):	
+		return query_types[1]
 	if isPropertyCapital(query):
 		return query_types[10]
 	if(isPropertyNeighbors(query)):	
@@ -54,6 +56,22 @@ def printObject(obj):
 	for a in obj:
 		print a.decode("utf-8")
 
+def isPropertyDirection(query):
+	'''
+	Function to find the Direction property of a query
+	@param: query in list format, stripped and split
+	@return: Direction List property in query 
+	'''
+	input_file_handler= open("../synonyms/property/directions_synonym.txt","r")
+	direction_synonyms=eval(input_file_handler.readline())
+	#print distance_synonyms
+	input_file_handler.close()
+	queryNamedEntities= getNamedEntities(query)
+	
+	if len(set(query).intersection(direction_synonyms))>0 and (queryNamedEntities.get("NNP",0)!=0) and (len(queryNamedEntities["NNP"])==2) and ("से" in query or "के" in query):
+		return True
+	else:
+		return False
 
 def isPropertyDistance(query):
 	'''
@@ -435,6 +453,45 @@ def getLocationParameters(query):
 	paradic['L2'] = queryNamedEntities["NNP"][1]
 	return paradic
 
+def getDirectionParameters(query):
+	queryNamedEntities= getNamedEntities(query)
+	result={}
+	hindi_list=[]
+	#Finding NNP ners
+	fileR="../synonyms/ner/NNP/"
+
+	for filepath in iglob(os.path.join(fileR, '*.json')): 
+		with open(filepath) as f:
+			synonym_dict= eval(f.readline())
+			for key, value in synonym_dict.items():
+				if len(set(nounset).intersection(value)) >0:
+					for val in value:
+						if val in set(nounset) and val not in hindi_list:
+							hindi_list.append(val)
+							break
+	# print hindi_list[0].decode('utf-8')
+	# print hindi_list[1].decode('utf-8')
+	key_word3=query.index(hindi_list[0])
+	key_word4=query.index(hindi_list[1])
+	
+	if "से" in query:
+		key_word1=query.index("से")
+		if key_word3==key_word1-1:
+			result["L2"]=queryNamedEntities["NNP"][0]
+			result["L1"]=queryNamedEntities["NNP"][1]
+		elif key_word4==key_word1-1:
+			result["L2"]=queryNamedEntities["NNP"][1]
+			result["L1"]=queryNamedEntities["NNP"][0]
+
+	elif "के" in query:
+		key_word2=query.index("के")
+		if key_word3==key_word2-1:
+			result["L2"]=queryNamedEntities["NNP"][0]
+			result["L1"]=queryNamedEntities["NNP"][1]
+		elif key_word4==key_word2-1:
+			result["L2"]=queryNamedEntities["NNP"][1]
+			result["L1"]=queryNamedEntities["NNP"][0]
+	return result
 
 
 def getNamedEntities(query):
@@ -581,6 +638,10 @@ elif queryProperty == "size_val":
 	size_valParameters = getSizeValParameters(query)
 	output_file_handler.write(str(size_valParameters))
 	print size_valParameters
+elif queryProperty == "direction":
+	directionParameters= getDirectionParameters(query)
+	output_file_handler.write(str(directionParameters))
+	print directionParameters
 elif queryProperty == "capital":
 	queryNamedEntities= getNamedEntities(query)
 	capitalProperties=getCapitalParameters(queryNamedEntities)
