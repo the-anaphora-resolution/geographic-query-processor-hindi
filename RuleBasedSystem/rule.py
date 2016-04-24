@@ -12,7 +12,7 @@ import json
 import os
 
 outfile_path = "query_info.txt"
-query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count', 'size_list', 'size_val', 'capital','city_in']
+query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'river_length', 'area', 'count', 'size_list', 'size_val', 'capital','city_in']
 
 
 def checkQueryProperty(query):
@@ -25,6 +25,8 @@ def checkQueryProperty(query):
 		return query_types[0]
 	if isPropertySizeList(query):
 		return query_types[8]
+	if isPropertyLength(query):
+		return query_types[5]
 	if isPropertySizeVal(query):
 		return query_types[9]
 	if isPropertyCapital(query):
@@ -107,11 +109,10 @@ def isPropertyCount(query):
 	queryNamedEntities= getNamedEntities(query)
 
 	flag=0
-	if len(queryNamedEntities["NN"])==1 and len(queryNamedEntities["NNP"])==1:
-		flag=1
+	if "NN" in queryNamedEntities and "NNP" in queryNamedEntities and len(queryNamedEntities["NN"])==1 and len(queryNamedEntities["NNP"])==1:
+		return True
 		#output_file_handler.write("\n"+i)
-	if flag==1: return True
-
+	return False
 
 
 
@@ -125,11 +126,11 @@ def isPropertySize(query):
 	area_synonyms=eval(input_file_handler.readline())
 	#print area_synonyms
 	input_file_handler.close()
-	input_file_handler= open("../synonyms/property/length.txt","r")
-	length_synonyms=eval(input_file_handler.readline())
+	# input_file_handler= open("../synonyms/property/length.txt","r")
+	# length_synonyms=eval(input_file_handler.readline())
 	
-	input_file_handler.close()
-	#print printObject(area_synonyms)
+	# input_file_handler.close()
+	# #print printObject(area_synonyms)
 	#print query[3]
 
 	#hexdump.dump(query[3].decode("utf-8"))
@@ -142,11 +143,41 @@ def isPropertySize(query):
 	if len(set(query).intersection(area_synonyms)) > 0:
 		return True
 
-	if len(set(query).intersection(length_synonyms)) > 0:
-		return True
+	# if len(set(query).intersection(length_synonyms)) > 0:
+	# 	return True
 
 		#output_file_handler.write("\n"+i)
 	return False
+
+def isPropertyLength(query):
+	'''
+	Function to check if the query is a Length query or not
+	@param: query in list format, stripped and split
+	@return: True if a area query, False otherwise
+	'''
+	input_file_handler= open("../synonyms/property/length.txt","r")
+	length_synonyms=eval(input_file_handler.readline())
+	
+	input_file_handler.close()
+	# #print printObject(area_synonyms)
+	#print query[3]
+
+	#hexdump.dump(query[3].decode("utf-8"))
+	#hexdump.dump(area_synonyms[1])
+	#print area_synonyms[1]
+
+	#for x in area_synonyms:
+		#print x == query[3]
+	#print printObject(set(query).intersection(area_synonyms))
+	if len(set(query).intersection(length_synonyms)) > 0:
+		return True
+
+	# if len(set(query).intersection(length_synonyms)) > 0:
+	# 	return True
+
+		#output_file_handler.write("\n"+i)
+	return False
+
 
 def isPropertyCapital(query):
 	'''
@@ -488,6 +519,10 @@ elif queryProperty == "size_list":
 	sizeParameters = getSizeListParameters(query)
 	output_file_handler.write(str(sizeParameters))
 	print sizeParameters
+elif queryProperty == 'river_length':
+	len_valParameters = getSizeValParameters(query) #Using same method since result is same
+	output_file_handler.write(str(len_valParameters))
+	print len_valParameters
 elif queryProperty == "size_val":
 	size_valParameters = getSizeValParameters(query)
 	output_file_handler.write(str(size_valParameters))
