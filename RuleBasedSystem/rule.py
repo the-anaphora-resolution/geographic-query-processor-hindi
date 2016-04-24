@@ -12,7 +12,7 @@ import json
 import os
 
 outfile_path = "query_info.txt"
-query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count', 'size_list', 'size_val', 'captial']
+query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count', 'size_list', 'size_val', 'capital']
 
 
 def checkQueryProperty(query):
@@ -147,7 +147,7 @@ def isPropertySize(query):
 		#output_file_handler.write("\n"+i)
 	return False
 
-def isPropertySize(query):
+def isPropertyCapital(query):
 	'''
 	Function to check if the query is a Capital query or not
 	@param: query in list format, stripped and split
@@ -422,7 +422,7 @@ Integrating Shallow Parser here -->
 Finds Nouns in a string, which we use to find NERs (Named Entities) in query
 '''
 nounset = set()
-useShallowParser = True
+useShallowParser = False
 if (useShallowParser):
 	os.system("python ../shallow_parser_interface.py " + filePath)
 	with open("parsed_data.txt", "r") as f1:
