@@ -1,0 +1,18 @@
+Distance between 2 cities:
+दिल्ली से कानपुर की दूरी कितनी है?
+Neighbours of State (Count/List):
+पंजाब के पडोसी राज्य कौन से हैं?
+Entities (City/River) in State (Count/List):
+राजस्थान में कौन से शहर हैं?
+असम में कितनी नदी है?
+Area of States/Lakes:
+महाराष्ट्र की क्षेत्रफल कितनी है?
+बिहार कितना बड़ा राज्य है?
+Capital of State:
+तमिल-नाडु की राजधानी क्या है?
+Direction of X from Y (City/State):
+दिल्ली से मुंबई किस ओर है?
+Length of River:
+यमुना कितनी लम्बी है?
+City is in which state?
+मुंबई  कहाँ है?
