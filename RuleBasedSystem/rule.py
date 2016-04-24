@@ -12,7 +12,7 @@ import json
 import os
 
 outfile_path = "query_info.txt"
-query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'river_length', 'area', 'count', 'size_list', 'size_val', 'capital','city_in']
+query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'river_length', 'area', 'within', 'size_list', 'size_val', 'capital','city_in']
 
 
 def checkQueryProperty(query):
@@ -33,7 +33,7 @@ def checkQueryProperty(query):
 		return query_types[10]
 	if(isPropertyNeighbors(query)):	
 		return query_types[2]
-	if(isPropertyCount(query)):	
+	if(isPropertyWithin(query)):	
 		return query_types[7]
 	
 	if(isPropertyCityIn(query)):
@@ -94,9 +94,9 @@ def isPropertyNeighbors(query):
 
 
 
-def isPropertyCount(query):
+def Within(query):
 	'''
-	Function to check if the query is a Count query or not
+	Function to check if the query is a Within query or not
 	@param: query in list format, stripped and split
 	@return: True if a count query, False otherwise
 	'''
@@ -436,7 +436,7 @@ def getNamedEntities(query):
 
 
 
-def getCountParameters(queryNamedEntities):
+def getWithinParameters(queryNamedEntities):
 	'''
 	Function to find the Count parameters of a query
 	@param: query in list format, stripped and split
@@ -532,9 +532,9 @@ elif queryProperty == "capital":
 	capitalProperties=getCapitalParameters(queryNamedEntities)
 	output_file_handler.write(str(capitalProperties))	
 	print capitalProperties
-elif queryProperty == "count":
+elif queryProperty == "within":
 	queryNamedEntities= getNamedEntities(query)
-	queryNamedEntities=getCountParameters(queryNamedEntities)
+	queryNamedEntities=getWithinParameters(queryNamedEntities)
 	output_file_handler.write(str(queryNamedEntities))
 	print queryNamedEntities
 elif queryProperty == "neighbors":
