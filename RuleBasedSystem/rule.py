@@ -12,7 +12,7 @@ import json
 import os
 
 outfile_path = "query_info.txt"
-query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'river_length', 'area', 'within', 'size_list', 'size_val', 'capital','city_in']
+query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'river_length', 'area', 'within', 'size_list', 'size_val', 'capital','city_in','neighbor_direction']
 
 
 def checkQueryProperty(query):
@@ -21,6 +21,8 @@ def checkQueryProperty(query):
 	@param: query in list format, stripped and split
 	@return: Type of query 
 	'''
+	if(isPropertyNeighborDirection(query)):	
+		return query_types[12]
 	if(isPropertyDistance(query)):
 		return query_types[0]
 	if isPropertySizeList(query):
@@ -55,6 +57,27 @@ def printObject(obj):
 	'''
 	for a in obj:
 		print a.decode("utf-8")
+
+def isPropertyNeighborDirection(query):
+	'''
+	Function to find the Neighbor_Direction property of a query
+	@param: query in list format, stripped and split
+	@return: Neighbor_Direction in query 
+	'''
+	with open("../synonyms/property/direction.json") as f1:
+		numdic = eval(f1.readline())
+	cnt = -1
+	for num in numdic:
+		if len(set(query).intersection(numdic[num])) > 0:
+			cnt = num
+			break
+	queryNamedEntities= getNamedEntities(query)
+	if cnt != -1 and "NNP" in queryNamedEntities and len(queryNamedEntities["NNP"])==1:
+		print "NeighborDir"
+		return True
+	else:
+		return False
+
 
 def isPropertyDirection(query):
 	'''
@@ -494,6 +517,21 @@ def getDirectionParameters(query):
 	return result
 
 
+def getNeighborDirectionParameters(query):
+	queryNamedEntities= getNamedEntities(query)
+	with open("../synonyms/property/direction.json") as f1:
+		numdic = eval(f1.readline())
+	cnt=""
+	for num in numdic:
+		if len(set(query).intersection(numdic[num])) > 0:
+			cnt = num
+			break
+	result={}
+	result["L1"]=queryNamedEntities["NNP"][0]
+	result["direction"]=cnt
+	return result
+
+
 def getNamedEntities(query):
 	'''
 	Funtion to find a list of named entities in the query in tagged form
@@ -547,6 +585,7 @@ def getNamedEntities(query):
 
 
 
+
 def getWithinParameters(queryNamedEntities):
 	'''
 	Function to find the Count parameters of a query
@@ -556,7 +595,7 @@ def getWithinParameters(queryNamedEntities):
 	result={}
 	result["L1"]=queryNamedEntities["NNP"][0]
 	result["L2"]=queryNamedEntities["NN"][0]
-	if queryNamedEntities["NN"][0]=='state':
+	if len(queryNamedEntities["NN"])>1 and queryNamedEntities["NN"][0]=='state':
 		result["L2"]=queryNamedEntities["NN"][1]
 	input_file_handler= open("../synonyms/property/count.txt","r")
 	count_synonyms=eval(input_file_handler.readline())
@@ -659,7 +698,10 @@ elif queryProperty == "neighbors":
 	queryNamedEntities=getNeighborsParameters(query,queryNamedEntities)
 	output_file_handler.write(str(queryNamedEntities))
 	print queryNamedEntities
-
+elif queryProperty == "neighbor_direction":
+	neighborDirectionEntities=getNeighborDirectionParameters(query)
+	output_file_handler.write(str(neighborDirectionEntities))
+	print neighborDirectionEntities
 #Last Rule- city_in query
 elif queryProperty == "city_in":
 	queryNamedEntities= getNamedEntities(query)
