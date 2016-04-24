@@ -12,7 +12,7 @@ import json
 import os
 
 outfile_path = "query_info.txt"
-query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count', 'size_list', 'size_val']
+query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'length', 'area', 'count', 'size_list', 'size_val', 'captial']
 
 
 def checkQueryProperty(query):
@@ -27,6 +27,8 @@ def checkQueryProperty(query):
 		return query_types[8]
 	if isPropertySizeVal(query):
 		return query_types[9]
+	if isPropertyCapital(query):
+		return query_types[10]
 	if(isPropertyNeighbors(query)):	
 		return query_types[2]
 	if(isPropertyCount(query)):	
@@ -111,7 +113,7 @@ def isPropertyCount(query):
 
 
 
-# -*- coding: utf-8 -*-
+
 def isPropertySize(query):
 	'''
 	Function to check if the query is a Size query or not
@@ -141,6 +143,33 @@ def isPropertySize(query):
 
 	if len(set(query).intersection(length_synonyms)) > 0:
 		return True
+
+		#output_file_handler.write("\n"+i)
+	return False
+
+def isPropertySize(query):
+	'''
+	Function to check if the query is a Capital query or not
+	@param: query in list format, stripped and split
+	@return: True if a area query, False otherwise
+	'''
+	input_file_handler= open("../synonyms/property/capital.txt","r")
+	capital_synonyms=eval(input_file_handler.readline())
+	#print area_synonyms
+	input_file_handler.close()
+	#print printObject(area_synonyms)
+	#print query[3]
+
+	#hexdump.dump(query[3].decode("utf-8"))
+	#hexdump.dump(area_synonyms[1])
+	#print area_synonyms[1]
+
+	#for x in area_synonyms:
+		#print x == query[3]
+	#print printObject(set(query).intersection(area_synonyms))
+	if len(set(query).intersection(capital_synonyms)) > 0:
+		return True
+
 
 		#output_file_handler.write("\n"+i)
 	return False
@@ -274,6 +303,18 @@ def getNeighborsParameters(query, queryNamedEntities):
 		paradic['result'] = "count"
 	else:
 		paradic['result'] = "list"
+	return paradic
+
+def getCapitalParameters(queryNamedEntities):
+	'''
+	Function to find the property of capital of a query
+	@param: query in list format, stripped and split
+	@return: List of neighbours 
+	'''
+
+	paradic = dict()
+	paradic['L1'] = queryNamedEntities["NNP"][0]
+	
 	return paradic
 
 
@@ -427,7 +468,12 @@ elif queryProperty == "size_list":
 elif queryProperty == "size_val":
 	size_valParameters = getSizeValParameters(query)
 	output_file_handler.write(str(size_valParameters))
-	print size_valParameters	
+	print size_valParameters
+elif queryProperty == "capital":
+	queryNamedEntities= getNamedEntities(query)
+	capitalProperties=getCapitalParameters(queryNamedEntities)
+	output_file_handler.write(str(capitalProperties))	
+	print capitalProperties
 elif queryProperty == "count":
 	queryNamedEntities= getNamedEntities(query)
 	queryNamedEntities=getCountParameters(queryNamedEntities)
