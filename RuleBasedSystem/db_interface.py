@@ -29,29 +29,29 @@ class db:
         #__PH__ = place holder, needs to be replaced with values
         keys = ['distance', 'direction', 'neighbors', 'size_val', 'count', 'count_intersect']
         queries = [
-            "SELECT ST_Distance(T3.G1, T3.G2) FROM (SELECT T1.name_2 AS N1, T1.geom AS G1, T2.name_2 AS N2, T2.geom AS G2 FROM __PH3__ AS T1 CROSS JOIN __PH3__ AS T2 where T1.name_2 like '__PH1__' and T2.name_2 like '__PH2__') AS T3;",
+            "SELECT ST_Distance(T3.G1, T3.G2) FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH3__ AS T1 CROSS JOIN __PH3__ AS T2 where T1.name like '__PH1__' and T2.name like '__PH2__') AS T3;",
             "",
-            "SELECT T3.N2, ST_Touches(T3.G1, T3.G2) AS rval FROM (SELECT T1.name_1 AS N1, T1.geom AS G1, T2.name_1 AS N2, T2.geom AS G2 FROM __PH2__ AS T1 CROSS JOIN __PH2__ AS T2 where T1.name_1 like '__PH1__') AS T3 where ST_Touches(T3.G1, T3.G2) IS TRUE;",
-            "SELECT ST_Area(T1.geom) from __PH2__ as T1 where T1.name_1 like '__PH1__';",
-            "SELECT T3.name FROM (SELECT T2.name_3 as name, ST_Within(T2.geom, T1.geom) as within from __PH2__ as T1 CROSS JOIN __PH3__ as T2 WHERE T1.name_1 like '__PH1__') as T3 where T3.within is TRUE;",
-            "SELECT DISTINCT N1, ST_Intersects(T3.G1, T3.G2) FROM (SELECT T1.nam AS N1, T1.geom AS G1, T2.name_1 AS N2, T2.geom AS G2 FROM __PH3__ AS T1 CROSS JOIN __PH2__ AS T2 where T2.name_1 like '__PH1__') AS T3 where ST_Intersects(T3.G1, T3.G2) IS TRUE;",
+            "SELECT DISTINCT T3.N2, ST_Touches(T3.G1, T3.G2) AS rval FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH2__ AS T1 CROSS JOIN __PH2__ AS T2 where T1.name like '__PH1__') AS T3 where ST_Touches(T3.G1, T3.G2) IS TRUE;",
+            "SELECT ST_Area(T1.geom) from __PH2__ as T1 where T1.name like '__PH1__';",
+            "SELECT DISTINCT T3.name FROM (SELECT T2.name as name, ST_Within(T2.geom, T1.geom) as within from __PH2__ as T1 CROSS JOIN __PH3__ as T2 WHERE T1.name like '__PH1__') as T3 where T3.within is TRUE;",
+            "SELECT DISTINCT N1, ST_Intersects(T3.G1, T3.G2) FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH3__ AS T1 CROSS JOIN __PH2__ AS T2 where T2.name like '__PH1__') AS T3 where ST_Intersects(T3.G1, T3.G2) IS TRUE;",
 
-            "SELECT DISTINCT T3.N2 FROM (SELECT T1.nam AS N1, T1.geom AS G1, T2.name_1 AS N2, T2.geom AS G2 FROM __PH2__ AS T1 CROSS JOIN administrative1 AS T2 where T1.nam like '__PH1__') AS T3 where ST_Intersects(T3.G1, T3.G2) IS TRUE;",
+            "SELECT DISTINCT T3.N2 FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH2__ AS T1 CROSS JOIN administrative1 AS T2 where T1.name like '__PH1__') AS T3 where ST_Intersects(T3.G1, T3.G2) IS TRUE;",
 
-            "SELECT name_1 FROM administrative2 where name_2 like '__PH1__';",
+            "SELECT name_1 FROM administrative2 where name like '__PH1__';",
 
-            "SELECT sum(ST_Length(geom)) FROM __PH2__ where nam like '__PH1__'",
+            "SELECT sum(ST_Length(geom)) FROM __PH2__ where name like '__PH1__'",
 
-            "SELECT degrees(ST_Azimuth(ST_Centroid(T1.geom), ST_Centroid(T2.geom))) as DEG FROM __PH3__ AS T1 CROSS JOIN __PH3__ AS T2 where T1.name_2 like '__PH1__' and T2.name_2 like '__PH2__';",
+            "SELECT degrees(ST_Azimuth(ST_Centroid(T1.geom), ST_Centroid(T2.geom))) as DEG FROM __PH3__ AS T1 CROSS JOIN __PH3__ AS T2 where T1.name like '__PH1__' and T2.name like '__PH2__';",
 
-            "SELECT capital from __PH2__ where name_1 like '__PH1__';"
+            "SELECT capital from __PH2__ where name like '__PH1__';"
 
             #PH1 = first location, PH2 = second location, PH3 = table
             ]
         
         self.queries['distance'] = queries[0]
         self.queries['size_val'] = queries[3]
-        self.queries['count'] = queries[4]
+        self.queries['within'] = queries[4]
         self.queries['neighbors'] = queries[2]
         self.queries['count_intersect'] = queries[5]
         self.queries['river_intersect'] = queries[6]
@@ -132,7 +132,7 @@ if qtype == "size_val":
     area = res * mf
     print "area: ", area, " Sq KM"
 
-if qtype == "count":
+if qtype == "within":
     ph = list()
     qsubtype = 'list'
     for e in params:

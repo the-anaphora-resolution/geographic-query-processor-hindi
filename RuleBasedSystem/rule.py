@@ -35,7 +35,9 @@ def checkQueryProperty(query):
 		return query_types[2]
 	if(isPropertyWithin(query)):	
 		return query_types[7]
-	
+	#elif (isPropertyWithin(query)=="city_in"):
+	#	return query_types[11]
+
 	if(isPropertyCityIn(query)):
 		return query_types[11]
 
@@ -94,7 +96,33 @@ def isPropertyNeighbors(query):
 
 
 
-def Within(query):
+
+def isNNP(word):
+	'''
+	Funtion to find if a word is NNP
+	@param: query - a word to check for NNP
+	@return: True if NNP, False Otherwise
+	'''
+	fileR="../synonyms/ner/NNP/"
+	for filepath in iglob(os.path.join(fileR, '*.json')): 
+		#print filepath
+		with open(filepath) as f:
+			#print f
+			synonym_dict= eval(f.readline())
+			for key, value in synonym_dict.items():
+				#print key
+				#output_file_handler.write(set(query))
+				if word in value:
+					#print "check 1"
+					return True
+					#print key, value
+			#print synonym_dict
+	#print "check 2"
+	return False
+
+
+
+def isPropertyWithin(query):
 	'''
 	Function to check if the query is a Within query or not
 	@param: query in list format, stripped and split
@@ -107,6 +135,18 @@ def Within(query):
 
 	#Get Query Named Entities
 	queryNamedEntities= getNamedEntities(query)
+
+	if "में" in query:
+		idx= query.index("में")
+		input_file_handler= open("../synonyms/ner/NN/cnsynlist.json","r")
+		state_synonyms=eval(input_file_handler.readline())
+		#print inside_synonyms
+		input_file_handler.close()
+		if query[idx-1] in state_synonyms["state"]: 
+			#check query[idx-2]
+			if (isNNP(query[idx-2])) == False:
+				return False
+		return True
 
 	flag=0
 	if "NN" in queryNamedEntities and "NNP" in queryNamedEntities and len(queryNamedEntities["NN"])==1 and len(queryNamedEntities["NNP"])==1:
@@ -252,7 +292,7 @@ def isPropertyCityIn(query):
 		return True
 	elif "किस" in query:
 		return True
-	elif "कौन से" in query:
+	elif "कौन" in query:
 		return True
 	elif "कौनसे" in query:
 		return True
@@ -288,6 +328,20 @@ def getCountNeeded(query):
 def getSizeValParameters(query):
 	'''
 	Function to find the Size Val property of a query
+	@param: query in list format, stripped and split
+	@return: Size property in query 
+	'''
+
+	queryNamedEntities= getNamedEntities(query)
+	paradic = dict()
+	paradic["L1"] = queryNamedEntities["NNP"][0]
+	
+	return paradic
+
+
+def getCityInParameters(query):
+	'''
+	Function to find the City In property of a query
 	@param: query in list format, stripped and split
 	@return: Size property in query 
 	'''
@@ -546,6 +600,7 @@ elif queryProperty == "neighbors":
 #Last Rule- city_in query
 elif queryProperty == "city_in":
 	queryNamedEntities= getNamedEntities(query)
+	queryNamedEntities=getCityInParameters(queryNamedEntities)
 	output_file_handler.write(str(queryNamedEntities))
 	print queryNamedEntities
 
