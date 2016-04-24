@@ -69,11 +69,11 @@ def isPropertyNeighborDirection(query):
 	cnt = -1
 	for num in numdic:
 		if len(set(query).intersection(numdic[num])) > 0:
+			print cnt
 			cnt = num
 			break
 	queryNamedEntities= getNamedEntities(query)
-	if cnt != -1 and "NNP" in queryNamedEntities and len(queryNamedEntities["NNP"])==1:
-		print "NeighborDir"
+	if cnt != -1 and "NNP" in queryNamedEntities :
 		return True
 	else:
 		return False
