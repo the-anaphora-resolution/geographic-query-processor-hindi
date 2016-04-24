@@ -30,35 +30,32 @@ class db:
         keys = ['distance', 'direction', 'neighbors', 'size_val', 'count', 'count_intersect']
         queries = [
             "SELECT ST_Distance(T3.G1, T3.G2) FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH3__ AS T1 CROSS JOIN __PH3__ AS T2 where T1.name like '__PH1__' and T2.name like '__PH2__') AS T3;",
-            "",
             "SELECT DISTINCT T3.N2, ST_Touches(T3.G1, T3.G2) AS rval FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH2__ AS T1 CROSS JOIN __PH2__ AS T2 where T1.name like '__PH1__') AS T3 where ST_Touches(T3.G1, T3.G2) IS TRUE;",
             "SELECT ST_Area(T1.geom) from __PH2__ as T1 where T1.name like '__PH1__';",
             "SELECT DISTINCT T3.name FROM (SELECT T2.name as name, ST_Within(T2.geom, T1.geom) as within from __PH2__ as T1 CROSS JOIN __PH3__ as T2 WHERE T1.name like '__PH1__') as T3 where T3.within is TRUE;",
             "SELECT DISTINCT N1, ST_Intersects(T3.G1, T3.G2) FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH3__ AS T1 CROSS JOIN __PH2__ AS T2 where T2.name like '__PH1__') AS T3 where ST_Intersects(T3.G1, T3.G2) IS TRUE;",
-
             "SELECT DISTINCT T3.N2 FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH2__ AS T1 CROSS JOIN administrative1 AS T2 where T1.name like '__PH1__') AS T3 where ST_Intersects(T3.G1, T3.G2) IS TRUE;",
-
             "SELECT name_1 FROM administrative2 where name like '__PH1__';",
-
             "SELECT sum(ST_Length(geom)) FROM __PH2__ where name like '__PH1__'",
-
             "SELECT degrees(ST_Azimuth(ST_Centroid(T1.geom), ST_Centroid(T2.geom))) as DEG FROM __PH3__ AS T1 CROSS JOIN __PH3__ AS T2 where T1.name like '__PH1__' and T2.name like '__PH2__';",
+            "SELECT capital from __PH2__ where name like '__PH1__';",
+            "SELECT DISTINCT T2. N2, degrees(ST_Azimuth(ST_Centroid(T1.geom), ST_Centroid(G2))) as DEG FROM __PH2__ AS T1 CROSS JOIN (SELECT T7.N2, T7.G2, ST_Touches(T7.G1, T7.G2) AS rval FROM (SELECT T5.name AS N1, T5.geom AS G1, T6.name AS N2, T6.geom AS G2 FROM __PH2__ AS T5 CROSS JOIN __PH2__ AS T6 where T5.name like '__PH1__') AS T7 where ST_Touches(T7.G1, T7.G2) IS TRUE) AS T2 where T1.name like '__PH1__';"
 
-            "SELECT capital from __PH2__ where name like '__PH1__';"
 
             #PH1 = first location, PH2 = second location, PH3 = table
             ]
         
         self.queries['distance'] = queries[0]
-        self.queries['size_val'] = queries[3]
-        self.queries['within'] = queries[4]
-        self.queries['neighbors'] = queries[2]
-        self.queries['count_intersect'] = queries[5]
-        self.queries['river_intersect'] = queries[6]
-        self.queries['city_in'] = queries[7]
-        self.queries['river_length'] = queries[8]
-        self.queries['direction'] = queries[9]
-        self.queries['capital'] = queries[10]
+        self.queries['neighbors'] = queries[1]
+        self.queries['size_val'] = queries[2]
+        self.queries['within'] = queries[3]
+        self.queries['count_intersect'] = queries[4]
+        self.queries['river_intersect'] = queries[5]
+        self.queries['city_in'] = queries[6]
+        self.queries['river_length'] = queries[7]
+        self.queries['direction'] = queries[8]
+        self.queries['capital'] = queries[9]
+        self.queries['neighbor_direction'] = queries[10]
 
     def exec_query(self, qtype, phs):
         #qtype = query types
@@ -255,6 +252,50 @@ if qtype == "direction":
 
     print "direction: ", direc, " degrees"
     print "direction: ", dir
+
+if qtype == "neighbor_direction":
+    print "neighbor direction"
+    rdirec = ""
+    ph = list()
+    for e in params:
+        k, v = e.split(':')
+        if k == 'L1':
+            qtable = inst.get_table(v)
+            ph .append(v)
+        if k == 'direction':
+            rdirec = v
+        
+    ph.append(qtable)
+    print "ph: ", ph
+    res = inst.exec_query(qtype,ph)        
+    ans = list()
+    print "direction required: ", rdirec
+    for r in res:
+        #print r[0], r[1]
+        direc = r[1]
+        if ((direc >= 315 and direc <=360) or (direc >= 0 and direc <= 45)) and rdirec == "north":
+            ans.append(r[0])
+        elif direc >= 0 and direc <= 90 and rdirec == "north-east":
+            ans.append(r[0])
+        elif direc >= 45 and direc <=135 and rdirec == "east":
+            ans.append(r[0])
+        elif direc >= 90 and direc <= 180 and rdirec == "south-east":
+            ans.append(r[0])
+        elif direc >= 135 and direc <= 215 and rdirec == "south":
+            ans.append(r[0])
+        elif direc >=180 and direc <= 270 and rdirec == "south-west":
+            ans.append(r[0])
+        elif direc >= 225 and direc <= 315 and rdirec == "west":
+            ans.append(r[0])
+        elif direc >=270 and direc <= 360 and rdirec == "north-west":
+            ans.append(r[0])
+
+    ans = list(set(ans))
+    for a in ans:
+        print a
+
+
+
 
 if qtype == "capital":
     ph = list()
