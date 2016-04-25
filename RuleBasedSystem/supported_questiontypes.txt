@@ -18,3 +18,5 @@ City is in which state?
 मुंबई  कहाँ है?
 River flows through which states?
 गंगा किन-किन राज्यों से बहती है?
+Entities in (Direction) of State/City
+पंजाब के दक्षिण में कौनसे राज्य है?
