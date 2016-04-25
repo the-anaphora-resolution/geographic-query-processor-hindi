@@ -95,6 +95,228 @@ class db:
 
         return table_name
 
+    def process_query(self, qtype):
+        if qtype == "distance":
+            ph = list()
+            for e in params:
+                k, v = e.split(':')
+                if k == 'L1' or k == 'L2':
+                    qtable = inst.get_table(v)
+                ph .append(v)
+            ph.append(qtable)
+            #print "ph: ", ph
+            res = inst.exec_query(qtype,ph)        
+            mf = 110
+            dist = res[0][0] * mf
+            print ""
+            print "दूरी : ", dist, " KM"
+        
+        if qtype == "size_val":
+            ph = list()
+            k,v = params[0].split(':')
+            print ""
+            # print "v: ", v
+            qtable = inst.get_table(v)
+            ph.append(v)
+            ph.append(qtable)
+            #print "ph: ", ph
+            res = inst.exec_query(qtype, ph)[0][0]
+            #print "res: ", res
+            mf = 11313
+            area = res * mf
+            print ""
+            print convertToHindi(v), " का  क्षेत्र फल : ", area, " Sq KM"
+        
+        if qtype == "within":
+            ph = list()
+            qsubtype = 'list'
+            for e in params:
+                k,v = e.split(':')
+                if k == 'L1':
+                    table_X = inst.get_table(v)
+                    ph.append(v)
+                if k == 'L2':
+                    table_Y = inst.get_table(v)
+                if k == 'result':
+                    qsubtype = v
+            ph.append(table_X)
+            ph.append(table_Y)
+            #print "ph: ", ph
+            if table_Y == "water_lines":
+                qtype = "count_intersect"
+            res = inst.exec_query(qtype, ph)
+            # print params[1].split(':')[1], "in", params[0].split(':')[1], ": "
+            print ""
+            print convertToHindi(params[0].split(':')[1])," की ",convertToHindi(params[1].split(':')[1]), ": "
+            if qsubtype == 'count':
+                print len(res)
+            else:
+                for e in res:
+                    print convertToHindi(e[0])
+        
+        if qtype == "neighbors":
+            ph = list()
+            qsubtype = "list"
+            for e in params:
+                k,v = e.split(':')
+                if k == "L1":
+                    ph.append(v)
+                    qtable = inst.get_table(v)
+                if k == "result":
+                    qsubtype = v
+            ph.append(qtable)
+            res = inst.exec_query(qtype, ph)
+            if qsubtype == "count":
+                print len(res)
+            else:
+                print convertToHindi(v),"के पडोसी राज्य :"
+                for r in res:
+                    print  convertToHindi(r[0])
+        
+        if qtype == "river_intersect":
+            ph = list()
+            qsubtype = "list"
+            for e in params:
+                k,v = e.split(':')
+                if k == "L1":
+                    ph.append(v)
+                    qtable = inst.get_table(v)
+                if k == "result":
+                    qsubtype = v
+            ph.append(qtable)
+            res = inst.exec_query(qtype, ph)
+            if qsubtype == "count":
+                print len(res)
+            else:
+                for r in res:
+                    print  convertToHindi(r[0])
+        
+        if qtype == "city_in":
+            ph = list()
+        
+            for e in params:
+                k,v = e.split(':')
+                if k == "L1":
+                    ph.append(v)
+                    qtable = inst.get_table(v)
+        
+            ph.append(qtable)
+            res = inst.exec_query(qtype, ph)
+        
+            for r in res:
+                print  convertToHindi(r[0])
+        
+        if qtype == "river_length":
+            ph = list()
+        
+            for e in params:
+                k,v = e.split(':')
+                if k == "L1":
+                    ph.append(v)
+                    qtable = inst.get_table(v)
+        
+            ph.append(qtable)
+            res = inst.exec_query(qtype, ph)
+        
+            mf = 248
+            for r in res:
+                print  r[0] * mf
+        
+        if qtype == "direction":
+            ph = list()
+            for e in params:
+                k, v = e.split(':')
+                if k == 'L1' or k == 'L2':
+                    qtable = inst.get_table(v)
+                ph .append(v)
+            ph.append(qtable)
+            #print "ph: ", ph
+            res = inst.exec_query(qtype,ph)        
+            direc = res[0][0]
+        
+            if (direc >= 337.5 and direc <=360) or (direc >= 0 and direc <= 22.5):
+                dir = "North"
+            elif direc >= 22.5 and direc <= 67.5:
+                dir = "North-East"
+            elif direc >= 67.5 and direc <=112.5:
+                dir = "East"
+            elif direc >= 112.5 and direc <= 157.5:
+                dir = "South-East"
+            elif direc >= 157.5 and direc <= 202.5:
+                dir = "South"
+            elif direc >=202.5 and direc <= 247.5:
+                dir = "South-West"
+            elif direc >= 247.5 and direc <= 292.5:
+                dir = "West"
+            elif direc >=292.5 and direc <= 337.5:
+                dir = "North-West"
+        
+            print "दिशा: ", direc, " degrees"
+            print "दिशा: ", convertToHindi(dir.lower())
+        
+        if qtype == "neighbor_direction":
+            print "neighbor direction"
+            rdirec = ""
+            ph = list()
+            for e in params:
+                k, v = e.split(':')
+                if k == 'L1':
+                    qtable = inst.get_table(v)
+                    ph .append(v)
+                if k == 'direction':
+                    rdirec = v
+                
+            ph.append(qtable)
+            print ""
+            # print "ph: ", ph
+            res = inst.exec_query(qtype,ph)        
+            ans = list()
+            print ""
+            print "आवश्यक दिशा: ", convertToHindi(rdirec)
+            for r in res:
+                #print r[0], r[1]
+                direc = r[1]
+                if ((direc >= 315 and direc <=360) or (direc >= 0 and direc <= 45)) and rdirec == "north":
+                    ans.append(r[0])
+                elif direc >= 0 and direc <= 90 and rdirec == "north-east":
+                    ans.append(r[0])
+                elif direc >= 45 and direc <=135 and rdirec == "east":
+                    ans.append(r[0])
+                elif direc >= 90 and direc <= 180 and rdirec == "south-east":
+                    ans.append(r[0])
+                elif direc >= 135 and direc <= 215 and rdirec == "south":
+                    ans.append(r[0])
+                elif direc >=180 and direc <= 270 and rdirec == "south-west":
+                    ans.append(r[0])
+                elif direc >= 225 and direc <= 315 and rdirec == "west":
+                    ans.append(r[0])
+                elif direc >=270 and direc <= 360 and rdirec == "north-west":
+                    ans.append(r[0])
+        
+            ans = list(set(ans))
+            for a in ans:
+                print convertToHindi(a)
+        
+        
+        
+        
+        if qtype == "capital":
+            ph = list()
+            state_name = ""
+            for e in params:
+                k,v = e.split(':')
+                if k == "L1":
+                    ph.append(v)
+                    state_name = v
+                    qtable = inst.get_table(v)
+        
+            ph.append(qtable)
+            res = inst.exec_query(qtype, ph)
+        
+            print ""
+            # print "capital of", state_name, ":", res[0][0]
+            print convertToHindi(state_name), "की राजधानी :", convertToHindi(res[0][0])
+
 
 
 
@@ -119,7 +341,6 @@ def convertToHindi(word):
     return googleTranslate(word)
 
 
-
 inst = db()
 qtype = sys.argv[1]
 params = sys.argv[2:]
@@ -130,229 +351,6 @@ params = sys.argv[2:]
 
 inst.initialize_query_types()
 
-
-if qtype == "distance":
-    ph = list()
-    for e in params:
-        k, v = e.split(':')
-        if k == 'L1' or k == 'L2':
-            qtable = inst.get_table(v)
-        ph .append(v)
-    ph.append(qtable)
-    #print "ph: ", ph
-    res = inst.exec_query(qtype,ph)        
-    mf = 110
-    dist = res[0][0] * mf
-    print ""
-    print "दूरी : ", dist, " KM"
-
-if qtype == "size_val":
-    ph = list()
-    k,v = params[0].split(':')
-    print ""
-    # print "v: ", v
-    qtable = inst.get_table(v)
-    ph.append(v)
-    ph.append(qtable)
-    #print "ph: ", ph
-    res = inst.exec_query(qtype, ph)[0][0]
-    #print "res: ", res
-    mf = 11313
-    area = res * mf
-    print ""
-    print convertToHindi(v), " का  क्षेत्र फल : ", area, " Sq KM"
-
-if qtype == "within":
-    ph = list()
-    qsubtype = 'list'
-    for e in params:
-        k,v = e.split(':')
-        if k == 'L1':
-            table_X = inst.get_table(v)
-            ph.append(v)
-        if k == 'L2':
-            table_Y = inst.get_table(v)
-        if k == 'result':
-            qsubtype = v
-    ph.append(table_X)
-    ph.append(table_Y)
-    #print "ph: ", ph
-    if table_Y == "water_lines":
-        qtype = "count_intersect"
-    res = inst.exec_query(qtype, ph)
-    # print params[1].split(':')[1], "in", params[0].split(':')[1], ": "
-    print ""
-    print convertToHindi(params[0].split(':')[1])," की ",convertToHindi(params[1].split(':')[1]), ": "
-    if qsubtype == 'count':
-        print len(res)
-    else:
-        for e in res:
-            print convertToHindi(e[0])
-
-if qtype == "neighbors":
-    ph = list()
-    qsubtype = "list"
-    for e in params:
-        k,v = e.split(':')
-        if k == "L1":
-            ph.append(v)
-            qtable = inst.get_table(v)
-        if k == "result":
-            qsubtype = v
-    ph.append(qtable)
-    res = inst.exec_query(qtype, ph)
-    if qsubtype == "count":
-        print len(res)
-    else:
-        print convertToHindi(v),"के पडोसी राज्य :"
-        for r in res:
-            print  convertToHindi(r[0])
-
-if qtype == "river_intersect":
-    ph = list()
-    qsubtype = "list"
-    for e in params:
-        k,v = e.split(':')
-        if k == "L1":
-            ph.append(v)
-            qtable = inst.get_table(v)
-        if k == "result":
-            qsubtype = v
-    ph.append(qtable)
-    res = inst.exec_query(qtype, ph)
-    if qsubtype == "count":
-        print len(res)
-    else:
-        for r in res:
-            print  convertToHindi(r[0])
-
-if qtype == "city_in":
-    ph = list()
-
-    for e in params:
-        k,v = e.split(':')
-        if k == "L1":
-            ph.append(v)
-            qtable = inst.get_table(v)
-
-    ph.append(qtable)
-    res = inst.exec_query(qtype, ph)
-
-    for r in res:
-        print  convertToHindi(r[0])
-
-if qtype == "river_length":
-    ph = list()
-
-    for e in params:
-        k,v = e.split(':')
-        if k == "L1":
-            ph.append(v)
-            qtable = inst.get_table(v)
-
-    ph.append(qtable)
-    res = inst.exec_query(qtype, ph)
-
-    mf = 248
-    for r in res:
-        print  r[0] * mf
-
-if qtype == "direction":
-    ph = list()
-    for e in params:
-        k, v = e.split(':')
-        if k == 'L1' or k == 'L2':
-            qtable = inst.get_table(v)
-        ph .append(v)
-    ph.append(qtable)
-    #print "ph: ", ph
-    res = inst.exec_query(qtype,ph)        
-    direc = res[0][0]
-
-    if (direc >= 337.5 and direc <=360) or (direc >= 0 and direc <= 22.5):
-        dir = "North"
-    elif direc >= 22.5 and direc <= 67.5:
-        dir = "North-East"
-    elif direc >= 67.5 and direc <=112.5:
-        dir = "East"
-    elif direc >= 112.5 and direc <= 157.5:
-        dir = "South-East"
-    elif direc >= 157.5 and direc <= 202.5:
-        dir = "South"
-    elif direc >=202.5 and direc <= 247.5:
-        dir = "South-West"
-    elif direc >= 247.5 and direc <= 292.5:
-        dir = "West"
-    elif direc >=292.5 and direc <= 337.5:
-        dir = "North-West"
-
-    print "दिशा: ", direc, " degrees"
-    print "दिशा: ", convertToHindi(dir.lower())
-
-if qtype == "neighbor_direction":
-    print "neighbor direction"
-    rdirec = ""
-    ph = list()
-    for e in params:
-        k, v = e.split(':')
-        if k == 'L1':
-            qtable = inst.get_table(v)
-            ph .append(v)
-        if k == 'direction':
-            rdirec = v
-        
-    ph.append(qtable)
-    print ""
-    # print "ph: ", ph
-    res = inst.exec_query(qtype,ph)        
-    ans = list()
-    print ""
-    print "आवश्यक दिशा: ", convertToHindi(rdirec)
-    for r in res:
-        #print r[0], r[1]
-        direc = r[1]
-        if ((direc >= 315 and direc <=360) or (direc >= 0 and direc <= 45)) and rdirec == "north":
-            ans.append(r[0])
-        elif direc >= 0 and direc <= 90 and rdirec == "north-east":
-            ans.append(r[0])
-        elif direc >= 45 and direc <=135 and rdirec == "east":
-            ans.append(r[0])
-        elif direc >= 90 and direc <= 180 and rdirec == "south-east":
-            ans.append(r[0])
-        elif direc >= 135 and direc <= 215 and rdirec == "south":
-            ans.append(r[0])
-        elif direc >=180 and direc <= 270 and rdirec == "south-west":
-            ans.append(r[0])
-        elif direc >= 225 and direc <= 315 and rdirec == "west":
-            ans.append(r[0])
-        elif direc >=270 and direc <= 360 and rdirec == "north-west":
-            ans.append(r[0])
-
-    ans = list(set(ans))
-    for a in ans:
-        print convertToHindi(a)
-
-
-
-
-if qtype == "capital":
-    ph = list()
-    state_name = ""
-    for e in params:
-        k,v = e.split(':')
-        if k == "L1":
-            ph.append(v)
-            state_name = v
-            qtable = inst.get_table(v)
-
-    ph.append(qtable)
-    res = inst.exec_query(qtype, ph)
-
-    print ""
-    # print "capital of", state_name, ":", res[0][0]
-    print convertToHindi(state_name), "की राजधानी :", convertToHindi(res[0][0])
-
-
     #mf = 11313
     #area = res * mf
     #print "area: ", area, " Sq KM"
@@ -360,3 +358,9 @@ if qtype == "capital":
 #inst.exec_query(qtype,['\'Delhi\'','\'Kanpur\'','administrative2'])
 #inst.exec_query(qtype,['\'Greater Bombay\'','\'Varanasi\'','administrative2'])
 inst.close_conn()
+try:
+    inst.process_query(qtype)
+except:
+    err_file = open('error_file.txt', 'r')
+    err_msg = err_file.read()
+    print err_msg
