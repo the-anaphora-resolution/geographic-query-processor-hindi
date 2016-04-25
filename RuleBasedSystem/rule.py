@@ -44,8 +44,7 @@ def checkQueryProperty(query):
 	if(isPropertyCityIn(query)):
 		return query_types[11]
 
-	#if(isPropertyArea(query)):
-	#	return query_types[6]
+	
 
 
 def printObject(obj):
@@ -68,7 +67,6 @@ def isPropertyNeighborDirection(query):
 	cnt = -1
 	for num in numdic:
 		if len(set(query).intersection(numdic[num])) > 0:
-			print cnt
 			cnt = num
 			break
 	queryNamedEntities= getNamedEntities(query)
@@ -86,7 +84,7 @@ def isPropertyDirection(query):
 	'''
 	input_file_handler= open("../synonyms/property/directions_synonym.txt","r")
 	direction_synonyms=eval(input_file_handler.readline())
-	#print distance_synonyms
+	
 	input_file_handler.close()
 	queryNamedEntities= getNamedEntities(query)
 	
@@ -103,13 +101,13 @@ def isPropertyDistance(query):
 	'''
 	input_file_handler= open("../synonyms/property/distance.txt","r")
 	distance_synonyms=eval(input_file_handler.readline())
-	#print distance_synonyms
+	
 	input_file_handler.close()
 
 	flag=0
 	for i in set(query).intersection(distance_synonyms):
 		flag=1
-		#output_file_handler.write("\n"+i)
+		
 	if flag==1: return True
 
 
@@ -121,7 +119,7 @@ def isPropertyNeighbors(query):
 	'''
 	input_file_handler= open("../synonyms/property/neighbors.txt","r")
 	neighbors_synonyms=eval(input_file_handler.readline())
-	#print inside_synonyms
+	
 	input_file_handler.close()
 
 	#Get Query Named Entities
@@ -131,7 +129,7 @@ def isPropertyNeighbors(query):
 	for i in set(query).intersection(neighbors_synonyms):
 		if len(queryNamedEntities["NNP"])==1:
 			flag=1
-		#output_file_handler.write("\n"+i)
+		
 	if flag==1: return True
 
 
@@ -145,19 +143,16 @@ def isNNP(word):
 	'''
 	fileR="../synonyms/ner/NNP/"
 	for filepath in iglob(os.path.join(fileR, '*.json')): 
-		#print filepath
+		
 		with open(filepath) as f:
-			#print f
+			
 			synonym_dict= eval(f.readline())
 			for key, value in synonym_dict.items():
-				#print key
-				#output_file_handler.write(set(query))
+				
 				if word in value:
-					#print "check 1"
+					
 					return True
-					#print key, value
-			#print synonym_dict
-	#print "check 2"
+					
 	return False
 
 
@@ -168,10 +163,7 @@ def isPropertyWithin(query):
 	@param: query in list format, stripped and split
 	@return: True if a count query, False otherwise
 	'''
-	# input_file_handler= open("../synonyms/property/count.txt","r")
-	# count_synonyms=eval(input_file_handler.readline())
-	# #print inside_synonyms
-	# input_file_handler.close()
+	
 
 	#Get Query Named Entities
 	queryNamedEntities= getNamedEntities(query)
@@ -180,7 +172,7 @@ def isPropertyWithin(query):
 		idx= query.index("में")
 		input_file_handler= open("../synonyms/ner/NN/cnsynlist.json","r")
 		state_synonyms=eval(input_file_handler.readline())
-		#print inside_synonyms
+		
 		input_file_handler.close()
 		if query[idx-1] in state_synonyms["state"]: 
 			#check query[idx-2]
@@ -191,7 +183,7 @@ def isPropertyWithin(query):
 	flag=0
 	if "NN" in queryNamedEntities and "NNP" in queryNamedEntities and len(queryNamedEntities["NN"])==1 and len(queryNamedEntities["NNP"])==1:
 		return True
-		#output_file_handler.write("\n"+i)
+		
 	return False
 
 
@@ -204,29 +196,13 @@ def isPropertySize(query):
 	'''
 	input_file_handler= open("../synonyms/property/area.txt","r")
 	area_synonyms=eval(input_file_handler.readline())
-	#print area_synonyms
-	input_file_handler.close()
-	# input_file_handler= open("../synonyms/property/length.txt","r")
-	# length_synonyms=eval(input_file_handler.readline())
 	
-	# input_file_handler.close()
-	# #print printObject(area_synonyms)
-	#print query[3]
-
-	#hexdump.dump(query[3].decode("utf-8"))
-	#hexdump.dump(area_synonyms[1])
-	#print area_synonyms[1]
-
-	#for x in area_synonyms:
-		#print x == query[3]
-	#print printObject(set(query).intersection(area_synonyms))
+	input_file_handler.close()
+	
 	if len(set(query).intersection(area_synonyms)) > 0:
 		return True
 
-	# if len(set(query).intersection(length_synonyms)) > 0:
-	# 	return True
-
-		#output_file_handler.write("\n"+i)
+	
 	return False
 
 def isPropertyLength(query):
@@ -239,23 +215,11 @@ def isPropertyLength(query):
 	length_synonyms=eval(input_file_handler.readline())
 	
 	input_file_handler.close()
-	# #print printObject(area_synonyms)
-	#print query[3]
-
-	#hexdump.dump(query[3].decode("utf-8"))
-	#hexdump.dump(area_synonyms[1])
-	#print area_synonyms[1]
-
-	#for x in area_synonyms:
-		#print x == query[3]
-	#print printObject(set(query).intersection(area_synonyms))
+	
 	if len(set(query).intersection(length_synonyms)) > 0:
 		return True
 
-	# if len(set(query).intersection(length_synonyms)) > 0:
-	# 	return True
-
-		#output_file_handler.write("\n"+i)
+	
 	return False
 
 
@@ -269,23 +233,14 @@ def isPropertyCapital(query):
 	'''
 	input_file_handler= open("../synonyms/property/capital.txt","r")
 	capital_synonyms=eval(input_file_handler.readline())
-	#print area_synonyms
+	
 	input_file_handler.close()
-	#print printObject(area_synonyms)
-	#print query[3]
-
-	#hexdump.dump(query[3].decode("utf-8"))
-	#hexdump.dump(area_synonyms[1])
-	#print area_synonyms[1]
-
-	#for x in area_synonyms:
-		#print x == query[3]
-	#print printObject(set(query).intersection(area_synonyms))
+	
 	if len(set(query).intersection(capital_synonyms)) > 0:
 		return True
 
 
-		#output_file_handler.write("\n"+i)
+		
 	return False
 
 
@@ -319,7 +274,6 @@ def isPropertySizeList(query):
 	if  not isPropertySize(query):
 		return False
 	cnt = getCountNeeded(query)
-	print cnt
 	if cnt == -1:
 		return False
 	return True
@@ -483,7 +437,7 @@ def getNeighborsParameters(query, queryNamedEntities):
 	paradic['L1'] = queryNamedEntities["NNP"][0]
 	input_file_handler= open("../synonyms/property/count.txt","r")
 	count_synonyms=eval(input_file_handler.readline())
-	#print inside_synonyms
+	
 	input_file_handler.close()
 	if len(set(query).intersection(count_synonyms)) > 0:
 		paradic['result'] = "count"
@@ -529,8 +483,7 @@ def getDirectionParameters(query):
 						if val in set(nounset) and val not in hindi_list:
 							hindi_list.append(val)
 							break
-	# print hindi_list[0].decode('utf-8')
-	# print hindi_list[1].decode('utf-8')
+	
 	key_word3=query.index(hindi_list[0])
 	key_word4=query.index(hindi_list[1])
 	
@@ -582,21 +535,19 @@ def getNamedEntities(query):
 	flag=0
 	fileR="../synonyms/ner/NNP/"
 	for filepath in iglob(os.path.join(fileR, '*.json')): 
-		#print filepath
+		
 		with open(filepath) as f:
-			#print f
+			
 			synonym_dict= eval(f.readline())
 			for key, value in synonym_dict.items():
-				#print key
-				#output_file_handler.write(set(query))
+				
 				if len(set(nounset).intersection(value)) >0:
 					if flag==0:
 						flag=1
 						ner["NNP"]=[]
 					if key not in ner["NNP"]:
 						ner["NNP"].append(key)
-					#print key, value
-			#print synonym_dict
+					
 
 	#Finding NN ners
 	flag=0	
@@ -604,19 +555,17 @@ def getNamedEntities(query):
 	for filepath in iglob(os.path.join(fileR, '*.json')): 
 		#print filepath
 		with open(filepath) as f:
-			#print f
+			
 			synonym_dict= eval(f.readline())
 			for key, value in synonym_dict.items():
-				#print key
-				#output_file_handler.write(set(query))
+				
 				if len(set(query).intersection(value)) >0:
 					if flag==0:
 						flag=1
 						ner["NN"]=[]
 					if key not in ner["NN"]:
 						ner["NN"].append(key)
-					#print key, value
-			#print synonym_dict
+					
 	
 	return ner
 
@@ -636,7 +585,6 @@ def getWithinParameters(queryNamedEntities):
 		result["L2"]=queryNamedEntities["NN"][1]
 	input_file_handler= open("../synonyms/property/count.txt","r")
 	count_synonyms=eval(input_file_handler.readline())
-	#print inside_synonyms
 	input_file_handler.close()
 	if len(set(query).intersection(count_synonyms)) > 0:
 		result['result'] = "count"
@@ -652,8 +600,7 @@ Main Execution point of the program begins here-->
 print "GEOGRAPHIC QUESTION ANSWERING SYSTEM"
 print "------------------------------------\n"
 print "Loading Query from file... "
-#time.sleep(2)
-#filePath=sys.argv[1]
+
 filePath="hindiQuery.txt"
 
 input_file_handler= open(filePath,"r")
@@ -679,9 +626,7 @@ if (useShallowParser):
 				nounset.add(ent)
 
 
-#print len(nounset)
-#print printObject(nounset)
-##a = raw_input() 
+
 #removing ? mark from the end of the input query
 queryString=input_file_handler.readline().strip()
 if queryString[-1:]=="?":
@@ -691,7 +636,7 @@ query = queryString.replace("-", "_")
 query=query.rstrip('\n').split()
 if not useShallowParser:
 	nounset = set(query)
-#print query
+
 input_file_handler.close()
 
 #Get type of query 
