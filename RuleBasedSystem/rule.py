@@ -12,7 +12,7 @@ import json
 import os
 
 outfile_path = "query_info.txt"
-query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'river_length', 'area', 'within', 'size_list', 'size_val', 'capital','city_in','neighbor_direction']
+query_types = ['distance', 'direction', 'neighbors', 'width', 'height', 'river_length', 'area', 'within', 'size_list', 'size_val', 'capital','city_in','neighbor_direction', 'river_intersect']
 
 
 def checkQueryProperty(query):
@@ -39,9 +39,8 @@ def checkQueryProperty(query):
 		return query_types[2]
 	if(isPropertyWithin(query)):	
 		return query_types[7]
-	#elif (isPropertyWithin(query)=="city_in"):
-	#	return query_types[11]
-
+	if isPropertyRiverIntersect(query):
+		return query_types[13]
 	if(isPropertyCityIn(query)):
 		return query_types[11]
 
@@ -260,6 +259,8 @@ def isPropertyLength(query):
 	return False
 
 
+
+
 def isPropertyCapital(query):
 	'''
 	Function to check if the query is a Capital query or not
@@ -286,6 +287,26 @@ def isPropertyCapital(query):
 
 		#output_file_handler.write("\n"+i)
 	return False
+
+
+
+
+def isPropertyRiverIntersect(query):
+	'''
+	Function to check if the query is a River Intersect query or not
+	@param: query in list format, stripped and split
+	@return: True if a area query, False otherwise
+	'''
+	input_file_handler= open("../synonyms/property/flow.txt","r")
+	flow_synonyms=eval(input_file_handler.readline())
+	input_file_handler.close()
+	if len(set(query).intersection(flow_synonyms)) > 0:
+		return True
+
+
+		
+	return False
+
 
 
 
@@ -392,6 +413,22 @@ def getCityInParameters(query):
 	paradic["L1"] = queryNamedEntities["NNP"][0]
 	
 	return paradic
+
+
+def getRiverIntersect(query):
+	'''
+	Function to find the River Intersect property of a query
+	@param: query in list format, stripped and split
+	@return: Size property in query 
+	'''
+
+	queryNamedEntities= getNamedEntities(query)
+	paradic = dict()
+	paradic["L1"] = queryNamedEntities["NNP"][0]
+	
+	return paradic
+
+
 
 
 def getSizeListParameters(query):
@@ -697,7 +734,11 @@ elif queryProperty == "neighbors":
 	queryNamedEntities= getNamedEntities(query)
 	queryNamedEntities=getNeighborsParameters(query,queryNamedEntities)
 	output_file_handler.write(str(queryNamedEntities))
-	print queryNamedEntities
+	print queryNamedEntities	
+elif queryProperty == "river_intersect":
+	riverintersectproperty=getRiverIntersect(query)
+	output_file_handler.write(str(riverintersectproperty))
+	print riverintersectproperty
 elif queryProperty == "neighbor_direction":
 	neighborDirectionEntities=getNeighborDirectionParameters(query)
 	output_file_handler.write(str(neighborDirectionEntities))

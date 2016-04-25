@@ -16,3 +16,5 @@ Length of River:
 यमुना कितनी लम्बी है?
 City is in which state?
 मुंबई  कहाँ है?
+River flows through which states?
+गंगा किन-किन राज्यों से बहती है?
