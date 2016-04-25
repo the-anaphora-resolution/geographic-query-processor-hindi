@@ -638,67 +638,69 @@ if not useShallowParser:
 	nounset = set(query)
 
 input_file_handler.close()
+try:
+	#Get type of query 
+	queryProperty = checkQueryProperty(query)
+	output_file_handler.write(str(queryProperty) + "\n")
+	print queryProperty
 
-#Get type of query 
-queryProperty = checkQueryProperty(query)
-output_file_handler.write(str(queryProperty) + "\n")
-print queryProperty
-
-#Get Query Named Entities
-if queryProperty == "distance":
-	distanceParameters= getLocationParameters(query)
-	output_file_handler.write(str(distanceParameters))
-	print distanceParameters
-elif queryProperty == "size_list":
-	sizeParameters = getSizeListParameters(query)
-	output_file_handler.write(str(sizeParameters))
-	print sizeParameters
-elif queryProperty == 'river_length':
-	len_valParameters = getSizeValParameters(query) #Using same method since result is same
-	output_file_handler.write(str(len_valParameters))
-	print len_valParameters
-elif queryProperty == "size_val":
-	size_valParameters = getSizeValParameters(query)
-	output_file_handler.write(str(size_valParameters))
-	print size_valParameters
-elif queryProperty == "direction":
-	directionParameters= getDirectionParameters(query)
-	output_file_handler.write(str(directionParameters))
-	print directionParameters
-elif queryProperty == "capital":
-	queryNamedEntities= getNamedEntities(query)
-	capitalProperties=getCapitalParameters(queryNamedEntities)
-	output_file_handler.write(str(capitalProperties))	
-	print capitalProperties
-elif queryProperty == "within":
-	queryNamedEntities= getNamedEntities(query)
-	queryNamedEntities=getWithinParameters(queryNamedEntities)
-	output_file_handler.write(str(queryNamedEntities))
-	print queryNamedEntities
-elif queryProperty == "neighbors":
-	queryNamedEntities= getNamedEntities(query)
-	queryNamedEntities=getNeighborsParameters(query,queryNamedEntities)
-	output_file_handler.write(str(queryNamedEntities))
-	print queryNamedEntities	
-elif queryProperty == "river_intersect":
-	riverintersectproperty=getRiverIntersect(query)
-	output_file_handler.write(str(riverintersectproperty))
-	print riverintersectproperty
-elif queryProperty == "neighbor_direction":
-	neighborDirectionEntities=getNeighborDirectionParameters(query)
-	output_file_handler.write(str(neighborDirectionEntities))
-	print neighborDirectionEntities
-#Last Rule- city_in query
-elif queryProperty == "city_in":
-	queryNamedEntities= getNamedEntities(query)
-	queryNamedEntities=getCityInParameters(queryNamedEntities)
-	output_file_handler.write(str(queryNamedEntities))
-	print queryNamedEntities
-
-
-
-#Define the Query based on the above parameters
-
-output_file_handler.close()
+	#Get Query Named Entities
+	if queryProperty == "distance":
+		distanceParameters= getLocationParameters(query)
+		output_file_handler.write(str(distanceParameters))
+		print distanceParameters
+	elif queryProperty == "size_list":
+		sizeParameters = getSizeListParameters(query)
+		output_file_handler.write(str(sizeParameters))
+		print sizeParameters
+	elif queryProperty == 'river_length':
+		len_valParameters = getSizeValParameters(query) #Using same method since result is same
+		output_file_handler.write(str(len_valParameters))
+		print len_valParameters
+	elif queryProperty == "size_val":
+		size_valParameters = getSizeValParameters(query)
+		output_file_handler.write(str(size_valParameters))
+		print size_valParameters
+	elif queryProperty == "direction":
+		directionParameters= getDirectionParameters(query)
+		output_file_handler.write(str(directionParameters))
+		print directionParameters
+	elif queryProperty == "capital":
+		queryNamedEntities= getNamedEntities(query)
+		capitalProperties=getCapitalParameters(queryNamedEntities)
+		output_file_handler.write(str(capitalProperties))	
+		print capitalProperties
+	elif queryProperty == "within":
+		queryNamedEntities= getNamedEntities(query)
+		queryNamedEntities=getWithinParameters(queryNamedEntities)
+		output_file_handler.write(str(queryNamedEntities))
+		print queryNamedEntities
+	elif queryProperty == "neighbors":
+		queryNamedEntities= getNamedEntities(query)
+		queryNamedEntities=getNeighborsParameters(query,queryNamedEntities)
+		output_file_handler.write(str(queryNamedEntities))
+		print queryNamedEntities	
+	elif queryProperty == "river_intersect":
+		riverintersectproperty=getRiverIntersect(query)
+		output_file_handler.write(str(riverintersectproperty))
+		print riverintersectproperty
+	elif queryProperty == "neighbor_direction":
+		neighborDirectionEntities=getNeighborDirectionParameters(query)
+		output_file_handler.write(str(neighborDirectionEntities))
+		print neighborDirectionEntities
+	#Last Rule- city_in query
+	elif queryProperty == "city_in":
+		queryNamedEntities= getNamedEntities(query)
+		queryNamedEntities=getCityInParameters(queryNamedEntities)
+		output_file_handler.write(str(queryNamedEntities))
+		print queryNamedEntities
 
 
+
+	#Define the Query based on the above parameters
+
+	output_file_handler.close()
+
+except:
+	with open("../error message", "r") as f1:
+		print (f1.readline())
