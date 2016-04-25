@@ -628,8 +628,9 @@ if (useShallowParser):
 
 
 #removing ? mark from the end of the input query
-print queryString
 queryString=input_file_handler.readline().strip()
+print queryString
+
 if queryString[-1:]=="?":
 	queryString=queryString[:-1]
 
