@@ -628,6 +628,7 @@ if (useShallowParser):
 
 
 #removing ? mark from the end of the input query
+print queryString
 queryString=input_file_handler.readline().strip()
 if queryString[-1:]=="?":
 	queryString=queryString[:-1]
@@ -702,5 +703,5 @@ try:
 	output_file_handler.close()
 
 except:
-	with open("../error message", "r") as f1:
+	with open("error_file.txt", "r") as f1:
 		print (f1.readline())
