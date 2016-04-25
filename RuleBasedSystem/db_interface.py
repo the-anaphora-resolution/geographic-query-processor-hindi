@@ -3,7 +3,7 @@
 
 __author__ = "Chinmaya Gautam"
 __copyright__ = "Copyright 2016, The Anaphora Resolution"
-__credits__ = ["Chinamya Gautam", "Harsh Fatehpuria", "Rahul Agrawal", "Simrat Singh Chabbra"]
+__credits__ = ["Chinamya Gautam", "Harsh Fatepuria", "Rahul Agrawal", "Simrat Singh Chabbra"]
 __license__ = "GPL"
 __version__ = "1.0.2"
 __maintainer__ = "Chinmaya Gautam"
@@ -16,6 +16,10 @@ and appropriate library paths to be setup
 '''
 import psycopg2
 import sys
+from apiclient.discovery import build
+from glob import iglob
+import json
+import os
 
 class db:
     
@@ -69,6 +73,7 @@ class db:
             query = ph_val.join(temp)
         
         #print query
+        print ""
         print "query: ", query
         self.cur.execute(query)
         data = ""
@@ -89,6 +94,31 @@ class db:
         map_file.close()
 
         return table_name
+
+
+
+
+def googleTranslate(word):
+  service = build('translate', 'v2', developerKey='AIzaSyBEnSzexXv-Ve1E-d9rjHvygguF6rX9I8U')
+  return service.translations().list(
+      source='en',
+      target='hi',
+      q=word.decode('utf-8')
+    ).execute()["translations"][0]["translatedText"]
+
+def convertToHindi(word):
+    flag=0
+    fileR="../synonyms/ner/NNP/"
+    for filepath in iglob(os.path.join(fileR, '*.json')): 
+        #print filepath
+        with open(filepath) as f:
+            #print f
+            synonym_dict= eval(f.readline())
+            if word in synonym_dict:
+                return synonym_dict[word][0]
+    return googleTranslate(word)
+
+
 
 inst = db()
 qtype = sys.argv[1]
@@ -113,12 +143,14 @@ if qtype == "distance":
     res = inst.exec_query(qtype,ph)        
     mf = 110
     dist = res[0][0] * mf
-    print "distance: ", dist, " KM"
+    print ""
+    print "दूरी : ", dist, " KM"
 
 if qtype == "size_val":
     ph = list()
     k,v = params[0].split(':')
-    print "v: ", v
+    print ""
+    # print "v: ", v
     qtable = inst.get_table(v)
     ph.append(v)
     ph.append(qtable)
@@ -127,7 +159,8 @@ if qtype == "size_val":
     #print "res: ", res
     mf = 11313
     area = res * mf
-    print "area: ", area, " Sq KM"
+    print ""
+    print convertToHindi(v), " का  क्षेत्र फल : ", area, " Sq KM"
 
 if qtype == "within":
     ph = list()
@@ -147,12 +180,14 @@ if qtype == "within":
     if table_Y == "water_lines":
         qtype = "count_intersect"
     res = inst.exec_query(qtype, ph)
-    print params[1].split(':')[1], "in", params[0].split(':')[1], ": "
+    # print params[1].split(':')[1], "in", params[0].split(':')[1], ": "
+    print ""
+    print convertToHindi(params[0].split(':')[1])," की ",convertToHindi(params[1].split(':')[1]), ": "
     if qsubtype == 'count':
         print len(res)
     else:
         for e in res:
-            print e[0]
+            print convertToHindi(e[0])
 
 if qtype == "neighbors":
     ph = list()
@@ -169,8 +204,9 @@ if qtype == "neighbors":
     if qsubtype == "count":
         print len(res)
     else:
+        print convertToHindi(v),"के पडोसी राज्य :"
         for r in res:
-            print  r[0]
+            print  convertToHindi(r[0])
 
 if qtype == "river_intersect":
     ph = list()
@@ -188,7 +224,7 @@ if qtype == "river_intersect":
         print len(res)
     else:
         for r in res:
-            print  r[0]
+            print  convertToHindi(r[0])
 
 if qtype == "city_in":
     ph = list()
@@ -203,7 +239,7 @@ if qtype == "city_in":
     res = inst.exec_query(qtype, ph)
 
     for r in res:
-        print  r[0]
+        print  convertToHindi(r[0])
 
 if qtype == "river_length":
     ph = list()
@@ -250,8 +286,8 @@ if qtype == "direction":
     elif direc >=292.5 and direc <= 337.5:
         dir = "North-West"
 
-    print "direction: ", direc, " degrees"
-    print "direction: ", dir
+    print "दिशा: ", direc, " degrees"
+    print "दिशा: ", convertToHindi(dir.lower())
 
 if qtype == "neighbor_direction":
     print "neighbor direction"
@@ -266,10 +302,12 @@ if qtype == "neighbor_direction":
             rdirec = v
         
     ph.append(qtable)
-    print "ph: ", ph
+    print ""
+    # print "ph: ", ph
     res = inst.exec_query(qtype,ph)        
     ans = list()
-    print "direction required: ", rdirec
+    print ""
+    print "आवश्यक दिशा: ", convertToHindi(rdirec)
     for r in res:
         #print r[0], r[1]
         direc = r[1]
@@ -292,7 +330,7 @@ if qtype == "neighbor_direction":
 
     ans = list(set(ans))
     for a in ans:
-        print a
+        print convertToHindi(a)
 
 
 
@@ -310,7 +348,9 @@ if qtype == "capital":
     ph.append(qtable)
     res = inst.exec_query(qtype, ph)
 
-    print "capital of", state_name, ":", res[0][0]
+    print ""
+    # print "capital of", state_name, ":", res[0][0]
+    print convertToHindi(state_name), "की राजधानी :", convertToHindi(res[0][0])
 
 
     #mf = 11313
