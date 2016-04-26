@@ -16,9 +16,9 @@ public class App
     public static void main( String[] args ) throws IOException
     {
 
-//		getSynonyms();
-		getSentenceDetails();
-//		useTranslate();
+//		getSynonyms("बहती");
+//		getSentenceDetails();
+		useTranslate();
     }
     
     public static void useTranslate()
@@ -144,11 +144,11 @@ public class App
 							}
 							
 							
-//							System.out.print("[");
-//							
-//							for( i=0;i<syns.size()-1; i++ )
-//								System.out.print("\""+syns.get(i)+"\" , ");
-//							System.out.print("\""+syns.get(i)+"\"]");
+							System.out.print("[");
+							
+							for( i=0;i<syns.size()-1; i++ )
+								System.out.print("\""+syns.get(i)+"\" , ");
+							System.out.print("\""+syns.get(i)+"\"]");
 							
 							
 							

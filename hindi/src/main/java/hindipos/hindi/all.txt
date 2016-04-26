@@ -1,0 +1,3513 @@
+ country_name 
+--------------
+ India
+
+         states         
+------------------------
+ Chhattisgarh
+ Uttaranchal
+ Goa
+ Sikkim
+ Meghalaya
+ Tamil Nadu
+ Jammu and Kashmir
+ Uttar Pradesh
+ Rajasthan
+ Madhya Pradesh
+ Andhra Pradesh
+ Dadra and Nagar Haveli
+ Nagaland
+ Jharkhand
+ Puducherry
+ Lakshadweep
+ Maharashtra
+ Mizoram
+ Punjab
+ West Bengal
+ Tripura
+ Himachal Pradesh
+ Arunachal Pradesh
+ Karnataka
+ Gujarat
+ Manipur
+ Haryana
+ Chandigarh
+ Assam
+ Daman and Diu
+ Orissa
+ Andaman and Nicobar
+ Bihar
+ Kerala
+ Delhi
+ 
+ 
+ 
+
+
+          cities          
+--------------------------
+ Rae Bareli
+ Belgaum
+ Hyderabad
+ Madhubani
+ Purba Singhbhum
+ Chandauli
+ Koderma
+ Raj Nandgaon
+ Firozpur
+ Nadia
+ Neemuch
+ Theni
+ Upper Subansiri
+ Kollam
+ Shimoga
+ Khordha
+ Jalgaon
+ Nuapada
+ Zunheboto
+ Hathras
+ Virudhunagar
+ Basti
+ Vidisha
+ Uttarkashi
+ Tonk
+ Kanpur
+ East Midnapore
+ Puri
+ Satara
+ Papum Pare
+ Panipat
+ Barpeta
+ Begusarai
+ Upper Dibang Valley
+ Alwar
+ Andaman Islands
+ Rajkot
+ East Nimar
+ Khammam
+ Agra
+ Dhalai
+ Cuddapah
+ Mamit
+ Jamui
+ Bellary
+ Simdega
+ Chamba
+ Dhule
+ Sirsa
+ Patna
+ Gorakhpur
+ Guna
+ Cuttack
+ Bhandara
+ Mahesana
+ Mon
+ Bhadrak
+ Erode
+ Bijnor
+ Sonepat
+ Gulbarga
+ East Godavari
+ Kancheepuram
+ Mahbubnagar
+ Udaipur
+ Pashchim Champaran
+ Alappuzha
+ Lalitpur
+ Yanam
+ Nanded
+ Darrang
+ Tiruchchirappalli
+ West Kameng
+ Sonitpur
+ Dharwad
+ Sirmaur
+ Gopalganj
+ Sirohi
+ Shajapur
+ East Siang
+ Sitamarhi
+ Bidar
+ Dhanbad
+ Mirzapur
+ East Khasi Hills
+ Bareilly
+ Banas Kantha
+ Udham Singh Nagar
+ Ashoknagar
+ West Nimar
+ Rupnagar
+ Lower Dibang Valley
+ Cachar
+ Muktsar
+ Osmanabad
+ North Goa
+ Sawai Madhopur
+ Faizabad
+ Lakhimpur
+ Tiruvannamalai
+ Purba Champaran
+ Barddhaman
+ Tirap
+ Ganganagar
+ Kanniyakumari
+ Satna
+ Keonjhar
+ Bagalkot
+ Jorhat
+ Baleshwar
+ Sehore
+ West Imphal
+ Buldana
+ Baramula (Kashmir North)
+ Ladakh (Leh)
+ Banda
+ Kurnool
+ Ri-Bhoi
+ Krishna
+ Udupi
+ Thanjavur
+ Sundargarh
+ Sheohar
+ Kamrup
+ Kokrajhar
+ Pali
+ Senapati
+ Marigaon
+ Pattanamtitta
+ Lawngtlai
+ Mansa
+ Balrampur
+ Parbhani
+ Buxar
+ Garhwa
+ Mahoba
+ South Goa
+ Katihar
+ Muzaffarpur
+ Nalanda
+ Ghaziabad
+ Rampur
+ Faridabad
+ Kohima
+ Raigarh
+ Panchkula
+ Idukki
+ Pudukkottai
+ Lohardaga
+ Jammu
+ Jalpaiguri
+ Betul
+ Angul
+ Meerut
+ Tikamgarh
+ Dharmapuri
+ Vizianagaram
+ Shahjahanpur
+ Sitapur
+ Jaintia Hills
+ Mandi
+ Balaghat
+ Hailakandi
+ Bangalore Urban
+ Mahendragarh
+ Greater Bombay
+ Saran
+ Dumka
+ Karnal
+ Bangalore Rural
+ Solan
+ Jashpur
+ Moga
+ Dhar
+ Jaisalmer
+ Nellore
+ Gaya
+ Golaghat
+ Sibsagar
+ Gadag
+ Murshidabad
+ Chamoli
+ Anuppur
+ Villupuram
+ Jhunjhunun
+ Bishnupur
+ Pune
+ Pithoragarh
+ Wayanad
+ Gurgaon
+ Chikmagalur
+ Shivpuri
+ Medak
+ Guntur
+ Vishakhapatnam
+ Farrukhabad
+ Junagadh
+ Firozabad
+ Amravati
+ Aligarh
+ West Tripura
+ Jhalawar
+ Gajapati
+ Latehar
+ Karur
+ Ukhrul
+ South Sikkim
+ Purnia
+ Sonbhadra
+ Amreli
+ Wardha
+ Jehanabad
+ Sambalpur
+ Supaul
+ West Siang
+ West Khasi Hills
+ Bahraich
+ Sabar Kantha
+ Rudra Prayag
+ Perambalur
+ Banka
+ Giridih
+ Chandrapur
+ Gurdaspur
+ Bhojpur
+ Sheopur
+ East Imphal
+ Karbi Anglong
+ West Garo Hills
+ Kalahandi
+ Mahasamund
+ Hanumangarh
+ Navsari
+ Bhiwani
+ Washim
+ Tawang
+ Jhajjar
+ Siwan
+ Gonda
+ Bhind
+ Kishanganj
+ Dadra and Nagar Haveli
+ Shahdol
+ Kinnaur
+ Kolkata
+ Munger
+ Yamuna Nagar
+ Kurung Kumey
+ Latur
+ Hardoi
+ Bhilwara
+ Kolasib
+ Churu
+ Uttar Dinajpur
+ Nawan Shehar
+ Naini Tal
+ Ariyalur
+ Deoghar
+ North 24 Parganas
+ Darjiling
+ Bharuch
+ Kendrapara
+ Lakhimpur Kheri
+ Rajgarh
+ Bhavnagar
+ Tumkur
+ Nilgiris
+ Mau
+ Dantewada
+ Jalna
+ Raichur
+ Dhamtari
+ Bankura
+ Jhansi
+ Madhepura
+ Palakkad
+ Jharsuguda
+ Chamrajnagar
+ Banswara
+ Kochbihar
+ Mainpuri
+ Prakasam
+ Sant Kabir Nagar
+ Sangrur
+ Mokokchung
+ Ganjam
+ Jaipur
+ Panna
+ Birbhum
+ Auraiya
+ Mysore
+ Mahe
+ Fatehgarh Sahib
+ Azamgarh
+ Gandhinagar
+ Lahul and Spiti
+ Kangra
+ Rewari
+ Allahabad
+ Raipur
+ Muzaffarnagar
+ Delhi
+ Dehra Dun
+ Shravasti
+ Almora
+ Pratapgarh
+ Morena
+ Sultanpur
+ Nabarangpur
+ Lucknow
+ Udhampur
+ Saharsa
+ Bulandshahr
+ Maharajganj
+ West Sikkim
+ Dhaulpur
+ Unnao
+ Cuddalore
+ Bageshwar
+ Gautam Buddha Nagar
+ Kaushambi
+ Burhanpur
+ Rangareddi
+ Champhai
+ Adilabad
+ Dhuburi
+ Malkangiri
+ Damoh
+ Haora
+ Ranchi
+ South Garo Hills
+ Amritsar
+ Ratlam
+ Namakkal
+ Dhemaji
+ Chatra
+ Kottayam
+ Rajsamand
+ Ambala
+ West Midnapore
+ Moradabad
+ Datia
+ Nashik
+ Rajauri
+ Thiruvananthapuram
+ Sikar
+ Nagpur
+ Fatehpur
+ Jind
+ Deogarh
+ Sivaganga
+ Nandurbar
+ Ludhiana
+ Tirunelveli Kattabo
+ Bhabua
+ Jajpur
+ Bhopal
+ Kolhapur
+ Garhchiroli
+ Thiruvarur
+ Mathura
+ Ballia
+ Badaun
+ Mayurbhanj
+ Kheda
+ Patan
+ Baragarh
+ Kanker
+ Kushinagar
+ Gwalior
+ Malappuram
+ Karaikal
+ Valsad
+ Sahibganj
+ Puruliya
+ Nawada
+ Ratnagiri
+ Janjgir-Champa
+ The Dangs
+ Jamnagar
+ Surguja
+ Varanasi
+ Umaria
+ Sant Ravi Das Nagar
+ Solapur
+ South 24 Parganas
+ Saraikela Kharsawan
+ Baghpat
+ Haridwar
+ Thoothukudi
+ Ahmednagar
+ Wokha
+ Upper Siang
+ Palamu
+ Dindigul
+ Srikakulam
+ North Cachar Hills
+ Kolar
+ Nagapattinam
+ Koppal
+ Sonepur
+ Kodagu
+ Tuensang
+ Kota
+ Jamtara
+ Karimnagar
+ Lohit
+ Hisar
+ Chittoor
+ Surendranagar
+ Chandigarh
+ Nizamabad
+ Kurukshetra
+ Rewa
+ Chitradurga
+ Panch Mahals
+ Daman
+ Jabalpur
+ Seoni
+ Warangal
+ Kaithal
+ Dewas
+ Karauli
+ Darbhanga
+ Bongaigaon
+ Punch
+ Samastipur
+ Pashchim Singhbhum
+ Anantnag (Kashmir South)
+ Thoubal
+ Tinsukia
+ Aizawl
+ Durg
+ Khagaria
+ Bharatpur
+ Deoria
+ Hazaribag
+ Kapurthala
+ Hoshiarpur
+ Dausa
+ Rohtas
+ Nagaur
+ Nalgonda
+ Baran
+ Nalbari
+ Boudh
+ Bijapur
+ Lunglei
+ Patiala
+ Phek
+ Davanagere
+ Kawardha
+ Gondiya
+ South Tripura
+ Akola
+ Jalor
+ Kullu
+ Kozhikode
+ West Godavari
+ Chittaurgarh
+ Katni
+ Champawat
+ Gumla
+ Jodhpur
+ Sangli
+ Pulwama
+ Lakhisarai
+ Dhenkanal
+ Pauri Garhwal
+ Ujjain
+ North Tripura
+ Dahod
+ Thane
+ Chennai
+ Tamenglong
+ Salem
+ Godda
+ Kupwara (Muzaffarabad)
+ Barwani
+ Jagatsinghpur
+ Coimbatore
+ North Sikkim
+ Faridkot
+ Madurai
+ Vellore
+ Ernakulam
+ Jalaun
+ Saiha
+ Churachandpur
+ Indore
+ Sidhi
+ Uttar Kannand
+ Aurangabad
+ Kannauj
+ Koriya
+ Jaunpur
+ Kavaratti
+ Bilaspur
+ Saharanpur
+ Puducherry
+ Ghazipur
+ Chitrakoot
+ Vadodara
+ Serchhip
+ Anantapur
+ Narsinghpur
+ Una
+ East Garo Hills
+ Fatehabad
+ Nicobar Islands
+ Karimganj
+ Shimla
+ Jyotiba Phule Nagar
+ Dindori
+ East
+ Nayagarh
+ Mandya
+ Kannur
+ Kachchh
+ Korba
+ Surat
+ Bokaro
+ Maldah
+ Rayagada
+ Bundi
+ Changlang
+ Chandel
+ Barmer
+ Srinagar
+ Hoshangabad
+ Thrissur
+ Siddharth Nagar
+ Ajmer
+ Chhindwara
+ Rohtak
+ Sagar
+ Sheikhpura
+ Kargil
+ Jalandhar
+ Ambedkar Nagar
+ Kanpur Dehat
+ Tehri Garhwal
+ Kasaragod
+ Ramanathapuram
+ Sindhudurg
+ Bid
+ Dibrugarh
+ Porbandar
+ Haveri
+ Nagaon
+ Dimapur
+ Hingoli
+ Pakur
+ Koraput
+ Bara Banki
+ Bolangir
+ Thiruvallur
+ Anand
+ Bikaner
+ Lower Subansiri
+ Mandsaur
+ Vaishali
+ East Kameng
+ Narmada
+ Bagdam
+ Hassan
+ Goalpara
+ Bhagalpur
+ Chhatarpur
+ Dakshin Kannad
+ Doda
+ Bathinda
+ Yavatmal
+ Bastar
+ Ahmadabad
+ Pilibhit
+ Dakshin Dinajpur
+ Mandla
+ Hugli
+ Araria
+ Hamirpur
+ Etah
+ Dungarpur
+ Raisen
+ Jhabua
+ Kandhamal
+ Harda
+ Kathua
+ Etawah
+(589 rows)
+
+        cities        
+----------------------
+ Belgaum
+ n.a. ( 1198)
+ Sironj
+ Firozpur
+ Kamthi
+ Pollachi
+ Beawar
+ Kiraoli
+ Loharu
+ Shilla
+ Nanguneri
+ Shimoga
+ Parasia
+ Kulittalai
+ n.a. ( 902)
+ Jambusar
+ Tumsar
+ Manasa
+ Bindra Nawagarh
+ Bagicha
+ Devgadh Bariya
+ Pharenda
+ n.a. ( 1337)
+ Tiruchchendur
+ n.a. ( 1998)
+ Arnaud
+ Aurad
+ Gangdhar
+ Udala
+ Narasaraopet
+ Cuddapah
+ Jamui
+ Konta
+ Salon
+ Sirsa
+ Chamursi
+ Kunigal
+ Cuttack
+ Kalavad
+ Mehidpur
+ Mon
+ Hansi
+ Wai
+ n.a. ( 1)
+ Sanwer
+ n.a. ( 745)
+ Lakhtar
+ Hosdurga
+ Lalitpur
+ Alattur
+ Bauda
+ Parvathipuram
+ n.a. ( 571)
+ Paithan
+ Barwah
+ Chaibasa
+ Kamjong
+ Kanjirapalli
+ Jath
+ Gopalganj
+ Kanakapura
+ n.a. ( 765)
+ Dataganj
+ Waraseoni
+ Vadia
+ Kalghatgi
+ Cannanore
+ Toda Raisingh
+ Sihor
+ Ranavav
+ Nadbai
+ Naswadi
+ Sabalgarh
+ Hubli
+ Shahpura
+ Lakhimpur
+ Barddhaman
+ Muvattupula
+ Sindkhed Raja
+ Bah
+ Itanagar
+ Paramakkudi
+ Tamluk
+ Hangal
+ Krishnagiri
+ Srungavarapukota
+ Palampur
+ Ulhasnagar
+ Sinor
+ n.a. ( 211)
+ Pehowa
+ Barsar
+ Shri Madhopur
+ Kurnool
+ Mahagaon
+ Chachyot
+ Kokrajhar
+ Alibag
+ Amini Island
+ Ausa
+ Sulya
+ Ajra
+ Chitapur
+ Uluberiya
+ Ghatal
+ Tirumakudal Narsipur
+ Kharchi
+ Mandvi
+ Aspur
+ Buxar
+ Vedasandur
+ Ponnani
+ Indapur
+ Indi
+ Katihar
+ Kheralu
+ Kyelang
+ Shrigonda
+ n.a. ( 9)
+ Molakalmuru
+ Gond Pipri
+ Khambhat
+ Dhampur
+ Salumbar
+ Kovvur
+ Chaksu
+ Akalkot
+ Betul
+ Rahuri
+ Alampur
+ Shahjahanpur
+ Jatara
+ Pawai
+ Nagercoil
+ Gondia
+ Khandar
+ Asifabad
+ Farooq Nagar
+ Thanesar
+ Mahendragarh
+ Mandal
+ Milak
+ Sanand
+ Karnal
+ Tiruvidaimarudur
+ Dabhoi
+ Solan
+ Jamwa Ramgarh
+ Moga
+ Dhar
+ Kankauli
+ Hindaun
+ Pattukkottai
+ Golaghat
+ Barh
+ Hajipur
+ Bhadravathi
+ Bishnupur
+ Jhunjhunun
+ Udaipurwati
+ n.a. ( 352)
+ Pithoragarh
+ Manawar
+ Gurgaon
+ Chikmagalur
+ Shivpuri
+ Allagadda
+ Brahmaur
+ Alot
+ Dharchula
+ Guntur
+ Athni
+ Manapparai
+ Karchana
+ Sihora
+ Bargarh
+ Valod
+ Patnagarh
+ Amravati
+ Devikolam
+ Rawatsar
+ Bilgram
+ Ahwa
+ Dharmavaram
+ Athagarh
+ Shahabad
+ n.a. ( 347)
+ Lahar
+ Purnia
+ Barakpur
+ Narainpur
+ Sorab
+ Kasom Khullen
+ Perambalur
+ Madnur
+ Banka
+ Chandrapur
+ Lundra
+ Kakching
+ Dhari
+ Jamkhandi
+ Mahasamund
+ Sonapur
+ Padrauna
+ Pirmed
+ Majalgaon
+ Sonipat
+ Ner
+ Henima
+ n.a. ( 1152)
+ Bhind
+ Bhadrachalam
+ Susner
+ Shahdol
+ Pathapatnam
+ Jagalur
+ Sarangarh
+ Addanki
+ Madhugiri
+ Bhilwara
+ Hardoi
+ Huzurnagar
+ Banera
+ Durgapur
+ Benipatti
+ Maddur
+ Bhavnagar
+ Tirumayam
+ Shujalpur
+ Palghar
+ Jalna
+ n.a. ( 1220)
+ Narsapur
+ Bari Sadri
+ Tenkasi
+ Henglep
+ Kalyani
+ Sri Kalahasti
+ Lachhmangarh
+ Bhatwari
+ Chamrajnagar
+ Lakhnadon
+ Tiruvettipuram
+ Tiruttani
+ Mapuca
+ Kochbihar
+ Mainpuri
+ Moirang
+ Amroha
+ Jansath
+ Karunagapalli
+ Laxettipet
+ Jagadhri
+ n.a. ( 188)
+ Avanashi
+ Puranpur
+ Dharamgarh
+ Gandhinagar
+ Patti
+ Konch
+ Allahabad
+ Delhi
+ n.a. ( 1087)
+ Ambasamudram
+ Nilanga
+ Navalgund
+ Balurghat
+ Selu
+ n.a. ( 1975)
+ Vadasinor
+ Perambur Purasavakam
+ Malvan
+ Sikandra Rao
+ Bombay
+ Domriaganj
+ Punalur
+ Bulandshahr
+ Changanacheri
+ Dhaulpur
+ Unnao
+ Karera
+ Robertsganj
+ Burhanpur
+ Pandavapura
+ Rayadurg
+ Anekal
+ Titlagarh
+ n.a. ( 1232)
+ Fatehgarh
+ Minicoy Island
+ Tirutturaippundi
+ Barasat
+ Damoh
+ Honavar
+ Sasaram
+ Ratlam
+ Sarwar
+ Nagappattinam
+ Budhana
+ Dhrol
+ Bonali
+ Orattanadu
+ n.a. ( 1156)
+ Nashik
+ Banei
+ Gudibanda
+ Sringeri
+ Vengurla
+ Kaimganj
+ Shiv
+ Fatehpur
+ Jind
+ Rajpur
+ Sriperumbudur
+ Dahanu
+ Tirora
+ Mulbagal
+ Chhata
+ Salur
+ Bhopal
+ Garhchiroli
+ Kadiri
+ Mathura
+ Tiruchengodu
+ Sangla
+ Rajapur
+ Pathankot
+ Mangalore
+ Ahor
+ Arakkonam
+ Chakrata
+ Siwani
+ Sambaji
+ Sailana
+ Lanja
+ Jhalod
+ Kanker
+ Deodrug
+ Malappuram
+ Bhikangaon
+ Badnawar
+ Dhoraji
+ Nim ka Thana
+ Jubbal
+ Pachora
+ Puruliya
+ Kot Putli
+ Haflong
+ Baseri
+ Sultanabad
+ Ratnagiri
+ Bansur
+ Yadgir
+ Kudal
+ Petlad
+ Radhanpur
+ Varanasi
+ n.a. ( 1551)
+ Vallabhnagar
+ Gannavaram
+ Wokha
+ Osiyan
+ n.a. ( 1096)
+ n.a. ( 1681)
+ Dindigul
+ Kolar
+ Khilchipur
+ Devli
+ Jagdalpur
+ Turaiyur
+ Mekhliganj
+ Viramgam
+ Narsinghgarh
+ Khurja
+ Etmadpur
+ Devrukh
+ Pusad
+ Kota
+ Jamtara
+ Raghogarh
+ Chiplun
+ Hisar
+ Limbdi
+ Mohanlalganj
+ Sattenapalle
+ Jamner
+ Nizamabad
+ Valabhipur
+ Jagtial
+ Daman
+ Sarkaghat
+ Talipparamba
+ Nawashahr
+ Itapalli
+ Pandharkawada
+ Dewas
+ n.a. ( 1370)
+ Bhongaon
+ Samastipur
+ Suni
+ Thunag
+ Kadipur
+ Kalmeshwar
+ Sanganer
+ Indora
+ Baheri
+ Vijayawada
+ Khagaria
+ Deoria
+ Hazaribag
+ Bhimavaram
+ Bindki
+ Balod
+ Devakottai
+ Nalgonda
+ Periyakulam
+ Bangalore
+ Siddapur
+ Adur
+ Waghoriya
+ Arkalgud
+ Janjgir
+ Imphal
+ Hatta
+ Vijapur
+ Pangi
+ Parvatsar
+ Tindivanam
+ Tousem
+ Bilgi
+ Nandgaon Khandeshwar
+ Songadh
+ n.a. ( 1997)
+ Kalamnuri
+ Tiruvuru
+ Ambajogai
+ Vaniyambadi
+ Champua
+ Lakhisarai
+ n.a. ( 11)
+ Santrampur
+ Kanthi
+ Nadaun
+ Dahod
+ Pandharpur
+ Kundapura
+ Sabrum
+ Palani
+ Afzalpur
+ Vellore
+ Nannilam
+ Chandragiri
+ Surajpur
+ Lakhandur
+ Saiha
+ Karanpur
+ Chalisgaon
+ Hindola
+ Jalalabad
+ Basmat
+ n.a. ( 1547)
+ Hunsur
+ Barnagar
+ Shahganj
+ Repalle
+ Dwarka
+ Lanji
+ Paud
+ Ghosi
+ Udayagiri
+ Jobat
+ Kalna
+ Salekasa
+ Krishnarajanagara
+ Puttur
+ Sasvad
+ Roha
+ Paralakhemundi
+ Paonta
+ Pandaria
+ Puducherry
+ Vayalipad
+ Kamalapuram
+ Jayal
+ Gudalur
+ Diyodar
+ Chengalpattu
+ Silvassa
+ Panaji
+ Mallapalli
+ Kekri
+ Bhuj
+ n.a. ( 1229)
+ Kalyan
+ Vaduj
+ Peravurani
+ Nayagarh
+ Khambha
+ Sindkheda
+ Jhalarapatan
+ Batala
+ Korba
+ Maldah
+ Jafarabad
+ Bundi
+ Shiggaon
+ Barmer
+ Babra
+ Beohari
+ Orai
+ Pulivendla
+ Barnala
+ Gudivada
+ Rohtak
+ Baramati
+ Tarangambadi
+ Sandila
+ Bodhan
+ Chittur
+ Jalandhar
+ Talaja
+ Quilandi
+ Jhargram
+ Dapoli
+ Kottapeta
+ Gulha
+ Porbandar
+ Nandikotkur
+ Asansol
+ Talcher
+ Koraput
+ Tandur
+ Bikaner
+ Tirukkoyilur
+ Malihabad
+ Mandsaur
+ Chengannur
+ Makhtal
+ Mudigere
+ Manvi
+ Gangakher
+ Bahror
+ Kendraparha
+ Jhanjharpur
+ Sultanpur Lodhi
+ Hassan
+ Gangapur
+ Channarayapatna
+ Lasadia
+ n.a. ( 2011)
+ Phalsiya
+ Khed Brahma
+ Anandpur Sahib
+ Khambhaliya
+ n.a. ( 1475)
+ Kasganj
+ Kadur
+ Jevargi
+ Masaurhi
+ Telhara
+ Gevrai
+ Harur
+ Belur
+ Hyderabad
+ Baikunthpur
+ Maler Kotla
+ Raj Nandgaon
+ Wadhwan
+ Mendarda
+ Ratangarh
+ Gajwel
+ n.a. ( 1608)
+ Tirumangalam
+ Talala
+ Gangtok
+ Revdar
+ Basoda
+ Nakodar
+ Lakhpat
+ Chakradharpur
+ Zunheboto
+ Kamakhyanagar
+ Hathras
+ Bangaon
+ Palanpur
+ Basti
+ Vidisha
+ Pindwara
+ Shorapur
+ Narkher
+ Baloda Bazar
+ Chandur Bazar
+ Nagar
+ Jam Kandorna
+ Merta
+ Jahanabad
+ Narasimharajapura
+ Gauribidanur
+ Benipur
+ n.a. ( 1199)
+ Gohad
+ Guwahati
+ n.a. ( 1572)
+ Machilipatnam
+ Kharar
+ Srivaikuntam
+ Gauripur
+ Tilakwada
+ Nandigama
+ Armur
+ Jetpur
+ Khammam
+ Kotri
+ Bellary
+ Dig
+ Channapatna
+ Medha
+ Shahada
+ Bhusawal
+ Mudukulattur
+ Bhandara
+ Sultans Battery
+ Vilattikulam
+ n.a. ( 1651)
+ Bhadrak
+ Saidpur
+ Khed
+ Kollegal
+ Nohar
+ Tiruppur
+ Gulbarga
+ Kamalpur
+ Karjan
+ Udaipur
+ Bhachau
+ Mangaldai
+ Yanam
+ Ganaur
+ Nanded
+ Ani
+ Chavakkad
+ n.a. ( 42)
+ Madurantakam
+ Biswan
+ Sirmaur
+ Malhargarh
+ Kavathe Mahankal
+ Alangudi
+ Bidar
+ Dhanbad
+ Bilara
+ Birpur
+ Ramganj Mandi
+ Mhasla
+ Harihar
+ Hapur
+ Bhainsdehi
+ Ashoknagar
+ Rupnagar
+ Nanpara
+ Purola
+ Berpeta
+ Sattur
+ Handia
+ Dod Ballapur
+ Zira
+ Bawal
+ Bhavani
+ Baleshwar
+ Badami
+ Bobbili
+ Cochin
+ Mauganj
+ Tasgaon
+ Rajgurunagar
+ Haldwani
+ Bhanvad
+ Banswada
+ Jangaon
+ Dabwali
+ Kherwara
+ Sundargarh
+ Sheohar
+ Kasauli
+ n.a. ( 2161)
+ Chomu
+ Begun
+ Bhatkal
+ Suluru
+ Hingana
+ Morbi
+ Mansa
+ Balrampur
+ Pachhad
+ Kutiyana
+ Garhwa
+ Mahoba
+ Muzaffarpur
+ n.a. ( 111)
+ Sangole
+ Pachpadra
+ Ghaziabad
+ Faridabad
+ Suar
+ Bagepalli
+ n.a. ( 2)
+ Shirwal
+ Nevasa
+ Meerut
+ Ashta
+ Tikamgarh
+ Khair
+ Karhal
+ n.a. ( 1971)
+ Mandi
+ Krishnarajpet
+ Takhatpur
+ Aonla
+ Idar
+ Sironcha
+ n.a. ( 2236)
+ Umarkhed
+ Ghatol
+ Srivilliputtur
+ Petlawad
+ Bangarapet
+ Umrala
+ n.a. ( 455)
+ Ramannapet
+ n.a. ( 2020)
+ Jhagadia
+ Akkalkuva
+ Nellore
+ n.a. ( 922)
+ Morshi
+ Sikandarabad
+ Baharampur
+ Bardoli
+ Hiriyur
+ Chandvad
+ Vishakhapatnam
+ n.a. ( 1607)
+ Khowai
+ Basirhat
+ Himatnagar
+ Usilampatti
+ Firozabad
+ Aligarh
+ Sahaswan
+ Latehar
+ Devgarh
+ n.a. ( 1352)
+ Mannargudi
+ Nirmal
+ Anjar
+ Maheshwar
+ Kamudi
+ Kunda
+ Pauri
+ Phillaur
+ Mandawar
+ Ranaghat
+ Chachaura
+ Sheopur
+ Tamei
+ Polur
+ Diamond Harbour
+ Vaibhavwadi
+ Kadi
+ Navsari
+ Kodarma
+ Jhajjar
+ Rusera
+ Kishanganj
+ Umred
+ Hata
+ Munger
+ Vriddhachalam
+ Taloda
+ Bharthana
+ Kolasib
+ Borgampad
+ Radhanagari
+ Naini Tal
+ n.a. ( 1598)
+ Keshorai Patan
+ Darjiling
+ Khatima
+ Guruzala
+ Dudu
+ Soygaon
+ Chunar
+ Raichur
+ Sankheda
+ Channagiri
+ Kichha
+ Sardhana
+ Piparia
+ Krishnanagar
+ Madhepura
+ Jharsuguda
+ Sakleshpur
+ n.a. ( 1612)
+ Bijaipur
+ Sangrur
+ Diphu
+ Auraiya
+ Puspatirega
+ Bagli
+ Gangrar
+ Nuh
+ n.a. ( 1375)
+ Jambughoda
+ Anjangaon
+ Kangra
+ Raipur
+ Muzaffarnagar
+ Koppa
+ Gyanpur
+ Dharmjaygarh
+ Sagbara
+ Medchal
+ Baswa
+ Chhoti Sadri
+ Yellandu
+ Morena
+ Amini
+ Mangalwedha
+ Tarn Taran
+ Ralegaon
+ Saharsa
+ Khategaon
+ Bageshwar
+ Udaiyarpalaiyam
+ Thandla
+ Ichchapuram
+ Chaupal
+ Ramanagaram
+ Androth Island
+ Dasua
+ Banki
+ Chhapra
+ Sangamner
+ Haora
+ Bhokar
+ n.a. ( 1507)
+ Ranchi
+ Arani
+ Kalpi
+ Aruppukottai
+ Namakkal
+ Ramanuj Ganj
+ n.a. ( 1154)
+ Bhor
+ Hanmakonda
+ Sarada
+ Rajsamand
+ Bansdih
+ Thasra
+ Virarajendrapet
+ Ambala
+ Sikar
+ Ranikhet
+ Chipurupalle
+ Nagpur
+ Deogarh
+ Taranagar
+ Sivaganga
+ Nandyal
+ Jaitaran
+ Maham
+ Weir
+ Savanur
+ Sivagiri
+ Sanchor
+ Malegaon
+ Thiruvarur
+ Vanthli
+ Tuticorin
+ Chhuikhadan
+ Ballia
+ Gokak
+ Ambah
+ n.a. ( 2237)
+ Patan
+ Mettuppalaiyam
+ Nakur
+ Mahrauni
+ Ramachandrapuram
+ Nermand
+ Gwalior
+ Umarga
+ Anugul
+ Athamallik
+ Meghraj
+ n.a. ( 2015)
+ Chanasma
+ Sahibganj
+ n.a. ( 302)
+ Melur
+ Nawada
+ Karwi
+ Roorkee
+ Seepa
+ Guhagar
+ Modasa
+ Ahmadnagar
+ Basavakalyan
+ Srikakulam
+ Ghod
+ Tuensang
+ Katghar
+ Harsud
+ Bhimunipatnam
+ n.a. ( 1327)
+ Panhala
+ Rajampet
+ Thinghat
+ Chittoor
+ Chandigarh
+ Khalapur
+ Karkal
+ Palitana
+ Siddhapur
+ Jabalpur
+ Malkapur
+ Pathalgaon
+ Singrauli
+ Mangrul Pir
+ Pen
+ Manora
+ Daporijo
+ n.a. ( 1549)
+ n.a. ( 2016)
+ Padra
+ Tufanganj
+ Cheyyur
+ Muhammadabad
+ Safidon
+ Nichar
+ Bharatpur
+ Vandavasi
+ Naraini
+ Siddipet
+ Mahuva
+ Ajaigarh
+ Pawayan
+ Sinnar
+ Chawngte
+ Viratnagar
+ Nagaur
+ Mandalgarh
+ Aland
+ Chingai
+ Digod
+ Dahegam
+ n.a. ( 2304)
+ Manendragarh
+ n.a. ( 2239)
+ Phek
+ Rasipuram
+ n.a. ( 1456)
+ Kawardha
+ Akola
+ Palakkodu
+ Relmagra
+ Baijnath
+ Honnali
+ Sakrai
+ Kishangarh
+ n.a. ( 1344)
+ Tiruvallur
+ Kullu
+ Takkalai
+ Jodhpur
+ Sausar
+ Borsad
+ Dhenkanal
+ Dholka
+ Visnagar
+ Gairatganj
+ Ujjain
+ Satyamangalam
+ Sattankulam
+ Tirunelveli
+ Pawni
+ Papanasam
+ Barwani
+ Budaun
+ Jagatsinghpur
+ Paderu
+ Sagwara
+ Madurai
+ Kodungallur
+ Jawhar
+ Mahwah
+ Kunnattur
+ Tiruvadanai
+ Indore
+ Sidhi
+ n.a. ( 10)
+ Aurangabad
+ Berasia
+ Kalyanpur
+ Mahad
+ n.a. ( 2010)
+ Jaunpur
+ Sindgi
+ Gurha Malini
+ Pavagada
+ Nandgaon
+ Tadepallegudem
+ Nasirabad
+ Malpura
+ Ghumarwin
+ Perumbavur
+ Parbung
+ Ghazipur
+ Amalner
+ Palakonda
+ Malur
+ Udaipura
+ Tellicherry
+ Mokhada
+ Gummidipundi
+ n.a. ( 913)
+ n.a. ( 1307)
+ Fatehabad
+ Dabra
+ Sundarnagar
+ Bayad
+ Quepem
+ Mandya
+ Todupulai
+ Bomdila
+ Wani
+ Gandevi
+ Rajura
+ Baberu
+ Mohari
+ Kumharsain
+ Baba Bakala
+ Somvarpet
+ Halol
+ Sayla
+ Palwal
+ Bolpur
+ Garot
+ Dhanora
+ Chik Ballapur
+ Kandaghat
+ Ponda
+ Ramanathapuram
+ Lingsugur
+ n.a. ( 1187)
+ Chhipa Barod
+ Hingoli
+ Salempur
+ Bhubaneshwar
+ Yellapur
+ Dera Gopipur
+ Parola
+ Suratgarh
+ Jam Jodhpur
+ Nabarangapur
+ Mahemdavad
+ n.a. ( 1556)
+ Ratia
+ Akot
+ Rajpura
+ Didwana
+ Bathinda
+ Yavatmal
+ Sadulshahr
+ Pernem
+ Pilibhit
+ Chopda
+ Tanda
+ Lansdowne
+ n.a. ( 1575)
+ Khaga
+ Etah
+ Dungarpur
+ Babulgaon
+ Koregaon
+ Magadi
+ Siliguri
+ Abohar
+ Deoband
+ Narsimhapur
+ Sandur
+ Rae Bareli
+ Khandwa
+ Didihat
+ Amgaon
+ Lunkaransar
+ Rasra
+ Yelbarga
+ n.a. ( 1565)
+ Diglur
+ Shillong
+ Bermo
+ Dudhi
+ Rohru
+ Rampa Chodavaram
+ n.a. ( 748)
+ Ghatampur
+ Mul
+ Machhlishahr
+ Saraikela
+ Nagina
+ Ankleshwar
+ Sira
+ Barsi Takli
+ Chapakhowa
+ Tuni
+ Tonk
+ n.a. ( 1359)
+ Boath
+ Nawa
+ Tenali
+ Kanpur
+ Garhi
+ Puri
+ Atru
+ Pohri
+ Koratagere
+ Seondha
+ Badvel
+ Kandahar
+ Devsar
+ Chhibramau
+ Hindupur
+ Bamanwas
+ Barsi
+ Mirialguda
+ Alwar
+ Jashpurnagar
+ Holenarsipur
+ Pachpahar
+ Devghar
+ Agra
+ Thakurdwara
+ Mamit
+ Bari
+ Arcot
+ Ramgarh
+ Tiruppattur
+ Tezpur
+ Chamba
+ n.a. ( 7)
+ Udumalaippettai
+ Guna
+ Nahan
+ Davangere
+ Bhadra
+ Daltenganj
+ Chotila
+ Bisauli
+ Chinnur
+ Bijnor
+ Khanapur
+ Saikul
+ Nighasan
+ Aklera
+ Venkatapuram
+ Markapur
+ Chirawa
+ Chengam
+ Junnar
+ Gogunda
+ Thana Gazi
+ Kundgol
+ Chirala
+ n.a. ( 360)
+ Amethi
+ Sidlaghatta
+ Punganuru
+ Palsana
+ Dharwad
+ Shirhatti
+ Fort Tondiarpet
+ Purwa
+ Pasighat
+ Srinivaspur
+ Sirohi
+ Murbad
+ n.a. ( 1074)
+ n.a. ( 1589)
+ Mungaoli
+ Bareilly
+ Soraon
+ Kankrej
+ Dantewara
+ n.a. ( 930)
+ Yaval
+ Sawai Madhopur
+ Alipur Duar
+ Kottarakara
+ Vadgam
+ Kopargaon
+ Pakaur
+ Partur
+ Kuppam
+ n.a. ( 1070)
+ Satna
+ Bagalkot
+ Jorhat
+ Nongstoin
+ Kuhi
+ Bhadravati
+ Dunda
+ Palmaner
+ Gulabpura
+ Gundlupet
+ Poladpur
+ Banda
+ Dungargarh
+ Parner
+ Ri-Bhoi
+ Tirthalli
+ Udupi
+ Thanjavur
+ Sangod
+ Disa
+ Chikodi
+ Eluru
+ Bazpur
+ Hungund
+ Bareli
+ Narendranagar
+ Amer
+ Haidargarh
+ n.a. ( 1049)
+ Nasrullahganj
+ Motihari
+ Garhshankar
+ Adoni
+ Vav
+ Darwha
+ Khanna
+ Hilsa
+ Chikhaldara
+ Babai
+ Podili
+ Nelamangala
+ Rashmi
+ Desuri
+ Talasri
+ Sankari
+ Kodinar
+ Pudukkottai
+ Jaora
+ Jalpaiguri
+ n.a. ( 1557)
+ Arantangi
+ Dharampur
+ Sitapur
+ Narsannapeta
+ Gohana
+ Redhakhol
+ Armori
+ Saidapet
+ Uchchhal
+ Gharghoda
+ Dumka
+ Nurpur
+ Ahiri
+ n.a. ( 230)
+ Ankola
+ Sengottai
+ Sangareddi
+ Huvvinahadagalli
+ Nuaparha
+ Mariahu
+ Bail Hongal
+ Anandapur
+ Sirathu
+ Jawali
+ Amarwara
+ Gaya
+ Khurai
+ Gargoti
+ Yeola
+ Bhoranj
+ Maudaha
+ Theog
+ Gadag
+ Murshidabad
+ Degana
+ Narwana
+ Chamoli
+ Anuppur
+ Tlabung
+ Naliya
+ Khunti
+ Dharni
+ Fazilka
+ Kamareddy
+ Homnabad
+ Junagadh
+ Nagod
+ Tengnoupal
+ Sardarpur
+ Shrirangapattana
+ Joshimath
+ Chidambaram
+ Sambhal
+ Tadpatri
+ Ambad
+ Dadri
+ Kushtagi
+ Ichhawar
+ Banganapalli
+ Bhesan
+ Rampura Phul
+ Supaul
+ Khargon
+ Prathipadu
+ n.a. ( 1482)
+ Kurseong
+ Bhongir
+ Achampet
+ Siruguppa
+ Nagamangala
+ Beltangadi
+ Gurdaspur
+ Warora
+ Bemetara
+ Dalhousie
+ Thanlon
+ Uttamapalaiyam
+ Uttangarai
+ Bhum
+ Banjar
+ n.a. ( 6)
+ Saluni
+ Amet
+ n.a. ( 1599)
+ Bhiwani
+ Washim
+ Tawang
+ Bhiloda
+ Siwan
+ Naenwa
+ Savner
+ Gonda
+ Jetpur Pavi
+ n.a. ( 75)
+ Kotra
+ Rampur Hat
+ Deori
+ Katol
+ Latur
+ Puh
+ Madakasira
+ Sirsilla
+ Nawalgarh
+ Satyavedu
+ Jajapur
+ Lauri
+ Bhawanipatna
+ Rajgarh
+ Tibi
+ Alipur
+ Atamkur
+ Bhanpura
+ n.a. ( 35)
+ Mau
+ Seraipali
+ Hadgaon
+ Anupgarh
+ Dhamtari
+ Pukhrayan
+ Shirol
+ Hirekerur
+ Meja
+ Bawani Khera
+ Toda Bhim
+ Gunnaur
+ Shirala
+ Karad
+ Narsampet
+ n.a. ( 566)
+ Niwas
+ Arvi
+ Kagal
+ Hosanagara
+ Mankombu
+ Mokokchung
+ Jaipur
+ Baroh
+ Mysore
+ Jowai
+ Hosur
+ Mahe
+ Azamgarh
+ Arjuni Morgaon
+ Spiti
+ Mukher
+ Vijayanagar
+ Raybag
+ Rewari
+ Kangpokpi
+ Shahpur
+ Pratapgarh
+ Vayittiri
+ Bhagwanpur
+ Sultanpur
+ Danta
+ Bijawar
+ Lucknow
+ Valia
+ Parur
+ Maharajganj
+ Sarangpur
+ Dhrangadhra
+ Kalam
+ Shirur
+ Byadgi
+ Champhai
+ Adilabad
+ n.a. ( 1569)
+ Hathin
+ Holalkere
+ Karwar
+ Hoskote
+ Tiptur
+ Kurkheda
+ Kavali
+ n.a. ( 1711)
+ n.a. ( 1037)
+ Alirajpur
+ Mat
+ n.a. ( 1349)
+ Chunchura
+ Morang
+ South Garo Hills
+ Nimbahera
+ n.a. ( 379)
+ n.a. ( 1460)
+ Bhinmal
+ Mylapore Tiruvallikk
+ Chodavaram
+ Sangrampur
+ Dhanera
+ Sami
+ Kotkhai
+ Moradabad
+ Phalodi
+ Rajapalaiyam
+ Firozpur Jhirka
+ Nandurbar
+ Satana
+ Bhabua
+ Karanja
+ Challakere
+ Kasrawad
+ Chintapalle
+ Rajim
+ Godhra
+ n.a. ( 2050)
+ Pennagaram
+ Balachaur
+ Uniara
+ Yellamanchili
+ Madanapalle
+ Giddalur
+ Karaikal
+ Valsad
+ Hospet
+ Nungba
+ Sitamau
+ Pala (Lalam)
+ n.a. ( 12)
+ Samana
+ Jamnagar
+ Bhatapara
+ Solapur
+ Devarkonda
+ Panchpir
+ Jora
+ Narsipatnam
+ Irinjalakuda
+ Sonkach
+ Murtajapur
+ Bhalki
+ Medinipur
+ Chirayinkil
+ Koppal
+ Gunupur
+ Addatigala
+ Lilia
+ Tanuku
+ Tezu
+ Proddatur
+ Gadarwara
+ Itarsi
+ Jaggayyapeta
+ Lalsot
+ Rewa
+ Chitradurga
+ Biaora
+ Kashipur
+ Niphad
+ Zahirabad
+ Kotagiri
+ Dharapuram
+ Samrala
+ n.a. ( 2002)
+ n.a. ( 2275)
+ Sirpur
+ Nivari
+ Pithapuram
+ Kalyandurg
+ Kondagaon
+ n.a. ( 8)
+ Shrirampur
+ Amod
+ Samudrapur
+ Denkanikota
+ Durg
+ Chintamani
+ Trivandrum
+ Karong
+ Kapurthala
+ Sindewahi
+ Dausa
+ Chauhtan
+ Khuldabad
+ Chatrapur
+ Sujangarh
+ Nalbari
+ Bramhapuri
+ Penukonda
+ Ara
+ Ron
+ Safipur
+ Bijapur
+ Lunglei
+ Peint
+ n.a. ( 2012)
+ Botad
+ Tiruvalla
+ n.a. ( 89)
+ Alleppey
+ Ramtek
+ Savantvadi
+ Garautha
+ Danapur
+ Chhabra
+ Turuvekere
+ Kozhikode
+ Mhow
+ Ponneri
+ Kairana
+ Shikarpur
+ n.a. ( 3)
+ Champawat
+ Gumla
+ Quilon
+ Madgaon
+ Hasanpur
+ Pichor
+ n.a. ( 837)
+ Avanigadda
+ Mangaon
+ Padampur
+ Manamadurai
+ Musiri
+ Haraiya
+ Vansada
+ Dongargarh
+ Kishangarh Bas
+ Kalka
+ Tamenglong
+ Salem
+ Kudligi
+ Chincholi
+ Sakti
+ Alwaye
+ Matar
+ Coimbatore
+ Karmal
+ Faridkot
+ n.a. ( 2178)
+ Ernakulam
+ Kusmi
+ Wanparthy
+ n.a. ( 965)
+ Kinwat
+ Churachandpur
+ Bidhuna
+ n.a. ( 652)
+ Muhamdi
+ Vinukonda
+ Perintalmanna
+ Darsi
+ Panposh
+ Sakoli
+ Khalilabad
+ Bilaspur
+ Bilhaur
+ Gooty
+ Kannod
+ Coonoor
+ Heggadadevankote
+ n.a. ( 155)
+ Sompeta
+ n.a. ( 1171)
+ Teonthar
+ Kumher
+ Gadwal
+ Basavana Bagevadi
+ Chanderi
+ Vadodara
+ n.a. ( 16)
+ n.a. ( 1103)
+ Bhadgaon
+ Pataudi
+ Jagraon
+ Una
+ Chakia
+ Hatkalangda
+ Sakri
+ Karimganj
+ Neyyattinkara
+ Shimla
+ Kendujhar
+ Alur
+ Dindori
+ Tekkali
+ Bhopalgarh
+ Manavadar
+ n.a. ( 4)
+ Vasai
+ Jasdan
+ Nuzvid
+ n.a. ( 1202)
+ Mohol
+ Kaman
+ Patoda
+ Chandel
+ Pala Laharha
+ Dharmshala
+ n.a. ( 1082)
+ Khairagarh
+ Hoshangabad
+ Tharad
+ Ajmer
+ Manthani
+ Gauriganj
+ Kodaikkanal
+ Deoli
+ Nathdwara
+ Bassi
+ Parenda
+ Rapur
+ Sardarshahar
+ n.a. ( 15)
+ Bid
+ Rajahmundry
+ Dhone
+ Dibrugarh
+ Sindhnur
+ Nagaon
+ Gangawati
+ Saundatti
+ Williamnagar
+ Gondal
+ Razole
+ Vagra
+ Simga
+ Rayagarha
+ Pakhanjur
+ Hasanganj
+ Zamania
+ Pallippattu
+ Kallam
+ Chaurah
+ n.a. ( 1090)
+ Chhatarpur
+ Chiknayakanhalli
+ Udgir
+ Rath
+ Mandla
+ Mahabaleshwar
+ Peddapuram
+ Araria
+ Hamirpur
+ Seram
+ Talwandi Sabo
+ Gudiyattam
+ Nedumangad
+ Raisen
+ Tarabganj
+ Nawabganj
+ Etawah
+ Mudhol
+ Trichur
+ Bhiwapur
+ Kailashahar
+ Madhubani
+ Atpadi
+ Rehli
+ Chandauli
+ Jamshedpur
+ n.a. ( 1315)
+ Kolayat
+ Akbarpur
+ Kalvan
+ n.a. ( 1728)
+ Parsivni
+ Bandhogarh
+ Khordha
+ Palghat
+ Tirur
+ Jalgaon
+ Dhandhuka
+ Maihar
+ Jangipur
+ Umargam
+ Anakapalli
+ Baghmara
+ Nilagiri
+ Siuri
+ Sankarankovil
+ Kapadvanj
+ Pirawa
+ Kumbhalgarh
+ Satara
+ Panipat
+ Kanigiri
+ Champa
+ Ahmadpur
+ Attur
+ Mundargi
+ Asandh
+ Begusarai
+ Multai
+ Bela
+ Rajkot
+ Niwai
+ Rajgarhi
+ Chhota Udaipur
+ Simdega
+ Nagbhir
+ Dhule
+ Aliganj
+ Jaypur
+ Bahadurgarh
+ Gorakhpur
+ Iglas
+ Bhatkuli Jain
+ n.a. ( 1703)
+ Tura
+ Mahesana
+ Dhaka
+ Tarana
+ Igatpuri
+ Mathabhanga
+ Lunavada
+ Erode
+ Vyara
+ n.a. ( 1378)
+ Palayankottai
+ Utnur
+ Metpalli
+ Bihar Sharif
+ Rajula
+ Mahbubnagar
+ Pokaran
+ Gadhada
+ Ghumsur
+ Pardi
+ Dalsing Sarai
+ Korwai
+ Tiruchchirappalli
+ Bettiah
+ n.a. ( 1558)
+ Pattikonda
+ Ambikapur
+ Hinganghat
+ Shajapur
+ Musafirkhana
+ Sitamarhi
+ Mirzapur
+ Jaisinghpur
+ Hindoli
+ Shahuwadi
+ Kundla
+ n.a. ( 1089)
+ Kolaras
+ Muktsar
+ Osmanabad
+ Faizabad
+ Tiruvannamalai
+ Mauda
+ Parkal
+ Tirap
+ Ganganagar
+ Kotda Sangani
+ Tarikere
+ Sehore
+ Sri Vijainagar
+ Nijhar
+ n.a. ( 542)
+ Sagri
+ Walajapet
+ Vikarabad
+ n.a. ( 1106)
+ Dicholi
+ Huzurabad
+ Islampur
+ Charkhari
+ Jhirnia
+ Pali
+ Shertallai
+ Kanchipuram
+ Khanpur
+ n.a. ( 1634)
+ Lawngtlai
+ Siwana
+ Hosdurg
+ Parbhani
+ Agartala
+ Jahazpur
+ n.a. ( 1992)
+ Mundgod
+ Rampur
+ Raigarh
+ Harij
+ Lohardaga
+ Jaisinghnagar
+ Phagwara
+ Dharmapuri
+ Vizianagaram
+ Silchar
+ Nanjangud
+ Raiganj
+ Balaghat
+ Kottagudem
+ Hailakandi
+ Ramdurg
+ Nattam
+ Wadgaon
+ Bhiwandi
+ Valpoy
+ Amb
+ Shahbad
+ Amalapuram
+ n.a. ( 1656)
+ Faritpur
+ Nimach
+ n.a. ( 5)
+ Dhadgaon
+ Padmapur
+ Kalinjara
+ n.a. ( 2250)
+ Digras
+ Jaisalmer
+ Ranibennur
+ Arambag
+ Dahivadi
+ Chintalapudi
+ Sibsagar
+ Madha
+ Jalesar
+ Phungyar
+ Moth
+ Tiruchuli
+ Nagar Karnul
+ Visavadar
+ Mandangarh
+ Medak
+ Santalpur
+ Nandauti
+ Chorasi
+ Muli
+ Maliya
+ Baihar
+ Kosli
+ Harpanahalli
+ Padadhari
+ Sohagpur
+ Bikapur
+ Vada
+ Dasada
+ Karur
+ Ukhrul
+ Jogindarnagar
+ Keshod
+ Amreli
+ Wardha
+ Kumbakonam
+ Veraval
+ Sambalpur
+ Bahraich
+ Pargi
+ n.a. ( 1571)
+ Korangal
+ Giridih
+ Bhander
+ Viluppuram
+ Katghora
+ Gingee
+ Chauri
+ Sojat
+ Shevgaon
+ Savli
+ Pansemal
+ Ladnun
+ Kukshi
+ Ghatanji
+ Naugarh
+ Naugachhia
+ Uttiramerur
+ Rameswaram
+ Sapotra
+ n.a. ( 1586)
+ Bansi
+ Udagamandalam
+ Shikohabad
+ Lonar
+ Perundurai
+ Kalimpong
+ Churu
+ Rajendragram
+ Ariyalur
+ Maregaon
+ Bharuch
+ Tumkur
+ Dalmau
+ Sunam
+ Munsyari
+ Gajapatinagaram
+ Bankura
+ Ashti
+ Kuchinda
+ Khetri
+ Omalur
+ Jhansi
+ Kalol
+ Nalagarh
+ Sangariya
+ Devanhalli
+ n.a. ( 2019)
+ Banswara
+ Uttukkottai
+ Kuzhittura
+ Chandannagar
+ Sidhauli
+ Bapatla
+ Kaisarganj
+ Panna
+ Nadiad
+ Tohana
+ Chimur
+ Phagi
+ Pathri
+ Pathardi
+ Budhni
+ Phulbani
+ Arsikere
+ Kallakkurichchi
+ Dehra Dun
+ Sambhar
+ Bilaigarh
+ Haliyal
+ n.a. ( 1182)
+ Almora
+ Gariyadhar
+ Pendra Road
+ Mawana
+ Koilkuntla
+ Karjat
+ Rupbas
+ Utraula
+ Shahapur
+ Cuddalore
+ Begamganj
+ Kakinada
+ Jodiya
+ Yelandur
+ Sonamura
+ Upleta
+ Partabpur
+ Asind
+ Prantij
+ Kaij
+ Narayangarh
+ Kumta
+ Dhemaji
+ Chatra
+ Kottayam
+ Dediapada
+ Navapur
+ Goregaon
+ Lathi
+ Madikeri
+ Tilhar
+ Kamrej
+ Datia
+ Vadippatti
+ Atrauli
+ Raniwara
+ Phaltan
+ Ludhiana
+ Nargund
+ Achalpur
+ Malsiras
+ Kolhapur
+ Patur
+ n.a. ( 1593)
+ Sadabad
+ Dharmanagar
+ Suriapet
+ Rai
+ Nilakkottai
+ Lalgudi
+ Katoya
+ Agar
+ Kandi
+ Lodhi ka Mahal
+ Jawad
+ Surgana
+ Polavaram
+ Jamkhed
+ Shergarh
+ Kapasan
+ Warud
+ Kalwakurti
+ Belonia
+ Karnaprayag
+ Anupshahr
+ Jammalamadugu
+ Mulug
+ Risod
+ Baripada
+ Baghpat
+ Haridwar
+ Yellareddi
+ Ibrahimpatan
+ Bilari
+ Tuljapur
+ Rayachoti
+ Simalwara
+ Edalabad
+ Daund
+ Malakanagiri
+ Haripad
+ Ongole
+ Jintur
+ Karimnagar
+ Bisalpur
+ Mangrol
+ Raver
+ Kalpa
+ Abu Road
+ Malavalli
+ Leteri
+ Seoni
+ Ottappalam
+ Kaithal
+ Halvad
+ Karauli
+ Darbhanga
+ Chakpikarong
+ Karaikkudi
+ Shehera
+ Sendhwa
+ Mau Ranipur
+ Gudur
+ Pilibangan
+ Silvani
+ Kulattur
+ Maliya Miyana
+ Daryapur
+ Vadakkancheri
+ Manantavadi
+ Murwara
+ Thoubal
+ Tinsukia
+ Bhadesar
+ Aizawl
+ Phulpur
+ Bayana
+ Okhimath
+ Rani
+ Balangir
+ Hoshiarpur
+ Nokha
+ Segaon
+ Baran
+ Muddebihal
+ Bantval
+ Sidhout
+ Patiala
+ Venkatagiri
+ Bansgaon
+ n.a. ( 1657)
+ Bhim
+ Chevella
+ Supa
+ Jalor
+ Rajpipla
+ Kovilpatti
+ Limkheda
+ Vaijapur
+ Vite
+ Sirhind
+ Rapar
+ Goharganj
+ Chikhli
+ Misrikh
+ Sangli
+ Amarpur
+ Kulpahar
+ Sillod
+ Gadhinglaj
+ Mettur
+ Jasrana
+ Nabha
+ Udumbanchola
+ Tijara
+ Hansot Mahal
+ Thane
+ Godda
+ Along
+ Dinhata
+ Piriyapatna
+ Wankaner
+ Mavelikara
+ Jalaun
+ Madhira
+ Hukeri
+ Arki
+ Kannad
+ Kannauj
+ Lalpur
+ Manjhanpur
+ Mannarkkad
+ Kavaratti
+ Saharanpur
+ n.a. ( 1991)
+ Chandgad
+ Bavda
+ Tivsa
+ Jogipet
+ Sanguem
+ Ottapidaram
+ Renuka
+ Mahgawan
+ Sirsi
+ Gubbi
+ Khachrod
+ Anantapur
+ Depalpur
+ Mummidivaram
+ Kandukur
+ Ajnala
+ Bali
+ Olpad
+ n.a. ( 1983)
+ Narnaul
+ Biloli
+ Atmakur
+ n.a. ( 2000)
+ Bhutapandi
+ Mayuram
+ Ghogha
+ Bhanupratappur
+ n.a. ( 793)
+ Karsog
+ Hagaribommanahalli
+ Raisinghnagar
+ Bhokardan
+ Sirkazhi
+ Chhindwara
+ n.a. ( 1897)
+ Sagar
+ Sheikhpura
+ Radhapuram
+ Kirakat
+ Kasaragod
+ Mundra
+ Seonimalwa
+ Haveri
+ Najibabad
+ Kotamangalam
+ Shivganj
+ Bara Banki
+ Anand
+ Tehri
+ Chandur
+ Amarpatan
+ Ramsanehighat
+ Derapur
+ Mungeli
+ Mambalam Gundy
+ Narayankher
+ n.a. ( 1075)
+ Erandol
+ Goalpara
+ Bhagalpur
+ Kasdol
+ Shirpur
+ Egmore Nungabakkam
+ Ilaiyankudi
+ Kaikalur
+ Ahmadabad
+ Virudunagar
+ Nakhtarana
+ Nandura
+ Brahmapur
+ Diu
+ Vaikam
+ n.a. ( 776)
+ Pipalda Kalan
+ n.a. ( 1882)
+ n.a. ( 20)
+ Gopichettipalaiyam
+ Garhmuktesar
+ Jhabua
+ n.a. ( 1348)
+ Harda
+ n.a. ( 617)
+(2227 rows)
+
+          rivers           
+---------------------------
+ ZASKAR
+ AGRA CANAL
+ BETWA
+ GOMATI
+ PARBATI RIVER
+ BHAIRAB
+ MAHANADI
+ VATRAK
+ GAURIA NADI
+ AMALAPURAM CANAL
+ PATALGANGA RIVER
+ BAITARNI NADI
+ CHEYYERU RIVER
+ WARDHA
+ MIDNAPORE CANAL
+ SHYOK
+ KURNA
+ BALARAM RIVER
+ KOTRI
+ UPPUTERU RIVER
+ ABOHAR BRANCH
+ PRANHITA RIVER
+ DAYA
+ MAND
+ KALDIYA NADI
+ AUOI AHU
+ INDRAVATI
+ CHALIYAR RIVER
+ XIANGQUAN HE
+ GANTA NADI
+ RISPANA RAO
+ KARAD RIVER
+ KARNAUTI NADI
+ BANNE NADI
+ SIND RIVER
+ SUNTI NADI
+ FENI FENNY
+ TAMBRAPARNI RIVER
+ KAN RIVER
+ AMARAVATI
+ MANGAL NADI
+ SWARNAMUKHI
+ CHHAPI NADI
+ JIWACHH NADI
+ MARKANDA RIVER
+ SINDPHANA
+ DAMANGANGA
+ MOJ RIVER
+ MAN RIVER
+ CHHECHH NADI
+ BRAHMANI
+ KALINADI
+ TIRI RIVER
+ SABARMATI
+ PURNA
+ ANDHARI RIVER
+ KAL RIVER
+ KURNOOL CUDDAPAH CANAL
+ PERIYAR RIVER
+ DINDI
+ ICHHAMATI RIVER
+ BARWA NADI
+ SANK RIVER
+ DHASAN RIVER
+ CHHOTA TAWA
+ MAND RIVER
+ SOBRAON
+ SOTA RIVER
+ COLEROON
+ TISTA
+ SAIKI NADI
+ BUCKINGHAM CANAL
+ BAHUDANADI
+ MANSI RIVER
+ KUNCHMALANGA NADI
+ MALIN RIVER
+ PARAVUR KAYAL
+ GOI RIVER
+ TUNGA
+ DIPALPUR CANAL
+ EASTERN YAMUNA CANAL
+ SOMESAR NADI
+ LILRI RIVER
+ BURAI RIVER
+ GUNDLAKAMMA
+ DIGRU RIVER
+ KISHANGANGA
+ MOHANA
+ UPPER GANGES CANAL
+ ARRAH CANAL
+ SARASWATI RIVER
+ MANAR RIVER
+ PALLERU
+ BURHI GANDAK
+ MAHANANDA
+ SAU OR SIWANA
+ KHADAG
+ VEDAVATI
+ KASAI
+ MULA
+ SOLANI RIVER
+ CHANDRA
+ MAIN CANAL
+ UNK
+ BHATINDA BRANCH
+ KARJAN RIVER
+ NANDHAUR RIVER
+ GODAWARI
+ KOTLA BRANCH
+ GANGA GANGES
+ SIPRA
+ HINDRI
+ DODA
+ KUPPAM RIVER
+ RANGHOLA RIVER
+ NEWAJ
+ PAMBIYAR
+ PEDDA VAGU
+ KANHAN
+ TIKRA
+ SOUTH KOEL
+ RUPEN
+ RAMPERU RIVER
+ PAYASWANI RIVER
+ PARANGARA
+ BAGMATI NADI
+ MANIPUR
+ MATLA
+ SASUR KHADERI NADI
+ LENDI NADI
+ SONG RIVER
+ GARHVI
+ CAUVERY
+ JHAGRABARIA NADI
+ ABSARA NADI
+ SUBARNAREKHA
+ KARANJA
+ BAYA NADI
+ SONAR
+ KUNDERU RIVER
+ MUL
+ DEOHA
+ BANDI RIVER
+ VAIPPAR
+ SARA CREEK
+ WAINGANGA
+ PARBATI
+ KASUR BRANCH
+ THEGA KHAL
+ MIRHASAN NADI
+ SUTLEJ NAVIGATION CHANNEL
+ KALINDRI RIVER
+ CHALIYAR
+ VALARPATTANAM
+ GHURARI NADI
+ BUNGTIANG
+ SOKAR NADI
+ TSARAP CHU
+ ALAKNANDA
+ CHURNI RIVER
+ KABBANI
+ MOHEDAMADA RIVER
+ KHORUN
+ KARO RIVER
+ TUIVAW
+ GIRNA
+ UKME NADI
+ HEMAVATI
+ GODAVARI RIGHT BANK CANAL
+ JONK
+ THADAKAL ERU
+ SAPRAR NADI
+ JHANZI RIVER
+ KADDAM RIVER
+ SEONATH
+ KARAI NADI
+ BIDYADHARI RIVER
+ CHALAKUDI RIVER
+ DHUND
+ NIRA RIVER
+ LOWER GANGES CANAL
+ SILERU
+ BHADRA
+ PUNALUR AR
+ KOSI RIVER
+ MAIN WESTERN CANAL
+ NIRA RIGHT BANK CANAL
+ ORISSA COAST CANAL
+ SUTLEJ
+ NARMADA
+ BIANA NALA
+ GAURANG RIVER
+ TAMBRAPARN
+ SANDUR
+ CHANDRAWAL RIVER
+ LAPRI NADI
+ DAMODAR
+ ONG RIVER
+ VARADA
+ TAPI
+ SARASWATI
+ RAGER'U RIVER
+ CHAMBAL
+ MOHAN
+ SUGAR CREEK
+ CHANDRA CANAL
+ AMBLA CREEK
+ LAKSHMANTIRTHA
+ MANNERU
+ PAMBIYAR RIVER
+ BANK CANAL
+ PAIRI
+ RAMGANGA
+ NIRA LEFT BANK CANAL
+ SATLUJ
+ JAYAMANGALI
+ MOSAM RIVER
+ OR NADI
+ PONNAIYAR
+ UMIAM RIVER
+ THUNAKADAVU AR
+ MANJRA
+ SABARI
+ VARSHALEI
+ BAMBHAN RIVER
+ RIHAND
+ PALLERU RIVER
+ BAORDHIG
+ PENGANGA
+ MALAM PUZHA
+ MAHI
+ KRISHNA
+ TIGHARA CANAL
+ GHI RIVER
+ CHAMPAMATI RIVER
+ DWARKESWAR
+ KOLAB
+ BARANAI NADI
+ ITTIKARA AR
+ ANDHRA RIVER
+ SHIMSHA
+ TINAU
+ KATTALERU RIVER
+ PAR RIVER
+ KALI SINDH
+ MALPRABHA
+ KAPRA RIVER
+ SUKRI RIVER
+ TIRU RIVER
+ BENITHORA
+ PUNPUN NADI
+ KUMARADHARI RIVER
+ BHIMA
+ ULHAS
+ BANGANGA
+ NUBRA
+ MALAN RIVER
+ ETAWAH BRANCH
+ GHUGRI RIVER
+ YAGACHI RIVER
+ VAIGAI
+ INDUS
+ YERLA
+ SUMRAR NADI
+ NIBRA
+ PENNER
+ GODAVARI LEFT BANK CANAL
+ DONDI RIVER
+ SON
+ SONREKHA NADI
+ INDAR NADI
+ DHASAN
+ ELLORE CANAL
+ KHARI RIVER
+ BANDIA
+ KARON NADI
+ CHANDRABHAGA RIVER
+ NARBADA
+ BURHABALANG
+ NANDIYAR RIVER
+ MUSI
+ HANSI BRANCH
+ MALUNG
+ VELLAR
+ KALU RIVER
+ BANDIA RIVER
+ BANAS RIVER
+ TANSA RIVER
+ BARAKAR
+ PONNANI
+ GHATPRABHA
+ WAKAL
+ BAGHAIN RIVER
+ WESTERN YAMUNA
+ GODAVARI
+ KAGNA
+ SHAHZAD NADI
+ NALLAMARA VAGU
+ JHELUM
+ TUNGABHADRA
+ GOLA RIVER
+ LAKNAVARAM RIVER
+ MORAR NADI
+ SHEDHI
+ SASOI RIVER
+ HARNI NALA
+ BELAN RIVER
+ CHOCH NADI
+ AMANAT RIVER
+ GOMA RIVER
+ DARNA RIVER
+ CHENG CHEMMO
+ MORA TISTA RIVER
+ CHENAB
+ LONI
+ VAMSADHARA
+ HIGH LEVEL CANAL
+ BEAS
+ MUCHKULLA NADI
+ SAJNAM NADI
+ SIRHIND CANAL
+ PHULKA RIVER
+ NIARI RIVER
+ NORTH KOEL
+ CHHOTI KALI SINDH
+ CHAKKI KHAD
+ SIRSA BRANCH
+ DAI
+ DUDNA
+ SHARAVATI
+ RAVI
+ BARGANG RIVER
+ BHAKLA RIVER
+ BAGH NADI
+ AJNAL RIVER
+ KORAN NADI
+ KALI
+ BERACH RIVER
+ BAHUDA RIVER
+ KORAIYAR RIVER
+ BANAS
+ MANAR
+ HARDOI BRANCH
+ TALDANDA CANAL
+ SARJU RIVER
+ SIND
+ BENNI HAILA
+ ONG
+ ORSANG
+ LISH NADI
+ SARAYAN
+ BEARMA
+ GISH NADI
+ NAGAVALI
+ GUDRA RIVER
+ AKERU
+ KUNDERU
+ KUNWARI
+(358 rows)
+
+            lakes             
+------------------------------
+ NAGIN LAKE
+ 
+ MOTI RESERVOIR
+ BAGHEL TAL
+ KUMHARI TANK
+ BETWA
+ GOMATI
+ SUBANSIRI
+ GHAGHAR RESERVOIR
+ MAHANADI
+ PATRI TANK
+ MADAN SAGAR
+ BARELA TAL
+ SRI CHAMRAJENDRA RESERVOIR
+ SHASTRI
+ BISNALI TAL
+ YAMUNA
+ INDRAVATI
+ CHITRAVATI
+ MULSH LAKE
+ KURUNG TANK
+ NADAYARA KAYAL
+ RANN OF KUTCH
+ HUGLI
+ ANCHAR LAKE
+ BODALKASA TANK
+ VAGHOTAN
+ SANERA TAL
+ WADWANA TANK
+ GANDHI SAGAR
+ PAWAI LAKE
+ MAITHON RESERVOIR
+ BARA TALAO
+ NAWEGAON LAKE
+ RAM SAGAR
+ GARHA TAL
+ BRAHMANI
+ BHUTNAL KERE
+ SABARMATI
+ JIDIMATLA TANK
+ MANAS
+ BHADRA RESERVOIR
+ GREAT GANDAK
+ JAMWA RAMGARH TAL
+ DOBNA TAL
+ BARWAR LAKE
+ BARDHA KA TALAO
+ MORAN SAGAR
+ SAVITRI
+ HUSAIN SAGAR
+ BARA TAL
+ CHORKHAMARA TANK
+ LITTLE RANN
+ PAKRI TAL
+ TANSA LAKE
+ TISTA
+ BAN TAL
+ TULSI LAKE
+ LOGTAK LAKE
+ STARTSAPUK TSO
+ PARAVUR KAYAL
+ MITHRI OR JOJRI
+ STEWARTGANJ CREEK
+ VANIVILASA SAGARA
+ SURAHA TAL
+ NETRAVATI
+ GHORAJHARI TANK
+ SIDHESHWAR
+ KAR TSO
+ VIRANAM ERI
+ MALA TANK
+ WAGARDHRAI CREEK
+ DUKWAN RESERVOIR
+ KYUN TSO
+ GOREWARA TANK
+ RANWAI TAL
+ BALIMILA RESERVOIR
+ MAHANANDA
+ SAU OR SIWANA
+ RAMAPPA CHERUVU
+ VEDAVATI
+ GWAL SAGAR
+ BALHIRA TAL
+ BARANA TAL
+ UNK
+ TORDI SAGAR
+ DEAH NADI
+ GANGA GANGES
+ KEN
+ GANGASAGAR
+ GHAGHARA
+ JASOLA TAL
+ URPAD BIL
+ NAHAR SAGAR
+ DIHANG
+ RANGANGA
+ RANN
+ BINGLI TANK
+ PARANGARA
+ GURUDONGMAR CHHO
+ JAGAT SAGAR
+ TAL MASIAON
+ KASHAR TAL
+ MUCHKUNDI RESERVOIR
+ GORA TAL
+ MARAMSILLI RESERVOIR
+ SONAR
+ ANA SAGAR
+ DHEBAR LAKE
+ RAMTEK TANK
+ KHARAKVASLA LAKE
+ DEOHA
+ WILLINGDON RESERVOIR
+ GOPAD
+ VICTORIA TANK
+ WAINGANGA
+ PAHUJ RESERVOIR
+ PADALA CREEK
+ JAMUNA
+ CHIKANCHARA BIL
+ KHAUR JHIL
+ DEVRAPURA CREEK
+ LAKE BEALE
+ ASOLA MENDHA TANK
+ NEHRA LAKE
+ LUNI
+ YANGSABATI
+ PALAR
+ VALVHAN LAKE
+ GHUGRI
+ AMBAJHERI TANK
+ NAL
+ DUNGIA RESERVOIR
+ DAROJI KERE
+ SEONI TANK
+ AIDA TAL
+ KONAR RESERVOIR
+ KOYNA RESERVOIR
+ UDAI SAGAR
+ VEHAR LAKE
+ RANI KERE
+ GOHNA LAKE
+ MAJHGAWAN TANK
+ RANA PRATAP SAGAR
+ KANHAR
+ JALAPUT RESERVOIR
+ SUTLEJ
+ NARMADA
+ SULE KERE
+ HIRAKUD RESERVOIR
+ BARWA SAGAR LAKE
+ NAGARJUNA SAGAR
+ PACHAU TAL
+ PANCHET RESERVOIR
+ JAYAKWADI
+ ANDHRA LAKE
+ BHATGHAR LAKE
+ TAPI
+ DINARA TAL
+ RAMGARH TAL
+ UKAL SAGAR
+ MITPAL TSO
+ CHAMBAL
+ SALONA TAL
+ BURHI DIHING
+ NARA
+ KANIGIRI RESERVOIR
+ CHOLAVARAM TANK
+ SAPT KOSI
+ LINGANAMAKKI RESERVOIR
+ BEYPORE
+ VARTUR KERE
+ MUNG TAL
+ MANJRA
+ DHARM SAGAR
+ KARCHIA TANK
+ STANLEY RESERVOIR
+ MANIARI TANK
+ MIR ALAM TANK
+ PRANHITA
+ PANDELA TAL
+ KUMEHRI TAL
+ KIAGAR TSO
+ KORILA BIL
+ NIRANI CREEK
+ EKRUK LAKE
+ MAHI
+ CHANDPUR TANK
+ KRISHNA
+ TUNGABHADRA RESERVOIR
+ PAPAGNI
+ PALLERU LAKE
+ LAKSHMIBAI TANK
+ KODAYAR LAKE
+ RAPTI
+ SAHNUA TAL
+ PERIYAR LAKE
+ SARATH RESERVOIR
+ TIGHARA RESERVOIR
+ UMRAN LAKE
+ GANGARI TANK
+ BOSAU TAL
+ GOVIND BALLABAH (PANT SAGAR)
+ BRAHMAPUTRA
+ KABAR TAL
+ SARVAR CREEK
+ BELA SAGAR
+ PENNER
+ ALWARA TAL
+ DAL LAKE
+ SON
+ KHARAUWA TAL
+ DHASAN
+ KORI CREEK
+ BIRSAGAR TAL
+ GOVIND SAGAR
+ UMED SAGAR
+ UDAI KALAN SAGAR
+ BAND BARETA
+ RENI TAL
+ RAJ SAMAND
+ WULAR LAKE
+ GANDAK
+ BHELWAHI JHIL
+ TONS
+ PULICAT LAKE
+ LUHIT
+ DALANI BIL
+ CHEMBARAMBAKKAM TANK
+ SAMBHAR SALT LAKE
+ RATOI TAL
+ GODAVARI
+ PUTIWAR TALAB
+ JHELUM
+ MARODA TANK
+ KONDAKARLA AVA
+ PARIAT TANK
+ SARDASNGAT
+ NADANWARA TAL
+ LAKNAVARAM CHERUVU
+ BANGANGA NADI
+ DEVI
+ CHILKA LAKE
+ SANWARIA KA RANN
+ TAL BARAILA
+ HALALI RESERVOIR
+ PAKHAL LAKE
+ CHENAB
+ OSMAN SAGAR
+ WILA LAKE
+ KHAPRI TANK
+ KALIVELI TANK
+ KHRISHNARAJA SAGARA
+ DHOLERAO TANK
+ TANDULA TANK
+ VEMBANAD LAKE
+ PANGONG TSO
+ ASTHAMUDILAKE
+ TSO MORARI
+ BALI TAL
+ VASHISHTI
+ AWADA RESERVOIR
+ ARTHUR HILL LAKE
+ ALAULA JHIL
+ TANDADARI TAL
+ HIMAYAT SAGAR
+ GHANPUR CHERUVU
+ RAVI
+ KORAMPALLAM TANK
+ NIZAM SAGAR
+ CHANDO TAL
+ BANAS
+ PERIYAR
+ MALAD CREEK
+ KUNWARI
+ JAWAI BRANCH
+ SUHELA TAL
+(277 rows)
+

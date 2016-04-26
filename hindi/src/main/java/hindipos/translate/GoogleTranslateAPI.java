@@ -23,13 +23,15 @@ public class GoogleTranslateAPI {
  
     public String translte(String text, String from, String to) {
         StringBuilder result = new StringBuilder();
+        HttpsURLConnection conn = null;
+        URL url;
         try {
             String encodedText = URLEncoder.encode(text, "UTF-8");
             String urlStr = "https://www.googleapis.com/language/translate/v2?key=" + key + "&q=" + encodedText + "&target=" + to + "&source=" + from;
  
-            URL url = new URL(urlStr);
+            url = new URL(urlStr);
  
-            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+            conn = (HttpsURLConnection) url.openConnection();
             InputStream stream;
             if (conn.getResponseCode() == 200) //success
             {
@@ -65,6 +67,11 @@ public class GoogleTranslateAPI {
  
         } catch (IOException | JsonSyntaxException ex) {
             System.err.println(ex.getMessage());
+        }
+        finally
+        {
+        	conn.disconnect();
+//        	System.out.println("Connection closed");
         }
  
         return null;
