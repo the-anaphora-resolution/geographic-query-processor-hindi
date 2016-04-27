@@ -357,10 +357,10 @@ inst.initialize_query_types()
 
 #inst.exec_query(qtype,['\'Delhi\'','\'Kanpur\'','administrative2'])
 #inst.exec_query(qtype,['\'Greater Bombay\'','\'Varanasi\'','administrative2'])
+inst.close_conn()
 try:
     inst.process_query(qtype)
 except:
     err_file = open('error_file.txt', 'r')
     err_msg = err_file.read()
     print err_msg
-inst.close_conn()
