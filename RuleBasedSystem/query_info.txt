@@ -1,2 +1,2 @@
-within
-{'L2': 'city', 'result': 'list', 'L1': 'Bihar'}
+distance
+{'L2': 'Delhi', 'L1': 'Greater Bombay'}
