@@ -1,2 +1,2 @@
-city_in
-{'L1': 'Vishakhapatnam'}
+distance
+{'L2': 'Delhi', 'L1': 'Chennai'}

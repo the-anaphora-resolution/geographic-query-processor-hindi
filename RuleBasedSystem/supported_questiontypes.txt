@@ -45,3 +45,21 @@ Entities in (Direction) of State/City
 मुंबई से अहमदाबाद की क्या दिशा है?
 मध्य-प्रदेश के पड़ोस में कौनसा राज्य है?
 विशाखापत्तनम किस राज्य का शहर है?
+
+
+
+
+
+GEOGRAPHIC QUESTION ANSWERING SYSTEM
+------------------------------------
+
+Loading Query from file... 
+मुंबई से दिल्ली के बीच कितनी दूरी है?
+distance
+{'L2': 'Delhi', 'L1': 'Greater Bombay'}
+command:  python db_interface.py distance L2:"Delhi" L1:"Greater Bombay" 
+
+query:  SELECT ST_Distance(T3.G1, T3.G2) FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM administrative3 AS T1 CROSS JOIN administrative3 AS T2 where T1.name like 'Delhi' and T2.name like 'Greater Bombay') AS T3;
+
+दूरी :  1127.85336745  KM
+
