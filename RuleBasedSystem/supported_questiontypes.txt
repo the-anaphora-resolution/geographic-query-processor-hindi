@@ -1,6 +1,6 @@
 Distance between 2 cities/states:
 दिल्ली से कानपुर की दूरी कितनी है?
-Neighbours of State (Count/List):
+Neighbors of State (Count/List):
 पंजाब के पडोसी राज्य कौन से हैं?
 Entities (City/River) in State (Count/List):
 राजस्थान में कौन से शहर हैं?
