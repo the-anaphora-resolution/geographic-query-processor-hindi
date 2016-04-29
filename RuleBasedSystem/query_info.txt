@@ -1,2 +1,2 @@
-direction
-{'L2': 'Gujarat', 'L1': 'Gangtok'}
+river_length
+{'L1': 'BEAS'}
