@@ -1,2 +1,2 @@
-within
-{'L2': 'river', 'result': 'list', 'L1': 'Madhya Pradesh'}
+neighbors
+{'result': 'list', 'L1': 'Chhattisgarh'}
