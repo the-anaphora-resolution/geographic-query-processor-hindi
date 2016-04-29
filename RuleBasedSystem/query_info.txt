@@ -1,1 +1,2 @@
-within
+distance
+{'L2': 'Kolkata', 'L1': 'Mangalore'}
