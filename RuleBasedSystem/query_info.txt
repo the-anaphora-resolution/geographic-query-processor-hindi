@@ -1,2 +1,2 @@
-neighbors
-{'result': 'list', 'L1': 'Chhattisgarh'}
+city_in
+{'L1': 'Vishakhapatnam'}
