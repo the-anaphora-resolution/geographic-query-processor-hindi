@@ -41,7 +41,7 @@ class db:
             "SELECT DISTINCT T3.N2 FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH2__ AS T1 CROSS JOIN administrative1 AS T2 where T1.name like '__PH1__') AS T3 where ST_Intersects(T3.G1, T3.G2) IS TRUE;",
             "SELECT name_1 FROM administrative2 where name like '__PH1__';",
             "SELECT sum(ST_Length(geom)) FROM __PH2__ where name like '__PH1__'",
-            "SELECT degrees(ST_Azimuth(ST_Centroid(T1.geom), ST_Centroid(T2.geom))) as DEG FROM __PH3__ AS T1 CROSS JOIN __PH3__ AS T2 where T1.name like '__PH1__' and T2.name like '__PH2__';",
+            "SELECT degrees(ST_Azimuth(ST_Centroid(T1.geom), ST_Centroid(T2.geom))) as DEG FROM __PH2__ AS T1 CROSS JOIN __PH4__ AS T2 where T1.name like '__PH1__' and T2.name like '__PH3__';",
             "SELECT capital from __PH2__ where name like '__PH1__';",
             "SELECT DISTINCT T2. N2, degrees(ST_Azimuth(ST_Centroid(T1.geom), ST_Centroid(G2))) as DEG FROM __PH2__ AS T1 CROSS JOIN (SELECT T7.N2, T7.G2, ST_Touches(T7.G1, T7.G2) AS rval FROM (SELECT T5.name AS N1, T5.geom AS G1, T6.name AS N2, T6.geom AS G2 FROM __PH2__ AS T5 CROSS JOIN __PH2__ AS T6 where T5.name like '__PH1__') AS T7 where ST_Touches(T7.G1, T7.G2) IS TRUE) AS T2 where T1.name like '__PH1__';"
 
@@ -229,8 +229,8 @@ class db:
                 if k == 'L1' or k == 'L2':
                     qtable = inst.get_table(v)
                 ph .append(v)
-            ph.append(qtable)
-            #print "ph: ", ph
+                ph.append(qtable)
+            print "ph: ", ph
             res = inst.exec_query(qtype,ph)        
             direc = res[0][0]
         
@@ -357,6 +357,9 @@ inst.initialize_query_types()
 
 #inst.exec_query(qtype,['\'Delhi\'','\'Kanpur\'','administrative2'])
 #inst.exec_query(qtype,['\'Greater Bombay\'','\'Varanasi\'','administrative2'])
+inst.process_query(qtype)
+inst.close_conn()
+'''
 try:
     inst.process_query(qtype)
 except:
@@ -364,3 +367,4 @@ except:
     err_msg = err_file.read()
     print err_msg
 inst.close_conn()
+'''
