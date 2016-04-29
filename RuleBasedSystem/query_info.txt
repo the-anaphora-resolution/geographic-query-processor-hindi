@@ -1,2 +1,2 @@
-distance
-{'L2': 'Kolkata', 'L1': 'Mangalore'}
+direction
+{'L2': 'Gujarat', 'L1': 'Gangtok'}

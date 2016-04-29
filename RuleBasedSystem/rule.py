@@ -88,7 +88,7 @@ def isPropertyDirection(query):
 	input_file_handler.close()
 	queryNamedEntities= getNamedEntities(query)
 	
-	if len(set(query).intersection(direction_synonyms))>0 and (queryNamedEntities.get("NNP",0)!=0) and (len(queryNamedEntities["NNP"])==2) and ("से" in query or "के" in query):
+	if len(set(query).intersection(direction_synonyms))>0 and (queryNamedEntities.get("NNP",0)!=0) and ("से" in query or "के" in query):
 		return True
 	else:
 		return False
