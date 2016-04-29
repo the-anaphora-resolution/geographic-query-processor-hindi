@@ -33,7 +33,7 @@ class db:
         #__PH__ = place holder, needs to be replaced with values
         keys = ['distance', 'direction', 'neighbors', 'size_val', 'count', 'count_intersect']
         queries = [
-            "SELECT ST_Distance(T3.G1, T3.G2) FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH3__ AS T1 CROSS JOIN __PH3__ AS T2 where T1.name like '__PH1__' and T2.name like '__PH2__') AS T3;",
+            "SELECT ST_Distance(T3.G1, T3.G2) FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH2__ AS T1 CROSS JOIN __PH4__ AS T2 where T1.name like '__PH1__' and T2.name like '__PH3__') AS T3;",
             "SELECT DISTINCT T3.N2, ST_Touches(T3.G1, T3.G2) AS rval FROM (SELECT T1.name AS N1, T1.geom AS G1, T2.name AS N2, T2.geom AS G2 FROM __PH2__ AS T1 CROSS JOIN __PH2__ AS T2 where T1.name like '__PH1__') AS T3 where ST_Touches(T3.G1, T3.G2) IS TRUE;",
             "SELECT ST_Area(T1.geom) from __PH2__ as T1 where T1.name like '__PH1__';",
             "SELECT DISTINCT T3.name FROM (SELECT T2.name as name, ST_Within(T2.geom, T1.geom) as within from __PH2__ as T1 CROSS JOIN __PH3__ as T2 WHERE T1.name like '__PH1__') as T3 where T3.within is TRUE;",
@@ -103,8 +103,8 @@ class db:
                 if k == 'L1' or k == 'L2':
                     qtable = inst.get_table(v)
                 ph .append(v)
-            ph.append(qtable)
-            #print "ph: ", ph
+                ph.append(qtable)
+            print "ph: ", ph
             res = inst.exec_query(qtype,ph)        
             mf = 110
             dist = res[0][0] * mf
