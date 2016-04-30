@@ -11,7 +11,7 @@ __email__ = "chinmaya.gautam@usc.edu"
 __status__ = "Developement"
 
 '''
-note: needs psycopg module for python installed to work, 
+note: needs psycopg2 and google-api-python-client module for python installed to work, 
 and appropriate library paths to be setup
 '''
 import psycopg2
