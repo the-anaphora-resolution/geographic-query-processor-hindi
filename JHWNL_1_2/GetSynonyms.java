@@ -13,7 +13,6 @@ public class GetSynonyms
     {
     	JHWNL.initialize();
 		getSynonyms();
-		// getSentenceDetails();
     }
     public static void getSynonyms() throws IOException
     {
@@ -25,13 +24,12 @@ public class GetSynonyms
 		{
 				
 				//inputLine ="दूर";
+				System.out.print("Enter a word in Hindi to search for its synonyms: ");
 				inputLine=br.readLine();
 
 				inputLine=inputLine.trim();
 				System.out.println("\nINPUT: " + inputLine+"\n\n");
 				
-				
-					System.out.println("WORD: "+inputLine);
 					
 						//Look up the word for all POS tags
 						IndexWordSet demoIWSet = Dictionary.getInstance().lookupAllIndexWords(inputLine);				
@@ -41,7 +39,7 @@ public class GetSynonyms
 						
 						if(demoIndexWord.length==0)
 						{
-							System.out.println("No entry for this word in WordNet");
+							System.out.println("No entry for this word in WordNet\n");
 						}
 						else
 						{
@@ -73,7 +71,7 @@ public class GetSynonyms
 							System.out.print("[");
 							for( i=0;i<syns.size()-1; i++ )
 								System.out.print("\""+syns.get(i)+"\" , ");
-							System.out.print("\""+syns.get(i)+"\"]");
+							System.out.println("\""+syns.get(i)+"\"]\n");
 						}
 		}
 		catch (JHWNLException e) 
