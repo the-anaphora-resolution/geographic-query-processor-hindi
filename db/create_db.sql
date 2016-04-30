@@ -155,11 +155,3 @@ CREATE TABLE "water_areas" (gid serial,
 "name" varchar(254));
 ALTER TABLE "water_areas" ADD PRIMARY KEY (gid);
 SELECT AddGeometryColumn('','water_areas','geom','0','MULTIPOLYGON',2);
-
-
-COPY administrative FROM 'administrative.csv' DELIMITER ',' CSV;
-COPY administrative1 FROM 'administrative1.csv' DELIMITER ',' CSV;
-COPY administrative2 FROM 'administrative2.csv' DELIMITER ',' CSV;
-COPY administrative3 FROM 'administrative3.csv' DELIMITER ',' CSV;
-COPY water_lines FROM 'water_lines.csv' DELIMITER ',' CSV;
-COPY water_areas FROM 'water_areas.csv' DELIMITER ',' CSV;
