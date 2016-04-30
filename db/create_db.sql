@@ -1,0 +1,165 @@
+CREATE TABLE "administrative" (gid serial,
+"gadmid" int2,
+"iso" varchar(5),
+"name" varchar(50),
+"name_iso" varchar(54),
+"name_fao" varchar(50),
+"name_local" varchar(54),
+"name_obsol" varchar(150),
+"name_varia" varchar(160),
+"name_nonla" varchar(50),
+"name_frenc" varchar(50),
+"name_spani" varchar(50),
+"name_russi" varchar(50),
+"name_arabi" varchar(50),
+"name_chine" varchar(50),
+"waspartof" varchar(100),
+"contains" varchar(50),
+"sovereign" varchar(40),
+"iso2" varchar(4),
+"www" varchar(2),
+"fips" varchar(6),
+"ison" numeric,
+"validfr" varchar(12),
+"validto" varchar(10),
+"andyid" numeric,
+"pop2000" numeric,
+"sqkm" numeric,
+"popsqkm" numeric,
+"unregion1" varchar(254),
+"unregion2" varchar(254),
+"developing" numeric,
+"cis" numeric,
+"transition" numeric,
+"oecd" numeric,
+"wbregion" varchar(254),
+"wbincome" varchar(254),
+"wbdebt" varchar(254),
+"wbother" varchar(254),
+"ceeac" numeric,
+"cemac" numeric,
+"ceplg" numeric,
+"comesa" numeric,
+"eac" numeric,
+"ecowas" numeric,
+"igad" numeric,
+"ioc" numeric,
+"mru" numeric,
+"sacu" numeric,
+"uemoa" numeric,
+"uma" numeric,
+"palop" numeric,
+"parta" numeric,
+"cacm" numeric,
+"eurasec" numeric,
+"agadir" numeric,
+"saarc" numeric,
+"asean" numeric,
+"nafta" numeric,
+"gcc" numeric,
+"csn" numeric,
+"caricom" numeric,
+"eu" numeric,
+"can" numeric,
+"acp" numeric,
+"landlocked" numeric,
+"aosis" numeric,
+"sids" numeric,
+"islands" numeric,
+"ldc" numeric,
+"shape_leng" numeric,
+"shape_area" numeric);
+ALTER TABLE "administrative" ADD PRIMARY KEY (gid);
+SELECT AddGeometryColumn('','administrative','geom','0','MULTIPOLYGON',2);
+
+CREATE TABLE "administrative1" (gid serial,
+"id_0" int4,
+"iso" varchar(3),
+"name_0" varchar(75),
+"id_1" int4,
+"name" varchar(75),
+"varname_1" varchar(150),
+"nl_name_1" varchar(50),
+"hasc_1" varchar(15),
+"cc_1" varchar(15),
+"type_1" varchar(50),
+"engtype_1" varchar(50),
+"validfr_1" varchar(25),
+"validto_1" varchar(25),
+"remarks_1" varchar(125),
+"shape_leng" numeric,
+"shape_area" numeric);
+ALTER TABLE "administrative1" ADD PRIMARY KEY (gid);
+SELECT AddGeometryColumn('','administrative1','geom','0','MULTIPOLYGON',2);
+ALTER TABLE administrative1 ADD COLUMN capital character varying(100);
+
+CREATE TABLE "administrative2" (gid serial,
+"id_0" int4,
+"iso" varchar(3),
+"name_0" varchar(75),
+"id_1" int4,
+"name_1" varchar(75),
+"id_2" int4,
+"name" varchar(75),
+"varname_2" varchar(150),
+"nl_name_2" varchar(75),
+"hasc_2" varchar(15),
+"cc_2" varchar(15),
+"type_2" varchar(50),
+"engtype_2" varchar(50),
+"validfr_2" varchar(25),
+"validto_2" varchar(25),
+"remarks_2" varchar(100),
+"shape_leng" numeric,
+"shape_area" numeric);
+ALTER TABLE "administrative2" ADD PRIMARY KEY (gid);
+SELECT AddGeometryColumn('','administrative2','geom','0','MULTIPOLYGON',2);
+
+CREATE TABLE "administrative3" (gid serial,
+"id_0" int4,
+"iso" varchar(3),
+"name_0" varchar(75),
+"id_1" int4,
+"name_1" varchar(75),
+"id_2" int4,
+"name_2" varchar(75),
+"id_3" int4,
+"name" varchar(75),
+"varname_3" varchar(100),
+"nl_name_3" varchar(75),
+"hasc_3" varchar(25),
+"type_3" varchar(50),
+"engtype_3" varchar(50),
+"validfr_3" varchar(25),
+"validto_3" varchar(25),
+"remarks_3" varchar(50),
+"shape_leng" numeric,
+"shape_area" numeric);
+ALTER TABLE "administrative3" ADD PRIMARY KEY (gid);
+SELECT AddGeometryColumn('','administrative3','geom','0','MULTIPOLYGON',2);
+
+CREATE TABLE "water_lines" (gid serial,
+"f_code_des" varchar(254),
+"hyc_descri" varchar(254),
+"name" varchar(254),
+"iso" varchar(7),
+"name_0" varchar(54));
+ALTER TABLE "water_lines" ADD PRIMARY KEY (gid);
+SELECT AddGeometryColumn('','water_lines','geom','0','MULTILINESTRING',2);
+
+CREATE TABLE "water_areas" (gid serial,
+"iso" varchar(7),
+"country" varchar(54),
+"f_code_des" varchar(254),
+"hyc_descri" varchar(254),
+"name" varchar(254));
+ALTER TABLE "water_areas" ADD PRIMARY KEY (gid);
+SELECT AddGeometryColumn('','water_areas','geom','0','MULTIPOLYGON',2);
+
+
+COPY administrative FROM 'administrative.csv' DELIMITER ',' CSV;
+COPY administrative1 FROM 'administrative1.csv' DELIMITER ',' CSV;
+COPY administrative2 FROM 'administrative2.csv' DELIMITER ',' CSV;
+COPY administrative3 FROM 'administrative3.csv' DELIMITER ',' CSV;
+COPY water_lines FROM 'water_lines.csv' DELIMITER ',' CSV;
+COPY water_areas FROM 'water_areas.csv' DELIMITER ',' CSV;
